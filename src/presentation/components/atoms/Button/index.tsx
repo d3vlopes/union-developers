@@ -1,14 +1,17 @@
-"use client";
+'use client'
 
-import { ReactNode } from "react";
+import { ReactNode } from 'react'
 
-import * as S from "./styles";
+import * as S from './styles'
 
 export interface ButtonProps {
-  children: ReactNode;
-  variant?: "primary" | "secondary";
+  children: ReactNode
+  variant?: 'primary' | 'secondary'
 }
 
-export const Button = ({ children, variant = "primary" }: ButtonProps) => {
-  return <S.Button variant={variant}>{children}</S.Button>;
-};
+export const Button = ({
+  children,
+  variant = 'primary',
+}: ButtonProps) => {
+  return <S.Button variant={variant}>{children}</S.Button>
+}
