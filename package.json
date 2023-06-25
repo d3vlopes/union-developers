@@ -54,5 +54,8 @@
       "yarn lint --fix",
       "yarn format"
     ]
+  },
+  "husky": {
+    "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
   }
 }
