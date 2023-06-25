@@ -7,7 +7,7 @@
     "build-storybook": "storybook build",
     "dev": "next dev",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "lint": "next lint --fix",
+    "lint": "eslint src --max-warnings=0",
     "prepare": "husky install",
     "start": "next start",
     "storybook": "storybook dev -p 6006"
@@ -46,5 +46,11 @@
     "prettier": "^2.8.8",
     "storybook": "^7.0.23",
     "typescript": "5.0.4"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "yarn lint --fix",
+      "yarn format"
+    ]
   }
 }
