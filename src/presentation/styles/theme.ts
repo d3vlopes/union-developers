@@ -5,6 +5,9 @@ export const theme = {
     primary: {
       500: "#811AC0",
     },
+    secondary: {
+      500: "#0048fe",
+    },
     neutral: {
       100: "#FFFFFF",
       200: "#E7E6E6",
