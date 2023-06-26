@@ -21,7 +21,8 @@
     "test:ci": "yarn test --coverage",
     "test:staged": "yarn test related ./src/**/**/**/**/*.test.tsx ./src/**/**/**/**/*.test.ts",
     "test:verbose": "vitest",
-    "test:unit": "vitest watch --silent"
+    "test:unit": "vitest watch --silent",
+    "typecheck": "tsc --project tsconfig.json --noEmit"
   },
   "dependencies": {
     "next": "13.4.7",
