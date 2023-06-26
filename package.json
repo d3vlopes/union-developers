@@ -10,7 +10,12 @@
     "lint": "eslint src --max-warnings=0",
     "prepare": "husky install",
     "start": "next start",
-    "storybook": "storybook dev -p 6006"
+    "storybook": "storybook dev -p 6006",
+    "test": "vitest run --silent",
+    "test:ci": "yarn test --coverage",
+    "test:staged": "yarn test related ./src/**/**/**/**/*.test.tsx ./src/**/**/**/**/*.test.ts",
+    "test:verbose": "vitest",
+    "test:unit": "vitest watch --silent"
   },
   "dependencies": {
     "next": "13.4.7",
@@ -39,6 +44,7 @@
     "@typescript-eslint/eslint-plugin": "^5.60.0",
     "@typescript-eslint/parser": "^5.60.0",
     "@vitejs/plugin-react": "^4.0.1",
+    "@vitest/coverage-istanbul": "^0.32.2",
     "eslint": "8.43.0",
     "eslint-config-next": "13.4.7",
     "eslint-config-prettier": "^8.8.0",
@@ -60,7 +66,8 @@
   "lint-staged": {
     "src/**/*.{ts,tsx}": [
       "yarn lint --fix",
-      "yarn format"
+      "yarn format",
+      "yarn test:staged"
     ]
   },
   "husky": {
