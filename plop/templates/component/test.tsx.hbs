@@ -1,0 +1,15 @@
+import { render, screen } from '@/__tests__/helpers'
+
+import { {{pascalCase name}} } from '.'
+
+const { getByRole } = screen
+
+describe('<{{pascalCase name}} />', () => {
+  it('should render by default', () => {
+    render(<{{pascalCase name}} title="{{pascalCase name}}" />)
+
+    expect(
+      getByRole('heading', { name: '{{pascalCase name}}' }),
+    ).toBeInTheDocument()
+  })
+})
