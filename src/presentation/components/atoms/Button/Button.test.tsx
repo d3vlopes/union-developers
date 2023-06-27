@@ -12,7 +12,7 @@ describe('<Button />', () => {
 
     expect(button).toBeInTheDocument()
     expect(button).toHaveStyle({
-      'background-color': '#811AC0',
+      background: 'linear-gradient(225deg, #0048FE 0%, #851D86 100%)',
     })
   })
 })
