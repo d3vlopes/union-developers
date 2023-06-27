@@ -9,7 +9,7 @@ const buttonModifiers = {
     background-color: ${theme.colors.primary['500']};
   `,
   secondary: (theme: DefaultTheme) => css`
-    background-color: ${theme.colors.secondary['500']};
+    background-color: ${theme.colors.text['500']};
   `,
 }
 
@@ -22,9 +22,9 @@ export const Button = styled.button<ButtonType>`
     text-decoration: none;
     cursor: pointer;
     border-radius: 10px;
-    background-color: ${theme.colors.primary['500']};
+    background: ${theme.colors.primary};
     padding: 16px 24px;
-    color: ${theme.colors.neutral['100']};
+    color: ${theme.colors.text['100']};
 
     ${!!variant && buttonModifiers[variant](theme)};
   `}
