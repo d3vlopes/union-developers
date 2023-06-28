@@ -35,7 +35,6 @@
     "react/jsx-no-bind": "off",
     "no-console": "warn",
     "no-var": "error",
-    "no-unused-vars": "error",
     "react/no-array-index-key": "warn",
     "react/button-has-type": "error",
     "react/react-in-jsx-scope": "off",
