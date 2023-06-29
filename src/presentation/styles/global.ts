@@ -46,6 +46,10 @@ export const GlobalStyles = createGlobalStyle`
     h6 {
       font-family: ${theme.fonts.family.heading};
     }
+
+    img {
+      max-width: 100%;
+    }
   `}
 
  `
