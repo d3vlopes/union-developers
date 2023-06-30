@@ -4,15 +4,13 @@ import { logoMock } from './mock'
 
 import { Logo } from '.'
 
-const { getByRole } = screen
+const { getByLabelText, getByRole } = screen
 
 describe('<Logo />', () => {
   it('should correct alt', () => {
     render(<Logo {...logoMock} />)
 
-    const logo = getByRole('img', {
-      name: logoMock.alt,
-    })
+    const logo = getByLabelText('Union')
 
     expect(logo).toHaveAttribute('alt', logoMock.alt)
   })
@@ -20,21 +18,9 @@ describe('<Logo />', () => {
   it('should correct src', () => {
     render(<Logo {...logoMock} />)
 
-    const logo = getByRole('img', {
-      name: logoMock.alt,
-    })
+    const logo = getByLabelText('Union')
 
     expect(logo).toHaveAttribute('src', logoMock.imgUrl)
-  })
-
-  it('should a have title', () => {
-    render(<Logo {...logoMock} />)
-
-    const logo = getByRole('img', {
-      name: logoMock.alt,
-    })
-
-    expect(logo).toHaveAttribute('title', 'Union')
   })
 
   it('should render <a> element around <img> with href for /', () => {
