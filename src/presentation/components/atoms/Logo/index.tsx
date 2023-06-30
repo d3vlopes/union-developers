@@ -10,7 +10,7 @@ export const Logo = ({ imgUrl, alt }: LogoProps) => {
   return (
     <S.Wrapper>
       <a href="/">
-        <img src={imgUrl} alt={alt} title="Union" />
+        <img src={imgUrl} alt={alt} aria-label="Union" />
       </a>
     </S.Wrapper>
   )
