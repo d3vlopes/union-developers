@@ -1,6 +1,6 @@
 export const borders = {
   radius: {
     sm: '5px',
-    medium: '10px',
+    md: '10px',
   },
 } as const

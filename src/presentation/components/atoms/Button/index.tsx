@@ -1,10 +1,10 @@
-'use client'
-
-import { ReactNode } from 'react'
+import { ButtonHTMLAttributes, ReactNode } from 'react'
 
 import * as S from './styles'
 
-export interface ButtonProps {
+type BaseButtonProps = ButtonHTMLAttributes<HTMLButtonElement>
+
+export interface ButtonProps extends BaseButtonProps {
   children: ReactNode
   variant?: 'primary' | 'secondary'
 }
@@ -12,6 +12,11 @@ export interface ButtonProps {
 export const Button = ({
   children,
   variant = 'primary',
+  ...props
 }: ButtonProps) => {
-  return <S.Button variant={variant}>{children}</S.Button>
+  return (
+    <S.Button variant={variant} {...props}>
+      <span>{children}</span>
+    </S.Button>
+  )
 }
