@@ -1,5 +1,7 @@
 export const colors = {
-  primary: 'linear-gradient(225deg, #0048FE 0%, #851D86 100%)',
+  blue: '#0048FE',
+  purple: '#851D86',
+  gradient: 'linear-gradient(225deg, #0048FE 0%, #851D86 100%)',
   background: {
     bg1: '#1F1D2B',
     bg2: '#121119',
