@@ -1,0 +1,31 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<Logo /> > should match snapshot 1`] = `
+.c0 img {
+  width: 8.8rem;
+  height: 2.8rem;
+}
+
+@media (min-width:768px) {
+  .c0 img {
+    width: 11.5rem;
+    height: 3.7rem;
+  }
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <a
+      href="/"
+    >
+      <img
+        alt="Um octógono com três pontos, representando a união dos desenvolvedores"
+        src="http://www.cdn.com/logo.png"
+        title="Union"
+      />
+    </a>
+  </div>
+</div>
+`;
