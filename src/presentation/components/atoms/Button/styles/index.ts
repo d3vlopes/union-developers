@@ -10,17 +10,18 @@ export const Button = styled.button<ButtonType>`
   ${({ theme, variant }) => css`
     position: relative;
     display: flex;
-    place-items: center;
+    justify-content: center;
+    align-items: center;
     border: none;
     text-decoration: none;
     cursor: pointer;
     border-radius: ${theme.borders.radius['sm']};
-    padding: 1.8rem 5rem;
-    width: inherit;
+    width: 100%;
     background: none;
     transition: filter ${theme.transitions.default};
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     overflow: hidden;
+    height: auto;
 
     span {
       color: ${theme.colors.text['100']};
