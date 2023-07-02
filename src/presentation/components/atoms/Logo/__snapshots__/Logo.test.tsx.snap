@@ -18,7 +18,7 @@ exports[`<Logo /> > should match snapshot 1`] = `
     class="c0"
   >
     <a
-      href="/"
+      href="#"
     >
       <img
         alt="Um octógono com três pontos, representando a união dos desenvolvedores"

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable @next/next/no-html-link-for-pages */
 import * as S from './styles'
 
@@ -9,7 +10,7 @@ export interface LogoProps {
 export const Logo = ({ imgUrl, alt }: LogoProps) => {
   return (
     <S.Wrapper>
-      <a href="/">
+      <a href="#">
         <img src={imgUrl} alt={alt} aria-label="Union" />
       </a>
     </S.Wrapper>
