@@ -3,7 +3,7 @@ interface NavigationItem {
   target: string
 }
 
-export interface BaseModel<TChildren> {
+export interface BaseModel<TChildren = null> {
   header: {
     logoUrl: string
     logoAlt: string
