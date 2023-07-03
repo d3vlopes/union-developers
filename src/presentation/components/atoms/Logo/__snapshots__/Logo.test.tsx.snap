@@ -23,7 +23,7 @@ exports[`<Logo /> > should match snapshot 1`] = `
       <img
         alt="Um octógono com três pontos, representando a união dos desenvolvedores"
         aria-label="Union"
-        src="https://res.cloudinary.com/dbnq26wqe/image/upload/v1687995701/union/logo_desktop_egwas8.png"
+        src="https://res.cloudinary.com/dbnq26wqe/image/upload/v1688490290/union/logo_desktop_uppabl.svg"
       />
     </a>
   </div>

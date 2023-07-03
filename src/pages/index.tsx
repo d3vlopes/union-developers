@@ -1,5 +1,21 @@
-import { Button } from '@/presentation/components/atoms'
+import { GetServerSideProps } from 'next'
 
-export default function Main() {
-  return <Button>Button</Button>
+import { headerMock } from '@/presentation/components/molecules/Header/mock'
+
+import { MainLayout, MainLayoutProps } from '@/presentation/layouts'
+
+export default function Index(props: MainLayoutProps) {
+  return <MainLayout {...props} />
+}
+
+export const getServerSideProps: GetServerSideProps<
+  MainLayoutProps
+> = async () => {
+  return {
+    props: {
+      base: {
+        header: headerMock,
+      },
+    },
+  }
 }
