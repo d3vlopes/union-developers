@@ -4,13 +4,13 @@ import { headerMock } from './mock'
 
 import { Header } from '.'
 
-const { getByLabelText, getByText, getAllByRole } = screen
+const { getByLabelText, getByText, getAllByRole, getByRole } = screen
 
 describe('<Header />', () => {
   it('should render logo', () => {
     render(<Header {...headerMock} />)
 
-    const logo = getByLabelText('Union')
+    const logo = getByRole('img')
 
     expect(logo).toBeInTheDocument()
   })
