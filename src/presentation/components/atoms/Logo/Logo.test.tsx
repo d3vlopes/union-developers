@@ -23,12 +23,12 @@ describe('<Logo />', () => {
     expect(logo).toHaveAttribute('src', logoMock.imgUrl)
   })
 
-  it('should render <a> element around <img> with href for /', () => {
+  it('should render <a> element around <img> with href for #', () => {
     render(<Logo {...logoMock} />)
 
     const link = getByRole('link')
 
-    expect(link).toHaveAttribute('href', '/')
+    expect(link).toHaveAttribute('href', '#')
   })
 
   it('should match snapshot', () => {

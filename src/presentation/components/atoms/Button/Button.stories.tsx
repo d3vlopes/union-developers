@@ -20,7 +20,7 @@ type Story = StoryObj<typeof Button>
 const template: Story = {
   render: (args) => (
     <div style={{ maxWidth: '35.7rem' }}>
-      <Button {...args} />
+      <Button style={{ padding: '1.8rem' }} {...args} />
     </div>
   ),
 }

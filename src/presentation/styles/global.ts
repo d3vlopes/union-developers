@@ -8,9 +8,11 @@ export const GlobalStyles = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
   html {
-  font-size: 62.5%;
-}
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+  }
 
   ${({ theme }) => css`
     body {
@@ -49,6 +51,11 @@ export const GlobalStyles = createGlobalStyle`
 
     img {
       max-width: 100%;
+    }
+
+    ul {
+      list-style: none;
+      list-style-type: none;
     }
   `}
 
