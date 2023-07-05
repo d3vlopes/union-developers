@@ -30,10 +30,7 @@ describe('<Header />', () => {
       const navigationAnchor = getByLabelText(item.label)
       const navigationItem = getByText(item.label)
 
-      expect(navigationAnchor).toHaveAttribute(
-        'href',
-        `#${item.target}`,
-      )
+      expect(navigationAnchor).toHaveAttribute('href', item.target)
       expect(navigationItem).toBeInTheDocument()
     })
   })

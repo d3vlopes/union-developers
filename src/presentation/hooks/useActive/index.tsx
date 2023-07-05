@@ -25,7 +25,7 @@ export const useActive = (navigationLinks: NavigationItem[]) => {
   useEffect(() => {
     const currentPage = navigationLinks.find(({ target }) => {
       const element = document.querySelector(
-        `#${target}`,
+        `${target}`,
       ) as HTMLElement
 
       if (element) {
