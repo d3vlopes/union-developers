@@ -4,7 +4,13 @@ import { headerMock } from './mock'
 
 import { Header } from '.'
 
-const { getByLabelText, getByText, getAllByRole, getByRole } = screen
+const {
+  getByLabelText,
+  getByText,
+  getAllByRole,
+  getByRole,
+  getByTestId,
+} = screen
 
 describe('<Header />', () => {
   it('should render logo', () => {
@@ -38,6 +44,14 @@ describe('<Header />', () => {
     const button = getByText(headerMock.buttonText)
 
     expect(button).toBeInTheDocument()
+  })
+
+  it('should render anchor under button with href for button target value', () => {
+    render(<Header {...headerMock} />)
+
+    const anchor = getByTestId('button-anchor')
+
+    expect(anchor).toHaveAttribute('href', headerMock.buttonTarget)
   })
 
   it('should handle the open/close mobile menu ', () => {

@@ -24,4 +24,5 @@ export const headerMock: HeaderProps = {
     },
   ],
   buttonText: 'Junte-se a nós',
+  buttonTarget: '#join',
 }

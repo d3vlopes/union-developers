@@ -8,6 +8,7 @@ export interface HeaderProps {
   logoAlt: string
   navigationLinks: NavigationItem[]
   buttonText: string
+  buttonTarget: string
 }
 
 export interface MenuProps {
