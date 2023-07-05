@@ -14,4 +14,12 @@ describe('<MainLayout />', () => {
 
     expect(baseLayout).toBeInTheDocument()
   })
+
+  it('should render Hero', () => {
+    render(<MainLayout {...mainLayoutMock} />)
+
+    const hero = getByTestId('mock-hero')
+
+    expect(hero).toBeInTheDocument()
+  })
 })
