@@ -1,0 +1,290 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<Hero /> > should match snapshot 1`] = `
+.c6 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100%;
+  background: none;
+  -webkit-transition: filter 0.3s ease-in-out;
+  transition: filter 0.3s ease-in-out;
+  box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
+  overflow: hidden;
+  height: auto;
+}
+
+.c6 span {
+  color: #FFFFFF;
+  font-size: 2.2rem;
+  font-family: Poppins,apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+  -webkit-letter-spacing: 1.5px;
+  -moz-letter-spacing: 1.5px;
+  -ms-letter-spacing: 1.5px;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  z-index: 2;
+}
+
+.c6:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.c6::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  background: linear-gradient(225deg,#0048FE 0%,#851D86 100%);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  z-index: 1;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background-image: url(https://media.graphassets.com/j1rOxE97RsCbeyFrMU4z);
+  background-size: cover;
+  background-position: center;
+  padding: 5.6rem 1.6rem 1.2rem;
+  width: 100%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+
+.c0 .c5 {
+  margin-top: 3.2rem;
+  min-height: 5.8rem;
+}
+
+.c3 {
+  max-width: 38.3rem;
+}
+
+.c3 h1 {
+  color: #FFFFFF;
+  font-size: 1.8rem;
+  font-family: Poppins,apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+  font-weight: 700;
+  line-height: 150%;
+}
+
+.c3 span,
+.c3 strong {
+  background: linear-gradient(346deg,#0048FE -48%,#851D86 115%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
+  margin-top: 1.4rem;
+  font-size: 1.6rem;
+  line-height: 150%;
+  max-width: 34.1rem;
+  color: #E2E2E2;
+}
+
+.c7 {
+  display: none;
+}
+
+@media (min-width:1024px) {
+  .c6:hover:not(.c5:disabled) {
+    border-right: 2px solid #0048FE;
+    border-left: 2px solid #851D86;
+    background-image: linear-gradient(to right,#851D86,#0048FE), linear-gradient(to right,#851D86,#0048FE);
+    background-size: 100% 2px;
+    background-position: 0 100%,0 0;
+    background-repeat: no-repeat;
+    background-clip: padding-box;
+  }
+
+  .c6:hover:not(.c5:disabled):hover {
+    -webkit-filter: brightness(0.9);
+    filter: brightness(0.9);
+  }
+
+  .c6:hover:not(.c5:disabled)::before {
+    left: 100%;
+  }
+}
+
+@media (min-width:390px) {
+  .c0 .c5 {
+    max-width: 34.3rem;
+    min-height: 6.9rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c0 {
+    background-image: url(https://media.graphassets.com/66rHD5NBR0K9lcIF9t62);
+  }
+}
+
+@media (min-width:1024px) {
+  .c0 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    gap: 1.4rem;
+  }
+
+  .c0 .c5 {
+    max-width: 40rem;
+    margin-top: 4rem;
+  }
+}
+
+@media (min-width:1024px) {
+  .c1 {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    max-width: 134.8rem;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width:390px) {
+  .c3 h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c3 {
+    max-width: 55rem;
+  }
+
+  .c3 h1 {
+    font-size: 2.8rem;
+  }
+}
+
+@media (min-width:1400px) {
+  .c3 {
+    max-width: 73.3rem;
+  }
+
+  .c3 h1 {
+    font-size: 4.2rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c2 {
+    padding: 19.9rem 0 13rem 9.2rem;
+  }
+}
+
+@media (min-width:1400px) {
+  .c2 {
+    padding: 19.9rem 0 13rem 0;
+  }
+}
+
+@media (min-width:768px) {
+  .c4 {
+    margin-top: 2.7rem;
+    font-size: 2.4rem;
+    max-width: 64rem;
+  }
+}
+
+@media (min-width:1024px) {
+  .c7 {
+    display: initial;
+  }
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        <div
+          class="c3"
+        >
+          <h1>
+            Quer se tornar um desenvolvedor 
+            <strong>
+              diferenciado?
+            </strong>
+          </h1>
+        </div>
+        <p
+          class="c4"
+        >
+          Aqui você vivencia na prática como é o dia a dia de um desenvolvedor em uma empresa e se prepara para enfrentar os desafios do mercado de forma prática e imersiva!
+        </p>
+        <a
+          href="#join"
+        >
+          <button
+            class="c5 c6"
+          >
+            <span>
+              Quero participar
+            </span>
+          </button>
+        </a>
+      </div>
+      <img
+        alt="Description logo"
+        class="c7"
+        src="https://media.graphassets.com/zRjyxnD5RyGdG8xVpll8"
+      />
+    </div>
+  </div>
+</div>
+`;
