@@ -1,2 +1,2 @@
-export * from './components/_barril'
+export * from './components'
 export * from './data'
