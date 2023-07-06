@@ -1,4 +1,4 @@
-import { NavigationItem } from '../types'
+import { NavigationItem } from '@/domain/models'
 
 interface NavigationLinkProps {
   navigationLink: NavigationItem
@@ -14,7 +14,7 @@ export const NavigationLinkTemplate = ({
   return (
     <a
       key={navigationLink.label}
-      href={`#${navigationLink.target}`}
+      href={navigationLink.target}
       aria-label={navigationLink.label}
     >
       <li className={activeClassName}>{navigationLink.label}</li>

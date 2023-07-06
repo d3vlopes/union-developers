@@ -1,6 +1,6 @@
 import { useState, useCallback, useEffect } from 'react'
 
-import { NavigationItem } from '@/presentation/components/molecules/Header/types'
+import { NavigationItem } from '@/domain/models'
 
 export const useActive = (navigationLinks: NavigationItem[]) => {
   const [scrollPosition, setScrollPosition] = useState(0)
@@ -25,7 +25,7 @@ export const useActive = (navigationLinks: NavigationItem[]) => {
   useEffect(() => {
     const currentPage = navigationLinks.find(({ target }) => {
       const element = document.querySelector(
-        `#${target}`,
+        `${target}`,
       ) as HTMLElement
 
       if (element) {

@@ -11,6 +11,7 @@ export const Header = styled.header`
     transition: all 0.35s ease-in-out;
     width: 100%;
     height: auto;
+    z-index: ${theme.layers.alwaysOnTop};
 
     ${media.lg`
       height: 11.4rem;

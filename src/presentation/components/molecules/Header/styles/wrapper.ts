@@ -9,7 +9,6 @@ export const Wrapper = styled.div`
     height: auto;
     margin: 0 auto;
     padding: 1.6rem 1.2rem;
-    z-index: ${theme.layers.menu};
 
     ${media.lg`
       & {

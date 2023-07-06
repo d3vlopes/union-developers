@@ -1,14 +1,6 @@
-export interface NavigationItem {
-  label: string
-  target: string
-}
+import { HeaderModel } from '@/domain/models'
 
-export interface HeaderProps {
-  logoUrl: string
-  logoAlt: string
-  navigationLinks: NavigationItem[]
-  buttonText: string
-}
+export type HeaderProps = HeaderModel
 
 export interface MenuProps {
   open: boolean

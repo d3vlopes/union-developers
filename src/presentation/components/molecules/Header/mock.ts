@@ -8,20 +8,21 @@ export const headerMock: HeaderProps = {
   navigationLinks: [
     {
       label: 'Sobre',
-      target: 'about',
+      target: '#about',
     },
     {
       label: 'Benefícios',
-      target: 'highlights',
+      target: '#highlights',
     },
     {
       label: 'Como funciona',
-      target: 'works',
+      target: '#works',
     },
     {
       label: 'Dúvidas',
-      target: 'questions',
+      target: '#questions',
     },
   ],
   buttonText: 'Junte-se a nós',
+  buttonTarget: '#join',
 }

@@ -15,6 +15,7 @@ export const Header = ({
   logoAlt,
   navigationLinks,
   buttonText,
+  buttonTarget,
 }: HeaderProps) => {
   const [isOpen, setIsOpen] = useState(false)
 
@@ -61,7 +62,9 @@ export const Header = ({
           </S.NavLink>
 
           <S.CallToAction open={isOpen}>
-            <Button>{buttonText}</Button>
+            <a href={buttonTarget} data-testid="button-anchor">
+              <Button>{buttonText}</Button>
+            </a>
           </S.CallToAction>
         </S.Navbar>
       </S.Wrapper>
