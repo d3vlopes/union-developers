@@ -1,10 +1,3 @@
-export interface HeroProps {
-  title: string
-  description: string
-  buttonText: string
-  buttonTarget: string
-  backgroundMobile: string
-  backgroundDesktop: string
-  logoUrl: string
-  logoAlt: string
-}
+import { HeroModel } from '@/domain/models'
+
+export type HeroProps = HeroModel

@@ -12,7 +12,7 @@ const defaultProps: HeroProps = {
   backgroundMobile:
     'https://media.graphassets.com/j1rOxE97RsCbeyFrMU4z',
   backgroundDesktop:
-    'https://media.graphassets.com/66rHD5NBR0K9lcIF9t62',
+    'https://media.graphassets.com/iGXpg7LOQaCPkzm6iOgs',
   logoUrl: 'https://media.graphassets.com/zRjyxnD5RyGdG8xVpll8',
   logoAlt: 'Description logo',
 }

@@ -154,7 +154,7 @@ exports[`<Hero /> > should match snapshot 1`] = `
 
 @media (min-width:768px) {
   .c0 {
-    background-image: url(https://media.graphassets.com/66rHD5NBR0K9lcIF9t62);
+    background-image: url(https://media.graphassets.com/iGXpg7LOQaCPkzm6iOgs);
   }
 }
 
