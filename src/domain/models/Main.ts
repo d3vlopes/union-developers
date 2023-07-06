@@ -1,4 +1,4 @@
-import { BaseModel } from './Base'
+import { BaseModel, AboutModel } from '.'
 
 type BaseType = Omit<BaseModel, 'children'>
 
@@ -14,4 +14,5 @@ export interface MainModel {
     logoUrl: string
     logoAlt: string
   }
+  about: AboutModel
 }
