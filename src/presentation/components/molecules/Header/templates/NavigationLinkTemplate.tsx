@@ -1,4 +1,4 @@
-import { NavigationItem } from '../types'
+import { NavigationItem } from '@/domain/models'
 
 interface NavigationLinkProps {
   navigationLink: NavigationItem

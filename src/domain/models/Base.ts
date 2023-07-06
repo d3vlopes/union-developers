@@ -1,14 +1,6 @@
-interface NavigationItem {
-  label: string
-  target: string
-}
+import { HeaderModel } from './Header'
 
 export interface BaseModel<TChildren = null> {
-  header: {
-    logoUrl: string
-    logoAlt: string
-    navigationLinks: NavigationItem[]
-    buttonText: string
-  }
+  header: HeaderModel
   children: TChildren
 }

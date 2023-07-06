@@ -1,6 +1,6 @@
 import { useState, useCallback, useEffect } from 'react'
 
-import { NavigationItem } from '@/presentation/components/molecules/Header/types'
+import { NavigationItem } from '@/domain/models'
 
 export const useActive = (navigationLinks: NavigationItem[]) => {
   const [scrollPosition, setScrollPosition] = useState(0)
