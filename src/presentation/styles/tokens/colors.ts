@@ -10,6 +10,7 @@ export const colors = {
     100: '#FFFFFF',
     500: '#E2E2E2',
     700: '#282828',
+    gradient: 'linear-gradient(225deg,#0048FE -50%,#851D86 100%)',
   },
   neutral: {
     100: '#FBFBFB',

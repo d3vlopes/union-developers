@@ -22,6 +22,7 @@ export const AboutSection = ({
           __html: clearDescriptionHTML,
         }}
       />
+      <S.Line />
     </S.Wrapper>
   )
 }
