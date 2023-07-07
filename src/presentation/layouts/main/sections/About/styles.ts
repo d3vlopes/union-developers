@@ -10,7 +10,7 @@ export const Wrapper = styled.section`
     background: ${theme.colors.background.bg1};
     background-clip: padding-box;
     border: 3px solid transparent;
-    border-radius: 1em;
+    border-radius: 20px;
 
     &:before {
       content: '';
@@ -22,12 +22,16 @@ export const Wrapper = styled.section`
       z-index: -1;
       margin: -3px;
       border-radius: inherit;
-      background: ${theme.colors.gradient};
+      background: ${`linear-gradient(-74deg,${theme.colors.blue} -50%,${theme.colors.purple} 100%)`};
     }
 
     ${media.md`
       & {
         margin-top: calc(3.2rem + 5rem);
+      }
+
+      &:before {
+        background: ${`linear-gradient(-74deg,${theme.colors.blue} -10%,${theme.colors.purple} 100%)`};
       }
     `}
   `}
@@ -44,7 +48,7 @@ export const TitleWrapper = styled.header`
     h2 {
       font-size: ${theme.fonts.size['xl']};
       font-weight: 600;
-      background: ${`linear-gradient(235deg, ${theme.colors.blue} -32%, ${theme.colors.purple} 131%)`};
+      background: ${theme.colors.text.gradient};
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -83,6 +87,48 @@ export const DescriptionContent = styled.div`
       p {
         max-width: 102.7rem;
         text-align: left;
+      }
+    `}
+  `}
+`
+
+export const Line = styled.div`
+  ${({ theme }) => css`
+    position: absolute;
+    bottom: -66px;
+    left: 50%;
+    border-radius: 0 0 20px 20px;
+    background: ${`linear-gradient(150deg, ${theme.colors.purple} -115%, ${theme.colors.blue} 280%)`};
+    width: 5px;
+    height: 64px;
+    z-index: -2;
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: inherit;
+      height: inherit;
+      border-radius: inherit;
+      background: ${`linear-gradient(
+        320deg,
+        ${theme.colors.background.bg1} 0%,
+        rgba(31, 29, 43, 0) 100%
+      )`};
+    }
+
+    ${media.md`
+      & {
+        bottom: -113px;
+        height: 110px;
+        background: ${`linear-gradient(0deg, ${theme.colors.purple} -70%, ${theme.colors.blue} 280%)`};
+      }
+
+      &:after {
+        background: ${`linear-gradient(
+        320deg,
+        ${theme.colors.background.bg1} 20%,
+        rgba(31, 29, 43, 0) 100%
+      )`};
       }
     `}
   `}
