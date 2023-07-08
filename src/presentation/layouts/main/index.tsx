@@ -4,7 +4,7 @@ import { Hero } from '@/presentation/components/molecules'
 
 import { BaseLayout } from '@/presentation/layouts'
 
-import { AboutSection } from './sections'
+import { AboutSection, MethodologySection } from './sections'
 
 import * as S from './styles'
 
@@ -21,6 +21,11 @@ export const MainLayout = ({
 
       <S.Container>
         <AboutSection {...about} />
+        <MethodologySection
+          {...about}
+          heading="Metodologias"
+          description="<p>Na Union combinamos o uso de 3 metodologias para você conquistar experiência, saber se posicionar profissionalmente e acelerar sua evolução!</p>"
+        />
       </S.Container>
     </BaseLayout>
   )

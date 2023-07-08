@@ -5,7 +5,7 @@ import { media } from '@/presentation/styles/helpers'
 export const Wrapper = styled.section`
   ${({ theme }) => css`
     position: relative;
-    margin-top: 3.2rem;
+    margin-top: 7.2rem;
     display: flex;
     background: ${theme.colors.background.bg1};
     background-clip: padding-box;
@@ -25,6 +25,23 @@ export const Wrapper = styled.section`
       background: ${`linear-gradient(-74deg,${theme.colors.blue} -50%,${theme.colors.purple} 100%)`};
     }
 
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      border-radius: inherit;
+      margin: -5px;
+      background: ${`linear-gradient(
+        360deg,
+        ${theme.colors.background.bg1} 50%,
+        rgba(31, 29, 43, 0) 100%
+      )`};
+    }
+
     ${media.md`
       & {
         margin-top: calc(3.2rem + 5rem);
@@ -42,8 +59,8 @@ export const TitleWrapper = styled.header`
     position: absolute;
     display: inline-block;
     background: ${theme.colors.background.bg1};
-    margin: -18px 0 0 22px;
-    padding: 0 5px 0 8px;
+    margin: -18px 0 0 calc(100vw - 85%);
+    padding: 0 15px 0 15px;
 
     h2 {
       font-size: ${theme.fonts.size['xl']};
@@ -51,11 +68,26 @@ export const TitleWrapper = styled.header`
       background: ${theme.colors.text.gradient};
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      text-align: center;
+    }
+
+    @media (max-width: 365px) {
+      margin: -18px 0 0 calc(100vw - 84%);
     }
 
     ${media.md`
       & {
-        margin: -35px 0 0 85px;
+        margin: -35px 0 0 30%;
+      }
+
+      h2 {
+        font-size: ${theme.fonts.size['6xl']};
+      }
+    `}
+
+    ${media.lg`
+      & {
+        margin: -35px 0 0 36%;
       }
 
       h2 {
@@ -86,7 +118,6 @@ export const DescriptionContent = styled.div`
 
       p {
         max-width: 102.7rem;
-        text-align: left;
       }
     `}
   `}
@@ -95,7 +126,7 @@ export const DescriptionContent = styled.div`
 export const Line = styled.div`
   ${({ theme }) => css`
     position: absolute;
-    bottom: -55px;
+    bottom: -66px;
     left: 50%;
     border-radius: 0 0 20px 20px;
     background: ${`linear-gradient(150deg, ${theme.colors.purple} -115%, ${theme.colors.blue} 280%)`};
@@ -118,7 +149,7 @@ export const Line = styled.div`
 
     ${media.md`
       & {
-        bottom: -89px;
+        bottom: -113px;
         height: 110px;
         background: ${`linear-gradient(0deg, ${theme.colors.purple} -70%, ${theme.colors.blue} 280%)`};
       }
