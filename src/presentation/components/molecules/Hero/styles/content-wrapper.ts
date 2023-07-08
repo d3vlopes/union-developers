@@ -5,16 +5,17 @@ import { media } from '@/presentation/styles/helpers'
 export const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  padding-bottom: 3.2rem;
 
-  ${media.md`
+  ${media.lg`
     & {
-      padding: 19.9rem 0 13rem 9.2rem;
+      padding-top: 19.9rem;
     }
   `}
 
-  @media (min-width: 1400px) {
+  ${media.xl`
     & {
-      padding: 19.9rem 0 13rem 0;
+      padding-bottom: 13rem;
     }
-  }
+  `}
 `
