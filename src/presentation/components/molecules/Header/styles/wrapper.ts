@@ -12,7 +12,13 @@ export const Wrapper = styled.div`
 
     ${media.lg`
       & {
-        padding: 2.2rem 9.2rem;
+        padding: 2.2rem 1.6rem;
+      }
+    `}
+
+    ${media.xl`
+      & {
+        padding: 2.2rem 0;
       }
     `}
   `}
