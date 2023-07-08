@@ -11,6 +11,7 @@ export const Wrapper = styled.section`
     background-clip: padding-box;
     border: 3px solid transparent;
     border-radius: 20px;
+    width: 100%;
 
     &:before {
       content: '';
@@ -27,6 +28,7 @@ export const Wrapper = styled.section`
 
     ${media.md`
       & {
+        max-width: ${theme.grid.container};
         margin-top: calc(3.2rem + 5rem);
       }
 
