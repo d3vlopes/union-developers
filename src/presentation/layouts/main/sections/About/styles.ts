@@ -87,6 +87,7 @@ export const DescriptionContent = styled.div`
       }
 
       p {
+        font-size: ${theme.fonts.size['3xl']};
         max-width: 102.7rem;
         text-align: left;
       }
@@ -97,7 +98,7 @@ export const DescriptionContent = styled.div`
 export const Line = styled.div`
   ${({ theme }) => css`
     position: absolute;
-    bottom: -66px;
+    bottom: -55px;
     left: 50%;
     border-radius: 0 0 20px 20px;
     background: ${`linear-gradient(150deg, ${theme.colors.purple} -115%, ${theme.colors.blue} 280%)`};
@@ -120,17 +121,9 @@ export const Line = styled.div`
 
     ${media.md`
       & {
-        bottom: -113px;
-        height: 110px;
+        bottom: -88px;
+        height: 88px;
         background: ${`linear-gradient(0deg, ${theme.colors.purple} -70%, ${theme.colors.blue} 280%)`};
-      }
-
-      &:after {
-        background: ${`linear-gradient(
-        320deg,
-        ${theme.colors.background.bg1} 20%,
-        rgba(31, 29, 43, 0) 100%
-      )`};
       }
     `}
   `}
