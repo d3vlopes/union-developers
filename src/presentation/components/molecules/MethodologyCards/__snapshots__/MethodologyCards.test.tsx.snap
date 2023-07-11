@@ -124,7 +124,7 @@ exports[`<MethodologyCards /> > should match snapshot 1`] = `
 
 @media (min-width:1024px) {
   .c4 {
-    padding: 2.4rem;
+    padding: 1.8rem;
   }
 
   .c4 p {
@@ -150,7 +150,7 @@ exports[`<MethodologyCards /> > should match snapshot 1`] = `
         class="c4"
       >
         <p>
-          É uma metodologia de aprendizado que coloca o aluno como protagonista, onde ele é o responsável por ir atrás dos conhecimentos necessários, ficando o professor como um mentor, que vai mostrar o caminho e indicar os melhores conteúdos, que vai guiar o estudo e os métodos, mas também deixar espaço para o aluno explorar.
+          Metodologia ativa é uma abordagem educacional que coloca o aluno como protagonista, onde ele é o responsável por ir atrás dos conhecimentos necessários, ficando o professor como um mentor, que vai mostrar o caminho para que ele possa ter sucesso no aprendizado.
         </p>
       </div>
     </div>
@@ -168,7 +168,7 @@ exports[`<MethodologyCards /> > should match snapshot 1`] = `
         class="c4"
       >
         <p>
-          É uma metodologia de ensino para adultos, que tem mais liberdade e colaboração, permitindo que o aluno decida quando, como e o que estudar, tornando o processo de aprendizagem mais sólido e eficaz. É uma metodologia de ensino mais prática, que estimula o aluno a resolver problemas reais, que estão relacionado ao seu interesse.
+          É uma metodologia de ensino para adultos, que tem mais liberdade e colaboração, permitindo que o aluno decida quando, como e o que estudar, tornando o processo de aprendizagem mais sólido e eficaz, a andragogia valoriza a autonomia e a experiência dos adultos como base para a aprendizagem 
         </p>
       </div>
     </div>
@@ -186,7 +186,7 @@ exports[`<MethodologyCards /> > should match snapshot 1`] = `
         class="c4"
       >
         <p>
-          A metodologia ágil é uma metodologia que busca entregar valor a todo momento, estimula uma maior colaboração entre o time, permitindo que tenha uma visão mais transparente, tendo liberdade para fazer escolhas e tomar decisões, também estimula a melhora continua entre os membros, processos e da qualidade dos entregáveis.
+          A metodologia ágil é uma metodologia que estimula a colaboração entre o time, permitindo que tenha uma visão mais transparente, tendo liberdade para fazer escolhas e tomar decisões, também estimula a melhora continua entre os membros, processos e da qualidade geral do trabalho.
         </p>
       </div>
     </div>
