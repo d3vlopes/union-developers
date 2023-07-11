@@ -9,6 +9,7 @@ export const colors = {
   text: {
     100: '#FFFFFF',
     500: '#E2E2E2',
+    600: '#D7D7D7',
     700: '#282828',
     gradient: 'linear-gradient(225deg,#0048FE -50%,#851D86 100%)',
   },

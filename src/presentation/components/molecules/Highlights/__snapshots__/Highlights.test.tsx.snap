@@ -1,0 +1,336 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<Highlights /> > should match snapshot 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 4rem;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+}
+
+.c2 img {
+  width: 8rem;
+  height: 8rem;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c3 h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 2.2rem;
+  color: #FFFFFF;
+  margin-top: 2.4rem;
+}
+
+.c3 p {
+  font-size: 1.6rem;
+  line-height: 150%;
+  color: #D7D7D7;
+  margin-top: 1.2rem;
+  max-width: 29rem;
+}
+
+@media (min-width:768px) {
+  .c0 {
+    gap: 10rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c1 {
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-align-items: flex-start;
+    -webkit-box-align: flex-start;
+    -ms-flex-align: flex-start;
+    align-items: flex-start;
+    gap: 5.8rem;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .c1:nth-child(even) {
+    -webkit-flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+  }
+
+  .c1:nth-child(even) h3,
+  .c1:nth-child(even) p {
+    text-align: right;
+  }
+}
+
+@media (min-width:768px) {
+  .c2 img {
+    width: 16rem;
+    height: 16rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c3 {
+    gap: 2.8rem;
+    -webkit-box-pack: initial;
+    -webkit-justify-content: initial;
+    -ms-flex-pack: initial;
+    justify-content: initial;
+    -webkit-align-items: initial;
+    -webkit-box-align: initial;
+    -ms-flex-align: initial;
+    align-items: initial;
+  }
+
+  .c3 h3,
+  .c3 p {
+    margin: 0;
+  }
+
+  .c3 h3 {
+    font-size: 3.2rem;
+    line-height: 4.4rem;
+    max-width: 65.9rem;
+  }
+
+  .c3 p {
+    font-size: 2.4rem;
+    line-height: 3rem;
+    max-width: 67.4rem;
+  }
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        <img
+          alt="rocket"
+          src="https://media.graphassets.com/qssZQEUSEaAQoM6oznCw"
+        />
+      </div>
+      <div
+        class="c3"
+      >
+        <h3>
+          Crescimento profissional
+        </h3>
+        <p>
+          Eleve o seu conhecimento, aperfeiçoe suas habilidades e alavanque o seu potencial com uma experiência intensa que te ajudará a ser um profissional ainda melhor.
+        </p>
+      </div>
+    </div>
+    <div
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        <img
+          alt="pencil and scale"
+          src="https://media.graphassets.com/BN50QqvcR67hdjNyuqkA"
+        />
+      </div>
+      <div
+        class="c3"
+      >
+        <h3>
+          Aumente sua caixa de ferramentas
+        </h3>
+        <p>
+          Descubra novas metodologias e encare desafios que agregam em seu conhecimento profissional, essenciais para avançar na sua trajetória.
+        </p>
+      </div>
+    </div>
+    <div
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        <img
+          alt="like"
+          src="https://media.graphassets.com/WR1yF2qGRmm8jWLCyw0D"
+        />
+      </div>
+      <div
+        class="c3"
+      >
+        <h3>
+          Problemas Reais
+        </h3>
+        <p>
+          Trabalhe em projetos reais com equipes reais para sair da sua zona de conforto e acelerar seu aprendizado.
+        </p>
+      </div>
+    </div>
+    <div
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        <img
+          alt="planet"
+          src="https://media.graphassets.com/2S5Pdk5oShOJUlIz8p7X"
+        />
+      </div>
+      <div
+        class="c3"
+      >
+        <h3>
+          Ambiente Imersivo
+        </h3>
+        <p>
+          Espaço completo que te prepara, conecta com o mercado e permite absorver conteúdos fundamentais para seguir a sua jornada profissional.
+        </p>
+      </div>
+    </div>
+    <div
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        <img
+          alt="bulb on"
+          src="https://media.graphassets.com/KHCFnl40RyKQqOx6Bjuz"
+        />
+      </div>
+      <div
+        class="c3"
+      >
+        <h3>
+          Experiência
+        </h3>
+        <p>
+          Com os processos fundamentais e domínio das ferramentas te dá a experiência necessária para tomar as melhores decisões no mundo real.
+        </p>
+      </div>
+    </div>
+    <div
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        <img
+          alt="game controller"
+          src="https://media.graphassets.com/XH5lk8IJQ1Cz1M2AE1Lu"
+        />
+      </div>
+      <div
+        class="c3"
+      >
+        <h3>
+          Vivência na Prática
+        </h3>
+        <p>
+          Vivencie o dia a dia do mercado com um time de diferentes mentalidades para solucionar problemas em diversas áreas.
+        </p>
+      </div>
+    </div>
+    <div
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        <img
+          alt="star"
+          src="https://media.graphassets.com/eBMuKBvTLulsEbZySGwt"
+        />
+      </div>
+      <div
+        class="c3"
+      >
+        <h3>
+          Desenvolvimento de Skills
+        </h3>
+        <p>
+          Aprenda a comunicar suas ideias em um ambiente profissional e melhorar suas habilidades de gerenciamento de tempo para se destacar em sua carreira.
+        </p>
+      </div>
+    </div>
+    <div
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        <img
+          alt="person"
+          src="https://media.graphassets.com/sanArFzbQUipTnjRVl78"
+        />
+      </div>
+      <div
+        class="c3"
+      >
+        <h3>
+          Mentoria
+        </h3>
+        <p>
+          No Union você irá ter do lado um profissional experiente que vai te guiar e mostrar os atalhos para que você consiga evoluir mais rápido em menos tempo.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

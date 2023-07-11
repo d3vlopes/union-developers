@@ -15,7 +15,6 @@ export const Wrapper = styled.div<WrapperProps>`
     flex-direction: column;
     background-image: ${`url(${backgroundMobile})`};
     background-size: cover;
-    background-position: center;
     padding: 5.6rem 1.6rem 1.2rem;
     width: 100%;
     height: max-content;
