@@ -5,9 +5,8 @@ import { media } from '@/presentation/styles/helpers'
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   gap: 4rem;
+  width: 100%;
 
   ${media.md`
     & {
@@ -22,10 +21,12 @@ export const Highlight = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
+  width: 100%;
 
   ${media.md`
     display: inline-flex;
     align-items: flex-start;
+    justify-content: flex-start;
     gap: 5.8rem;
     flex-direction: row;
     text-align: left;
