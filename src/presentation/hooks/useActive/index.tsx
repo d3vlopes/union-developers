@@ -29,7 +29,7 @@ export const useActive = (navigationLinks: NavigationItem[]) => {
       ) as HTMLElement
 
       if (element) {
-        const top = element.offsetTop - 114
+        const top = element.offsetTop - 150
         const bottom = top + element.offsetHeight
         return scrollPosition >= top && scrollPosition < bottom
       }
