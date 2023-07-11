@@ -12,6 +12,8 @@ export const Wrapper = styled.section`
     border: 3px solid transparent;
     border-radius: 20px;
     width: 100%;
+    scroll-margin-block-start: 150px;
+    scroll-margin-block-end: 150px;
 
     &:before {
       content: '';

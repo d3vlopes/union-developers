@@ -1,6 +1,7 @@
 import {
   BaseModel,
   HeroModel,
+  HighlightModel,
   MethodologyModel,
   SectionModel,
 } from '.'
@@ -13,9 +14,14 @@ export interface MethodologySectionType extends SectionModel {
   methodologyCards: MethodologyModel[]
 }
 
+export interface HighlightSectionType extends SectionModel {
+  highlights: HighlightModel[]
+}
+
 export interface MainModel {
   base: BaseType
   hero: HeroModel
   aboutSection: AboutSectionType
   methodologySection: MethodologySectionType
+  highlightSection: HighlightSectionType
 }

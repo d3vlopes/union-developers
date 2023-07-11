@@ -14,8 +14,8 @@ export const highlightsMock: HighlightModel[] = [
   {
     id: '2',
     icon: {
-      url: 'https://media.graphassets.com/BN50QqvcR67hdjNyuqkA',
-      alt: 'pencil and scale',
+      url: 'https://media.graphassets.com/tsqge8g9TpyED5o5iVr6',
+      alt: 'tools',
     },
     title: 'Aumente sua caixa de ferramentas',
     description:

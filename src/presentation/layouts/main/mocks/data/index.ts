@@ -1,6 +1,7 @@
 import { headerMock } from '@/presentation/components/molecules/Header/mock'
 import { heroMockFactory } from '@/presentation/components/molecules/Hero/mock'
 import { methodologyCardsMock } from '@/presentation/components/molecules/MethodologyCards/mock'
+import { highlightsMock } from '@/presentation/components/molecules/Highlights/mock'
 
 import { MainLayoutProps } from '../..'
 
@@ -21,5 +22,12 @@ export const mainLayoutMock: MainLayoutProps = {
     description:
       'Na Union combinamos o uso de 3 metodologias para você conquistar experiência, saber se posicionar profissionalmente e acelerar sua evolução!',
     methodologyCards: methodologyCardsMock,
+  },
+  highlightSection: {
+    id: 'highlights',
+    heading: 'Benefícios',
+    description:
+      'Conheça os nossos benefícios e venha fazer parte do time!',
+    highlights: highlightsMock,
   },
 }

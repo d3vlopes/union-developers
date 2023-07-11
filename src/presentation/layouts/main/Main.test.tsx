@@ -45,4 +45,12 @@ describe('<MainLayout />', () => {
 
     expect(methodologySection).toBeInTheDocument()
   })
+
+  it('should render highlight section', () => {
+    render(<MainLayout {...mainLayoutMock} />)
+
+    const highlightSection = getByTestId('mock-highlight-section')
+
+    expect(highlightSection).toBeInTheDocument()
+  })
 })

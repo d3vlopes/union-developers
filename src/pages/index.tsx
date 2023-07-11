@@ -35,6 +35,9 @@ export const getServerSideProps: GetServerSideProps<
         methodologyCards:
           mainLayoutMock.methodologySection.methodologyCards,
       },
+      highlightSection: {
+        ...mainLayoutMock.highlightSection,
+      },
     },
   }
 }
