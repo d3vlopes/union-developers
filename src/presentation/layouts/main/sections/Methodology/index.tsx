@@ -1,14 +1,17 @@
-import { AboutSectionType } from '@/domain/models'
+import { MethodologySectionType } from '@/domain/models'
 
 import { sanitizeHTML } from '@/libs/sanitizers'
 
+import { MethodologyCards } from '@/presentation/components/molecules'
+
 import * as S from './styles'
 
-export const AboutSection = ({
+export const MethodologySection = ({
   id,
   heading,
   description,
-}: AboutSectionType) => {
+  methodologyCards,
+}: MethodologySectionType) => {
   const clearDescriptionHTML = sanitizeHTML(description)
 
   return (
@@ -22,7 +25,10 @@ export const AboutSection = ({
           __html: clearDescriptionHTML,
         }}
       />
-      <S.Line />
+
+      <S.CardsWrapper>
+        <MethodologyCards items={methodologyCards} />
+      </S.CardsWrapper>
     </S.Wrapper>
   )
 }

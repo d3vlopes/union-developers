@@ -93,7 +93,7 @@ export const Content = styled.div`
 
     ${media.lg`
       & {
-        padding: 2.4rem;
+        padding: 1.8rem;
       }
 
       p {

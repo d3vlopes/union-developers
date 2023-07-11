@@ -27,11 +27,22 @@ describe('<MainLayout />', () => {
     render(<MainLayout {...mainLayoutMock} />)
 
     const heading = getByRole('heading', {
-      name: mainLayoutMock.about.heading,
+      name: mainLayoutMock.aboutSection.heading,
     })
-    const description = getByText(mainLayoutMock.about.description)
+
+    const description = getByText(
+      mainLayoutMock.aboutSection.description,
+    )
 
     expect(heading).toBeInTheDocument()
     expect(description).toBeInTheDocument()
+  })
+
+  it('should render about section', () => {
+    render(<MainLayout {...mainLayoutMock} />)
+
+    const methodologySection = getByTestId('mock-methodology-section')
+
+    expect(methodologySection).toBeInTheDocument()
   })
 })

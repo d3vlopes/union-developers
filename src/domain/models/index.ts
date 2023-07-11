@@ -1,6 +1,6 @@
 export * from './Base'
 export * from './Main'
 export * from './Header'
-export * from './About'
+export * from './Section'
 export * from './Hero'
 export * from './Methodology'
