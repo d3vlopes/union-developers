@@ -4,7 +4,11 @@ import { Hero } from '@/presentation/components/molecules'
 
 import { BaseLayout } from '@/presentation/layouts'
 
-import { AboutSection, MethodologySection } from './sections'
+import {
+  AboutSection,
+  MethodologySection,
+  HighlightSection,
+} from './sections'
 
 import * as S from './styles'
 
@@ -15,6 +19,7 @@ export const MainLayout = ({
   hero,
   aboutSection,
   methodologySection,
+  highlightSection,
 }: MainLayoutProps) => {
   return (
     <BaseLayout header={base.header}>
@@ -23,6 +28,8 @@ export const MainLayout = ({
       <S.Container>
         <AboutSection {...aboutSection} />
         <MethodologySection {...methodologySection} />
+
+        <HighlightSection {...highlightSection} />
       </S.Container>
     </BaseLayout>
   )

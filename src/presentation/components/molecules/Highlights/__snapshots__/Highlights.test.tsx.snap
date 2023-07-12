@@ -9,15 +9,8 @@ exports[`<Highlights /> > should match snapshot 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   gap: 4rem;
+  width: 100%;
 }
 
 .c1 {
@@ -37,6 +30,7 @@ exports[`<Highlights /> > should match snapshot 1`] = `
   -ms-flex-align: center;
   align-items: center;
   text-align: center;
+  width: 100%;
 }
 
 .c2 img {
@@ -94,6 +88,10 @@ exports[`<Highlights /> > should match snapshot 1`] = `
     -webkit-box-align: flex-start;
     -ms-flex-align: flex-start;
     align-items: flex-start;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
     gap: 5.8rem;
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
@@ -184,8 +182,8 @@ exports[`<Highlights /> > should match snapshot 1`] = `
         class="c2"
       >
         <img
-          alt="pencil and scale"
-          src="https://media.graphassets.com/BN50QqvcR67hdjNyuqkA"
+          alt="tools"
+          src="https://media.graphassets.com/tsqge8g9TpyED5o5iVr6"
         />
       </div>
       <div
