@@ -34,7 +34,7 @@ export const StepsWrapper = styled.ol`
       position: relative;
       box-shadow: 0px 0px 30px 0px rgba(0, 72, 254, 0.4);
       position: relative;
-      left: 25%;
+      left: 15%;
 
       &:after {
         content: '';
@@ -46,6 +46,15 @@ export const StepsWrapper = styled.ol`
         background-image: url('https://res.cloudinary.com/dbnq26wqe/image/upload/v1689446863/union/border-top-mobile_moemcz.svg');
         background-repeat: no-repeat;
         z-index: 1;
+      }
+    }
+
+    @media (max-width: 320px) {
+      li:nth-child(even) {
+        position: relative;
+        box-shadow: 0px 0px 30px 0px rgba(0, 72, 254, 0.4);
+        position: relative;
+        left: 15px;
       }
     }
 
