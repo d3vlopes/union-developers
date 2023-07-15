@@ -53,7 +53,8 @@ export const GlobalStyles = createGlobalStyle`
       max-width: 100%;
     }
 
-    ul {
+    ul,
+    ol {
       list-style: none;
       list-style-type: none;
     }
