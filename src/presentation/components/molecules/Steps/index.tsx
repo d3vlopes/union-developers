@@ -1,0 +1,20 @@
+import { StepModel } from '@/domain/models'
+
+import { StepTemplate } from './templates'
+
+import * as S from './styles'
+
+export interface StepsProps {
+  steps: StepModel[]
+}
+
+export const Steps = ({ steps }: StepsProps) => {
+  return (
+    <S.Wrapper>
+      <S.StepsWrapper>
+        {steps.sort((a, b) => a.number - b.number).map(StepTemplate)}
+      </S.StepsWrapper>
+      <S.Line />
+    </S.Wrapper>
+  )
+}

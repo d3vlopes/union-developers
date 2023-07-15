@@ -1,0 +1,361 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<Steps /> > should match snapshot 1`] = `
+.c0 {
+  position: relative;
+  width: 100%;
+  min-width: 31rem;
+}
+
+.c2 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 20.4rem;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  min-height: 19.6rem;
+  background-color: #121119;
+  padding: 2.4rem 1.6rem 2.4rem 3.2rem;
+  border-radius: 10px;
+}
+
+.c2 span {
+  position: absolute;
+  top: 0;
+  left: -50px;
+  font-size: 14rem;
+  font-weight: 700;
+  -webkit-letter-spacing: 3.2rem;
+  -moz-letter-spacing: 3.2rem;
+  -ms-letter-spacing: 3.2rem;
+  letter-spacing: 3.2rem;
+  background: linear-gradient(225deg,#0048FE 0%,#851D86 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 3.2rem;
+}
+
+.c1 li {
+  border-radius: 10px;
+}
+
+.c1 li:nth-child(odd) {
+  position: relative;
+  box-shadow: 0px 0px 30px 0px rgba(133,29,134,0.4);
+}
+
+.c1 li:nth-child(odd):before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 63px;
+  background-image: url('https://res.cloudinary.com/dbnq26wqe/image/upload/v1689446863/union/border-top-mobile_moemcz.svg');
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.c1 li:nth-child(even) {
+  position: relative;
+  box-shadow: 0px 0px 30px 0px rgba(0,72,254,0.4);
+  position: relative;
+  left: 25%;
+}
+
+.c1 li:nth-child(even):after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 63px;
+  background-image: url('https://res.cloudinary.com/dbnq26wqe/image/upload/v1689446863/union/border-top-mobile_moemcz.svg');
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.c3 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 0.8rem;
+  width: 14.4rem;
+  text-align: center;
+}
+
+.c4 {
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  font-weight: 700;
+  color: #E2E2E2;
+}
+
+.c5 {
+  font-size: 1.6rem;
+  line-height: 150%;
+  color: #D7D7D7;
+}
+
+.c6 {
+  position: absolute;
+  top: 15px;
+  right: 53px;
+  width: 3px;
+  height: calc(100% + 1.5rem);
+  background: linear-gradient(75deg,#0048FE 0%,#851D86 100%);
+  z-index: -1;
+  border-radius: 10px;
+}
+
+@media (min-width:1400px) {
+  .c0 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    min-width: 106.7rem;
+  }
+}
+
+@media (min-width:1400px) {
+  .c2 {
+    width: 44.1rem;
+    min-height: 24.3rem;
+    padding: 4rem 3.2rem 4rem 7.2rem;
+  }
+
+  .c2 span {
+    font-size: 20rem;
+  }
+}
+
+@media (min-width:1400px) {
+  .c1 {
+    -webkit-align-items: initial;
+    -webkit-box-align: initial;
+    -ms-flex-align: initial;
+    align-items: initial;
+    width: 100%;
+  }
+
+  .c1 li {
+    max-width: -webkit-max-content;
+    max-width: -moz-max-content;
+    max-width: max-content;
+  }
+
+  .c1 li:nth-child(odd):before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 63px;
+    background-image: url('https://res.cloudinary.com/dbnq26wqe/image/upload/v1689446863/union/border-top-desktop_vdpwro.svg');
+  }
+
+  .c1 li:nth-child(odd):after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -95px;
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(75deg,#0048FE -55%,#851D86 100%);
+    z-index: -1;
+  }
+
+  .c1 li:nth-child(even) {
+    left: 0;
+    -webkit-align-self: flex-end;
+    -ms-flex-item-align: end;
+    align-self: flex-end;
+  }
+
+  .c1 li:nth-child(even):before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -92px;
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(75deg,#0048FE -55%,#851D86 100%);
+    z-index: -1;
+  }
+
+  .c1 li:nth-child(even):after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 63px;
+    background-image: url('https://res.cloudinary.com/dbnq26wqe/image/upload/v1689446863/union/border-top-desktop_vdpwro.svg');
+  }
+}
+
+@media (min-width:1400px) {
+  .c3 {
+    gap: 1.6rem;
+    width: 33.7rem;
+  }
+}
+
+@media (min-width:1400px) {
+  .c4 {
+    font-size: 2.4rem;
+    line-height: 2.6rem;
+  }
+}
+
+@media (min-width:1400px) {
+  .c5 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (min-width:1400px) {
+  .c6 {
+    top: 0;
+    left: 50%;
+  }
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <ol
+      class="c1"
+    >
+      <li>
+        <div
+          class="c2"
+        >
+          <span>
+            1
+          </span>
+          <div
+            class="c3"
+          >
+            <h3
+              class="c4"
+            >
+              Pré-inscrição
+            </h3>
+            <p
+              class="c5"
+            >
+              Inicie a sua inscrição preenchendo o nosso formulário
+            </p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div
+          class="c2"
+        >
+          <span>
+            2
+          </span>
+          <div
+            class="c3"
+          >
+            <h3
+              class="c4"
+            >
+              Análise do formulário
+            </h3>
+            <p
+              class="c5"
+            >
+              O nosso time irá analisar suas informações
+            </p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div
+          class="c2"
+        >
+          <span>
+            3
+          </span>
+          <div
+            class="c3"
+          >
+            <h3
+              class="c4"
+            >
+              Desafio técnico
+            </h3>
+            <p
+              class="c5"
+            >
+              Após a análise você receberá um desafio prático
+            </p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div
+          class="c2"
+        >
+          <span>
+            4
+          </span>
+          <div
+            class="c3"
+          >
+            <h3
+              class="c4"
+            >
+              Entrevista
+            </h3>
+            <p
+              class="c5"
+            >
+              Nessa fase iremos bater um papo para que possamos conhecer melhor você
+            </p>
+          </div>
+        </div>
+      </li>
+    </ol>
+    <div
+      class="c6"
+    />
+  </div>
+</div>
+`;
