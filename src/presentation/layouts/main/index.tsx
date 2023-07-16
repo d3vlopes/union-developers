@@ -8,6 +8,7 @@ import {
   AboutSection,
   MethodologySection,
   HighlightSection,
+  StepsSection,
 } from './sections'
 
 import * as S from './styles'
@@ -20,6 +21,7 @@ export const MainLayout = ({
   aboutSection,
   methodologySection,
   highlightSection,
+  stepsSection,
 }: MainLayoutProps) => {
   return (
     <BaseLayout header={base.header}>
@@ -28,8 +30,8 @@ export const MainLayout = ({
       <S.Container>
         <AboutSection {...aboutSection} />
         <MethodologySection {...methodologySection} />
-
         <HighlightSection {...highlightSection} />
+        <StepsSection {...stepsSection} />
       </S.Container>
     </BaseLayout>
   )

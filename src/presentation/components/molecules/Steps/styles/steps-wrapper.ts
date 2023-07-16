@@ -13,6 +13,12 @@ export const StepsWrapper = styled.ol`
       border-radius: 10px;
     }
 
+    li:nth-child(1) {
+      div > span {
+        left: -29px;
+      }
+    }
+
     li:nth-child(odd) {
       position: relative;
       box-shadow: 0px 0px 30px 0px rgba(133, 29, 134, 0.4);
@@ -65,6 +71,12 @@ export const StepsWrapper = styled.ol`
       li {
         max-width: max-content;
       }
+
+      li:nth-child(1) {
+      div > span {
+        left: -50px;
+      }
+    }
 
       li:nth-child(odd) {
         &:before {

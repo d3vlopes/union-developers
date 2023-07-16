@@ -38,6 +38,9 @@ export const getServerSideProps: GetServerSideProps<
       highlightSection: {
         ...mainLayoutMock.highlightSection,
       },
+      stepsSection: {
+        ...mainLayoutMock.stepsSection,
+      },
     },
   }
 }

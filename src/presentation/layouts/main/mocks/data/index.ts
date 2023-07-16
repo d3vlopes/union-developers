@@ -2,6 +2,7 @@ import { headerMock } from '@/presentation/components/molecules/Header/mock'
 import { heroMockFactory } from '@/presentation/components/molecules/Hero/mock'
 import { methodologyCardsMock } from '@/presentation/components/molecules/MethodologyCards/mock'
 import { highlightsMock } from '@/presentation/components/molecules/Highlights/mock'
+import { stepsMock } from '@/presentation/components/molecules/Steps/mock'
 
 import { MainLayoutProps } from '../..'
 
@@ -29,5 +30,11 @@ export const mainLayoutMock: MainLayoutProps = {
     description:
       'Conheça os nossos benefícios e venha fazer parte do time!',
     highlights: highlightsMock,
+  },
+  stepsSection: {
+    id: 'steps',
+    heading: 'Etapas',
+    description: 'Conheça as etapas do nosso processo seletivo',
+    steps: stepsMock,
   },
 }
