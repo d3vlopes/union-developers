@@ -4,6 +4,7 @@ import {
   HighlightModel,
   MethodologyModel,
   SectionModel,
+  StepModel,
 } from '.'
 
 type BaseType = Omit<BaseModel, 'children'>
@@ -18,10 +19,15 @@ export interface HighlightSectionType extends SectionModel {
   highlights: HighlightModel[]
 }
 
+export interface StepsSectionType extends SectionModel {
+  steps: StepModel[]
+}
+
 export interface MainModel {
   base: BaseType
   hero: HeroModel
   aboutSection: AboutSectionType
   methodologySection: MethodologySectionType
   highlightSection: HighlightSectionType
+  stepsSection: StepsSectionType
 }

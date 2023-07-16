@@ -17,9 +17,9 @@ export const ContentWrapper = styled.div`
 
     span {
       position: absolute;
-      top: 0;
+      top: 15px;
       left: -50px;
-      font-size: 14rem;
+      font-size: 13rem;
       font-weight: 700;
       letter-spacing: 3.2rem;
       background: ${theme.colors.gradient};

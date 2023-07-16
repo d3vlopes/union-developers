@@ -15,8 +15,8 @@ export const headerMock: HeaderProps = {
       target: '#highlights',
     },
     {
-      label: 'Como funciona',
-      target: '#works',
+      label: 'Etapas',
+      target: '#steps',
     },
     {
       label: 'Dúvidas',

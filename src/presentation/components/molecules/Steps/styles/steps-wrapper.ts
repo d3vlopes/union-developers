@@ -13,6 +13,12 @@ export const StepsWrapper = styled.ol`
       border-radius: 10px;
     }
 
+    li:nth-child(1) {
+      div > span {
+        left: -29px;
+      }
+    }
+
     li:nth-child(odd) {
       position: relative;
       box-shadow: 0px 0px 30px 0px rgba(133, 29, 134, 0.4);
@@ -34,7 +40,7 @@ export const StepsWrapper = styled.ol`
       position: relative;
       box-shadow: 0px 0px 30px 0px rgba(0, 72, 254, 0.4);
       position: relative;
-      left: 25%;
+      left: 15%;
 
       &:after {
         content: '';
@@ -49,6 +55,15 @@ export const StepsWrapper = styled.ol`
       }
     }
 
+    @media (max-width: 320px) {
+      li:nth-child(even) {
+        position: relative;
+        box-shadow: 0px 0px 30px 0px rgba(0, 72, 254, 0.4);
+        position: relative;
+        left: 15px;
+      }
+    }
+
     ${media.xl`
       align-items: initial;
       width: 100%;
@@ -56,6 +71,12 @@ export const StepsWrapper = styled.ol`
       li {
         max-width: max-content;
       }
+
+      li:nth-child(1) {
+      div > span {
+        left: -50px;
+      }
+    }
 
       li:nth-child(odd) {
         &:before {

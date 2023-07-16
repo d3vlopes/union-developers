@@ -8,6 +8,7 @@ export const TextWrapper = styled.div`
   gap: 0.8rem;
   width: 14.4rem;
   text-align: center;
+  margin: 0 auto;
 
   ${media.xl`
     gap: 1.6rem;

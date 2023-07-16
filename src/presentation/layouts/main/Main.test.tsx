@@ -53,4 +53,12 @@ describe('<MainLayout />', () => {
 
     expect(highlightSection).toBeInTheDocument()
   })
+
+  it('should render steps section', () => {
+    render(<MainLayout {...mainLayoutMock} />)
+
+    const stepsSection = getByTestId('mock-steps-section')
+
+    expect(stepsSection).toBeInTheDocument()
+  })
 })
