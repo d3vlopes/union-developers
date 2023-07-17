@@ -8,7 +8,7 @@ export const Line = styled.div`
     top: 15px;
     right: 25%;
     width: 3px;
-    height: calc(100% + 1.5rem);
+    height: calc(100% + -1.5rem);
     background: ${`linear-gradient(75deg,${theme.colors.blue} 0%,${theme.colors.purple} 100%)`};
     z-index: -1;
     border-radius: 10px;
@@ -20,6 +20,7 @@ export const Line = styled.div`
     ${media.xl`
       top: 0;
       left: 50%;
+      height: calc(100% + -24rem);
     `}
   `}
 `
