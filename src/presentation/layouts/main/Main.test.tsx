@@ -61,4 +61,14 @@ describe('<MainLayout />', () => {
 
     expect(stepsSection).toBeInTheDocument()
   })
+
+  it('should render remember action section', () => {
+    render(<MainLayout {...mainLayoutMock} />)
+
+    const rememberActionSection = getByTestId(
+      'mock-remember-action-section',
+    )
+
+    expect(rememberActionSection).toBeInTheDocument()
+  })
 })

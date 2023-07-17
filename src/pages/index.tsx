@@ -41,6 +41,9 @@ export const getServerSideProps: GetServerSideProps<
       stepsSection: {
         ...mainLayoutMock.stepsSection,
       },
+      rememberActionSection: {
+        ...mainLayoutMock.rememberActionSection,
+      },
     },
   }
 }
