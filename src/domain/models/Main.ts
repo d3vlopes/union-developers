@@ -3,6 +3,7 @@ import {
   HeroModel,
   HighlightModel,
   MethodologyModel,
+  RememberActionModel,
   SectionModel,
   StepModel,
 } from '.'
@@ -23,6 +24,8 @@ export interface StepsSectionType extends SectionModel {
   steps: StepModel[]
 }
 
+export type RememberActionSectionType = RememberActionModel
+
 export interface MainModel {
   base: BaseType
   hero: HeroModel
@@ -30,4 +33,5 @@ export interface MainModel {
   methodologySection: MethodologySectionType
   highlightSection: HighlightSectionType
   stepsSection: StepsSectionType
+  rememberActionSection: RememberActionSectionType
 }

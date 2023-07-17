@@ -8,15 +8,20 @@ export const Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 70.9rem;
+    height: max-content;
     background-color: ${theme.colors.background.bg1};
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
     border-radius: ${theme.borders.radius['md']};
     padding-bottom: 4rem;
 
+    ${media.md`
+      max-width: 41.5rem;
+    `}
+
     ${media.xl`
       flex-direction: row;
       height: 32.1rem;
+      max-width: initial;
     `}
   `}
 `
@@ -24,8 +29,6 @@ export const Wrapper = styled.div`
 export const Logo = styled.img`
   position: relative;
   top: -40px;
-  width: 35.6rem;
-  height: 38.2rem;
 
   ${media.xl`
     width: 51.1rem;
@@ -36,6 +39,7 @@ export const Logo = styled.img`
 
 export const ContentWrapper = styled.div`
   ${({ theme }) => css`
+    padding: 0 0.8rem;
     text-align: center;
 
     h2 {
@@ -59,6 +63,32 @@ export const ContentWrapper = styled.div`
       button {
         width: 29.5rem;
         height: 4.7rem;
+      }
+    }
+
+    @media (min-width: 320px) and (max-width: 370px) {
+      h2 {
+        font-size: ${theme.fonts.size['xl']};
+      }
+
+      h3 {
+        font-size: ${theme.fonts.size['xl']};
+      }
+
+      a {
+        button {
+          width: 100%;
+
+          span {
+            font-size: ${theme.fonts.size['xl']};
+          }
+        }
+      }
+    }
+
+    @media (min-width: 375px) and (max-width: 410px) {
+      h2 {
+        font-size: ${theme.fonts.size['3xl']};
       }
     }
 

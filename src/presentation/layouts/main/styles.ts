@@ -20,3 +20,13 @@ export const Container = styled.div`
     `}
   `}
 `
+
+export const RememberActionSectionWrapper = styled.div`
+  background-image: url(https://media.graphassets.com/M037FMNQvexFoI1u2gAP);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  ${media.xl`
+    background-image: url(https://media.graphassets.com/zqzyqOSd6RG6uFM2Rdgx);
+  `}
+`

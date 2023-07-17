@@ -9,6 +9,7 @@ import {
   MethodologySection,
   HighlightSection,
   StepsSection,
+  RememberActionSection,
 } from './sections'
 
 import * as S from './styles'
@@ -22,6 +23,7 @@ export const MainLayout = ({
   methodologySection,
   highlightSection,
   stepsSection,
+  rememberActionSection,
 }: MainLayoutProps) => {
   return (
     <BaseLayout header={base.header}>
@@ -33,6 +35,12 @@ export const MainLayout = ({
         <HighlightSection {...highlightSection} />
         <StepsSection {...stepsSection} />
       </S.Container>
+
+      <S.RememberActionSectionWrapper>
+        <S.Container>
+          <RememberActionSection {...rememberActionSection} />
+        </S.Container>
+      </S.RememberActionSectionWrapper>
     </BaseLayout>
   )
 }

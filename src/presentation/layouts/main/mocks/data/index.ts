@@ -3,6 +3,7 @@ import { heroMockFactory } from '@/presentation/components/molecules/Hero/mock'
 import { methodologyCardsMock } from '@/presentation/components/molecules/MethodologyCards/mock'
 import { highlightsMock } from '@/presentation/components/molecules/Highlights/mock'
 import { stepsMock } from '@/presentation/components/molecules/Steps/mock'
+import { rememberActionMock } from '@/presentation/components/molecules/RememberAction/mock'
 
 import { MainLayoutProps } from '../..'
 
@@ -37,4 +38,5 @@ export const mainLayoutMock: MainLayoutProps = {
     description: 'Conheça as etapas do nosso processo seletivo',
     steps: stepsMock,
   },
+  rememberActionSection: rememberActionMock,
 }

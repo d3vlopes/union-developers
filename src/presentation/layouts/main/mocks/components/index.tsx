@@ -50,3 +50,20 @@ vitest.mock('@/presentation/layouts/main/sections/Steps', () => ({
     return <div data-testid="mock-steps-section">{children}</div>
   },
 }))
+
+vitest.mock(
+  '@/presentation/layouts/main/sections/RememberAction',
+  () => ({
+    RememberActionSection: function Mock({
+      children,
+    }: {
+      children: React.ReactNode
+    }) {
+      return (
+        <div data-testid="mock-remember-action-section">
+          {children}
+        </div>
+      )
+    },
+  }),
+)
