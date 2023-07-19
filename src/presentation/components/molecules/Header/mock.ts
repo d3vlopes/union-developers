@@ -11,12 +11,20 @@ export const headerMock: HeaderProps = {
       target: '#about',
     },
     {
+      label: 'Pilares',
+      target: '#pillars',
+    },
+    {
       label: 'Benefícios',
       target: '#highlights',
     },
     {
       label: 'Etapas',
       target: '#steps',
+    },
+    {
+      label: 'Depoimentos',
+      target: '#testimonials',
     },
     {
       label: 'Dúvidas',

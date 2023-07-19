@@ -1,6 +1,9 @@
 import { MainModel } from '@/domain/models'
 
-import { Hero } from '@/presentation/components/molecules'
+import {
+  Hero,
+  TestimonialCardProps,
+} from '@/presentation/components/molecules'
 
 import { BaseLayout } from '@/presentation/layouts'
 
@@ -10,11 +13,12 @@ import {
   HighlightSection,
   StepsSection,
   RememberActionSection,
+  TestimonialSection,
 } from './sections'
 
 import * as S from './styles'
 
-export type MainLayoutProps = MainModel
+export type MainLayoutProps = MainModel<TestimonialCardProps>
 
 export const MainLayout = ({
   base,
@@ -24,6 +28,7 @@ export const MainLayout = ({
   highlightSection,
   stepsSection,
   rememberActionSection,
+  testimonialSection,
 }: MainLayoutProps) => {
   return (
     <BaseLayout header={base.header}>
@@ -41,6 +46,10 @@ export const MainLayout = ({
           <RememberActionSection {...rememberActionSection} />
         </S.Container>
       </S.RememberActionSectionWrapper>
+
+      <S.Container>
+        <TestimonialSection {...testimonialSection} />
+      </S.Container>
     </BaseLayout>
   )
 }

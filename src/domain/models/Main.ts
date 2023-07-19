@@ -26,7 +26,12 @@ export interface StepsSectionType extends SectionModel {
 
 export type RememberActionSectionType = RememberActionModel
 
-export interface MainModel {
+export interface TestimonialSectionType<TypeTestimonialCard = null>
+  extends SectionModel {
+  testimonials: TypeTestimonialCard[]
+}
+
+export interface MainModel<TypeTestimonialCard = null> {
   base: BaseType
   hero: HeroModel
   aboutSection: AboutSectionType
@@ -34,4 +39,5 @@ export interface MainModel {
   highlightSection: HighlightSectionType
   stepsSection: StepsSectionType
   rememberActionSection: RememberActionSectionType
+  testimonialSection: TestimonialSectionType<TypeTestimonialCard>
 }

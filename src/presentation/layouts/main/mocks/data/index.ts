@@ -4,6 +4,7 @@ import { methodologyCardsMock } from '@/presentation/components/molecules/Method
 import { highlightsMock } from '@/presentation/components/molecules/Highlights/mock'
 import { stepsMock } from '@/presentation/components/molecules/Steps/mock'
 import { rememberActionMock } from '@/presentation/components/molecules/RememberAction/mock'
+import { testimonialsMock } from '@/presentation/components/organisms/TestimonialSlider/mock'
 
 import { MainLayoutProps } from '../..'
 
@@ -39,4 +40,10 @@ export const mainLayoutMock: MainLayoutProps = {
     steps: stepsMock,
   },
   rememberActionSection: rememberActionMock,
+  testimonialSection: {
+    id: 'testimonials',
+    heading: 'Depoimentos',
+    description: 'Veja o que dizem sobre nosso trabalho',
+    testimonials: testimonialsMock,
+  },
 }
