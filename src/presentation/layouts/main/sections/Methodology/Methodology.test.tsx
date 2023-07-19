@@ -8,11 +8,19 @@ import { MethodologySection } from '.'
 
 const { getByRole, getByText, getByTestId } = screen
 
+const mock = mainLayoutMock.methodologySection
+
 describe('<MethodologySection />', () => {
+  it('should contain correct section id', () => {
+    const { container } = render(<MethodologySection {...mock} />)
+
+    const wrapper = container.firstChild
+
+    expect(wrapper).toHaveAttribute('id', mock.id)
+  })
+
   it('should render heading', () => {
-    render(
-      <MethodologySection {...mainLayoutMock.methodologySection} />,
-    )
+    render(<MethodologySection {...mock} />)
 
     const heading = getByRole('heading', { name: 'Metodologias' })
 
@@ -20,21 +28,15 @@ describe('<MethodologySection />', () => {
   })
 
   it('should render description', () => {
-    render(
-      <MethodologySection {...mainLayoutMock.methodologySection} />,
-    )
+    render(<MethodologySection {...mock} />)
 
-    const description = getByText(
-      mainLayoutMock.methodologySection.description,
-    )
+    const description = getByText(mock.description)
 
     expect(description).toBeInTheDocument()
   })
 
   it('should render methodology cards', () => {
-    render(
-      <MethodologySection {...mainLayoutMock.methodologySection} />,
-    )
+    render(<MethodologySection {...mock} />)
 
     const methodologyCards = getByTestId('mock-methodology-cards')
 
@@ -42,9 +44,7 @@ describe('<MethodologySection />', () => {
   })
 
   it('should match snapshot', () => {
-    const { container } = render(
-      <MethodologySection {...mainLayoutMock.methodologySection} />,
-    )
+    const { container } = render(<MethodologySection {...mock} />)
 
     expect(container).toMatchSnapshot()
   })

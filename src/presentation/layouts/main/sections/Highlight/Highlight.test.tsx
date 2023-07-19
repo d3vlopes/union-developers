@@ -11,6 +11,14 @@ const { getByRole, getByText, getByTestId } = screen
 const mock = mainLayoutMock.highlightSection
 
 describe('<HighlightSection />', () => {
+  it('should contain correct section id', () => {
+    const { container } = render(<HighlightSection {...mock} />)
+
+    const wrapper = container.firstChild
+
+    expect(wrapper).toHaveAttribute('id', mock.id)
+  })
+
   it('should render heading', () => {
     render(<HighlightSection {...mock} />)
 
