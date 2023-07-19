@@ -14,10 +14,15 @@ export const Wrapper = styled.div`
       linear-gradient(to right, ${theme.colors.purple}, ${theme.colors.blue}) border-box;`}
     border-radius: 7px;
     border: 2px solid transparent;
+    margin: 0 auto;
 
     ${media.md`
       padding: 2.8rem 1.6rem 1.6rem;
       width: 28.6rem;
+    `}
+
+    ${media.xl`
+      margin: initial;
     `}
   `}
 `

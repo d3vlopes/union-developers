@@ -6,16 +6,12 @@ export const Line = styled.div`
   ${({ theme }) => css`
     position: absolute;
     top: 15px;
-    right: 25%;
+    right: 41%;
     width: 3px;
     height: calc(100% + -1.5rem);
     background: ${`linear-gradient(75deg,${theme.colors.blue} 0%,${theme.colors.purple} 100%)`};
     z-index: -1;
     border-radius: 10px;
-
-    ${media.md`
-      right: 36%;
-    `}
 
     ${media.xl`
       top: 0;

@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<StepsSection /> > should match snapshot 1`] = `
+exports[`<TestimonialSection /> > should match snapshot 1`] = `
 .c1 {
   position: relative;
   max-width: 125.6rem;
@@ -58,15 +58,15 @@ exports[`<StepsSection /> > should match snapshot 1`] = `
 }
 
 .c5 {
-  margin-top: 2.4rem;
+  margin: 2.4rem auto 0;
   color: #E2E2E2;
   font-size: 1.6rem;
   text-align: center;
+  max-width: 34.3rem;
 }
 
 .c6 {
-  margin: 4rem auto 0;
-  padding: 0 1.6rem;
+  margin-top: 4rem;
 }
 
 @media (min-width:768px) {
@@ -117,15 +117,14 @@ exports[`<StepsSection /> > should match snapshot 1`] = `
 
 @media (min-width:768px) {
   .c6 {
-    margin: 8rem auto 0;
-    max-width: 106.7rem;
+    margin-top: 8rem;
   }
 }
 
 <div>
   <section
     class="c0"
-    id="steps"
+    id="testimonials"
   >
     <div
       class="c1"
@@ -137,7 +136,7 @@ exports[`<StepsSection /> > should match snapshot 1`] = `
       <h2
         class="c3"
       >
-        Etapas
+        Depoimentos
       </h2>
       <div
         aria-label="Linha a direita do titulo"
@@ -147,13 +146,13 @@ exports[`<StepsSection /> > should match snapshot 1`] = `
     <p
       class="c5"
     >
-      Conheça as etapas do nosso processo seletivo
+      Veja o que dizem sobre nosso trabalho
     </p>
     <div
       class="c6"
     >
       <div
-        data-testid="mock-steps"
+        data-testid="mock-testimonial-slider"
       />
     </div>
   </section>

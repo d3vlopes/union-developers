@@ -7,25 +7,23 @@ import { MainLayout } from '.'
 const { getByTestId, getByRole, getByText } = screen
 
 describe('<MainLayout />', () => {
-  it('should render Base layout', () => {
+  beforeEach(() => {
     render(<MainLayout {...mainLayoutMock} />)
+  })
 
+  it('should render Base layout', () => {
     const baseLayout = getByTestId('mock-base-layout')
 
     expect(baseLayout).toBeInTheDocument()
   })
 
   it('should render Hero', () => {
-    render(<MainLayout {...mainLayoutMock} />)
-
     const hero = getByTestId('mock-hero')
 
     expect(hero).toBeInTheDocument()
   })
 
   it('should render about section', () => {
-    render(<MainLayout {...mainLayoutMock} />)
-
     const heading = getByRole('heading', {
       name: mainLayoutMock.aboutSection.heading,
     })
@@ -39,36 +37,34 @@ describe('<MainLayout />', () => {
   })
 
   it('should render about section', () => {
-    render(<MainLayout {...mainLayoutMock} />)
-
     const methodologySection = getByTestId('mock-methodology-section')
 
     expect(methodologySection).toBeInTheDocument()
   })
 
   it('should render highlight section', () => {
-    render(<MainLayout {...mainLayoutMock} />)
-
     const highlightSection = getByTestId('mock-highlight-section')
 
     expect(highlightSection).toBeInTheDocument()
   })
 
   it('should render steps section', () => {
-    render(<MainLayout {...mainLayoutMock} />)
-
     const stepsSection = getByTestId('mock-steps-section')
 
     expect(stepsSection).toBeInTheDocument()
   })
 
   it('should render remember action section', () => {
-    render(<MainLayout {...mainLayoutMock} />)
-
     const rememberActionSection = getByTestId(
       'mock-remember-action-section',
     )
 
     expect(rememberActionSection).toBeInTheDocument()
+  })
+
+  it('should render testimonial ', () => {
+    const testimonialSection = getByTestId('mock-testimonial-section')
+
+    expect(testimonialSection).toBeInTheDocument()
   })
 })

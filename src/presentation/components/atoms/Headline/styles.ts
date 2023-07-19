@@ -36,6 +36,10 @@ export const LineLeft = styled.div`
     background: ${`linear-gradient(225deg, ${theme.colors.blue} -70%, ${theme.colors.purple} 100%)`};
     border-radius: 20px;
 
+    @media (min-width: 320px) and (max-width: 390px) {
+      width: 25%;
+    }
+
     ${media.md`
       width: calc(100% / 2 - 16.3rem);
       height: 5px;
@@ -53,6 +57,10 @@ export const LineRight = styled.div`
     height: 3px;
     background: ${`linear-gradient(225deg, ${theme.colors.blue} 0%, ${theme.colors.purple} 200%)`};
     border-radius: 20px;
+
+    @media (min-width: 320px) and (max-width: 390px) {
+      width: 25%;
+    }
 
     ${media.md`
       width: calc(100% / 2 - 16.3rem);

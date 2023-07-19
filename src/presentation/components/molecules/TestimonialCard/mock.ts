@@ -1,6 +1,7 @@
 import { TestimonialCardProps } from '.'
 
 export const testimonialCardMock: TestimonialCardProps = {
+  id: '1',
   imgUrl:
     'https://res.cloudinary.com/dbnq26wqe/image/upload/v1674860826/union/Rectangle_20_2_wxas7x.jpg',
   name: 'John Doe',
