@@ -8,6 +8,9 @@ const meta: Meta<typeof TestimonialCard> = {
   title: 'Molecules/TestimonialCard',
   component: TestimonialCard,
   args: testimonialCardMock,
+  parameters: {
+    layout: 'centered',
+  },
 }
 
 export default meta
