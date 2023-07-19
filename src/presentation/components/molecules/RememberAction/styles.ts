@@ -29,6 +29,7 @@ export const Wrapper = styled.div`
 export const Logo = styled.img`
   position: relative;
   top: -40px;
+  height: 30rem;
 
   ${media.xl`
     width: 51.1rem;
