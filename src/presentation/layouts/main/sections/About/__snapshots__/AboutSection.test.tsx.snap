@@ -1,0 +1,152 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<AboutSection /> > should match snapshot 1`] = `
+.c0 {
+  position: relative;
+  margin-top: 3.2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background: #1F1D2B;
+  background-clip: padding-box;
+  border: 3px solid transparent;
+  border-radius: 20px;
+  width: 100%;
+  -webkit-scroll-margin-block-start: 150px;
+  -moz-scroll-margin-block-start: 150px;
+  -ms-scroll-margin-block-start: 150px;
+  scroll-margin-block-start: 150px;
+  -webkit-scroll-margin-block-end: 150px;
+  -moz-scroll-margin-block-end: 150px;
+  -ms-scroll-margin-block-end: 150px;
+  scroll-margin-block-end: 150px;
+}
+
+.c0:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  margin: -3px;
+  border-radius: inherit;
+  background: linear-gradient(-74deg,#0048FE -50%,#851D86 100%);
+}
+
+.c1 {
+  position: absolute;
+  display: inline-block;
+  background: #1F1D2B;
+  margin: -18px 0 0 22px;
+  padding: 0 5px 0 8px;
+}
+
+.c1 h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  background: linear-gradient(225deg,#0048FE -50%,#851D86 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.c2 {
+  padding: 3.5rem 1.6rem 2.4rem;
+}
+
+.c2 p {
+  color: #E2E2E2;
+  text-align: center;
+  line-height: 150%;
+}
+
+.c2 p:not(:last-child) {
+  padding-bottom: 2.4rem;
+}
+
+.c3 {
+  position: absolute;
+  bottom: -55px;
+  left: 50%;
+  border-radius: 0 0 20px 20px;
+  background: linear-gradient(150deg,#851D86 -115%,#0048FE 280%);
+  width: 5px;
+  height: 64px;
+  z-index: -2;
+}
+
+.c3:after {
+  content: '';
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  background: linear-gradient( 320deg, #1F1D2B 0%, rgba(31,29,43,0) 100% );
+}
+
+@media (min-width:768px) {
+  .c0 {
+    max-width: 125.6rem;
+    margin-top: calc(3.2rem + 5rem);
+  }
+
+  .c0:before {
+    background: linear-gradient(-74deg,#0048FE -10%,#851D86 100%);
+  }
+}
+
+@media (min-width:768px) {
+  .c1 {
+    margin: -35px 0 0 85px;
+  }
+
+  .c1 h2 {
+    font-size: 4rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c2 {
+    padding: 5rem 8rem 5rem;
+  }
+
+  .c2 p {
+    font-size: 2.4rem;
+    max-width: 102.7rem;
+    text-align: left;
+  }
+}
+
+@media (min-width:768px) {
+  .c3 {
+    bottom: -88px;
+    height: 88px;
+    background: linear-gradient(0deg,#851D86 -70%,#0048FE 280%);
+  }
+}
+
+<div>
+  <section
+    class="c0"
+    id="about"
+  >
+    <header
+      class="c1"
+    >
+      <h2>
+        Quem somos?
+      </h2>
+    </header>
+    <div
+      class="c2"
+    >
+      O Union é um grupo que tem como missão proporcionar experiências para desenvolvedores em inicio de carreira, oferecendo um ambiente prático e imersivo próximo do encontrado nas empresas, desafiando seus membros a resolver problemas reais, com cronogramas e prazos de entrega. No Union, você desenvolve as skills mais procuradas pelo mercado, trabalha com ferramentas e metodologias utilizada pelas empresas, além de ganhar experiência trabalhando com outras pessoas de varias partes do Brasil. Aqui você vai vivenciar na prática como é o dia a dia de um desenvolver em uma empresa e vai ficar mais preparado para conquistar sua vaga.
+    </div>
+    <div
+      class="c3"
+    />
+  </section>
+</div>
+`;
