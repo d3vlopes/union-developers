@@ -12,7 +12,7 @@ type BaseType = Omit<BaseModel, 'children'>
 
 export type AboutSectionType = SectionModel
 
-export interface MethodologySectionType extends SectionModel {
+export interface PillarsSectionType extends SectionModel {
   methodologyCards: MethodologyModel[]
 }
 
@@ -35,7 +35,7 @@ export interface MainModel<TypeTestimonialCard = null> {
   base: BaseType
   hero: HeroModel
   aboutSection: AboutSectionType
-  methodologySection: MethodologySectionType
+  pillarsSection: PillarsSectionType
   highlightSection: HighlightSectionType
   stepsSection: StepsSectionType
   rememberActionSection: RememberActionSectionType

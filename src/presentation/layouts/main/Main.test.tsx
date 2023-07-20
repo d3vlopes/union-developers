@@ -36,10 +36,10 @@ describe('<MainLayout />', () => {
     expect(description).toBeInTheDocument()
   })
 
-  it('should render about section', () => {
-    const methodologySection = getByTestId('mock-methodology-section')
+  it('should render pillars section', () => {
+    const pillarsSection = getByTestId('mock-pillars-section')
 
-    expect(methodologySection).toBeInTheDocument()
+    expect(pillarsSection).toBeInTheDocument()
   })
 
   it('should render highlight section', () => {

@@ -1,4 +1,4 @@
-import { MethodologySectionType } from '@/domain/models'
+import { PillarsSectionType } from '@/domain/models'
 
 import { sanitizeHTML } from '@/libs/sanitizers'
 
@@ -6,12 +6,12 @@ import { MethodologyCards } from '@/presentation/components/molecules'
 
 import * as S from './styles'
 
-export const MethodologySection = ({
+export const PillarsSection = ({
   id,
   heading,
   description,
   methodologyCards,
-}: MethodologySectionType) => {
+}: PillarsSectionType) => {
   const clearDescriptionHTML = sanitizeHTML(description)
 
   return (

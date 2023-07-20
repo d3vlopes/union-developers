@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<MethodologySection /> > should match snapshot 1`] = `
+exports[`<PillarsSection /> > should match snapshot 1`] = `
 .c0 {
   position: relative;
   margin-top: 7.2rem;
@@ -95,25 +95,25 @@ exports[`<MethodologySection /> > should match snapshot 1`] = `
 
 @media (min-width:320px) {
   .c1 {
-    margin: -18px 0 0 calc(100vw - 91%);
+    margin: -18px 0 0 calc(100vw - 76%);
   }
 }
 
 @media (min-width:365px) {
   .c1 {
-    margin: -18px 0 0 calc(100vw - 85%);
+    margin: -18px 0 0 calc(100vw - 75%);
   }
 }
 
 @media (min-width:428px) {
   .c1 {
-    margin: -18px 0 0 calc(100vw - 82%);
+    margin: -18px 0 0 calc(100vw - 72%);
   }
 }
 
 @media (min-width:768px) {
   .c1 {
-    margin: -35px 0 0 30%;
+    margin: -35px 0 0 39%;
   }
 
   .c1 h2 {
@@ -123,7 +123,7 @@ exports[`<MethodologySection /> > should match snapshot 1`] = `
 
 @media (min-width:1024px) {
   .c1 {
-    margin: -35px 0 0 37%;
+    margin: -35px 0 0 44%;
   }
 
   .c1 h2 {
@@ -151,13 +151,13 @@ exports[`<MethodologySection /> > should match snapshot 1`] = `
 <div>
   <section
     class="c0"
-    id="methodologys"
+    id="pillars"
   >
     <header
       class="c1"
     >
       <h2>
-        Metodologias
+        Pilares
       </h2>
     </header>
     <div
