@@ -14,7 +14,10 @@ import {
   StepsSection,
   RememberActionSection,
   TestimonialSection,
+  SubscriptionSection,
 } from './sections'
+
+import { subscriptionMock } from './sections/Subscription/mock'
 
 import * as S from './styles'
 
@@ -49,6 +52,7 @@ export const MainLayout = ({
 
       <S.Container>
         <TestimonialSection {...testimonialSection} />
+        <SubscriptionSection {...subscriptionMock} />
       </S.Container>
     </BaseLayout>
   )
