@@ -4,7 +4,7 @@ import { mainLayoutMock } from './mocks'
 
 import { MainLayout } from '.'
 
-const { getByTestId, getByRole, getByText } = screen
+const { getByTestId } = screen
 
 describe('<MainLayout />', () => {
   beforeEach(() => {
@@ -24,16 +24,9 @@ describe('<MainLayout />', () => {
   })
 
   it('should render about section', () => {
-    const heading = getByRole('heading', {
-      name: mainLayoutMock.aboutSection.heading,
-    })
+    const aboutSection = getByTestId('mock-about-section')
 
-    const description = getByText(
-      mainLayoutMock.aboutSection.description,
-    )
-
-    expect(heading).toBeInTheDocument()
-    expect(description).toBeInTheDocument()
+    expect(aboutSection).toBeInTheDocument()
   })
 
   it('should render pillars section', () => {
