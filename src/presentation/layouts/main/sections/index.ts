@@ -1,5 +1,5 @@
 export * from './About'
-export * from './Methodology'
+export * from './Pillars'
 export * from './Highlight'
 export * from './Steps'
 export * from './RememberAction'

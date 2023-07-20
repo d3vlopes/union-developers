@@ -9,7 +9,7 @@ import { BaseLayout } from '@/presentation/layouts'
 
 import {
   AboutSection,
-  MethodologySection,
+  PillarsSection,
   HighlightSection,
   StepsSection,
   RememberActionSection,
@@ -24,7 +24,7 @@ export const MainLayout = ({
   base,
   hero,
   aboutSection,
-  methodologySection,
+  pillarsSection,
   highlightSection,
   stepsSection,
   rememberActionSection,
@@ -36,7 +36,7 @@ export const MainLayout = ({
 
       <S.Container>
         <AboutSection {...aboutSection} />
-        <MethodologySection {...methodologySection} />
+        <PillarsSection {...pillarsSection} />
         <HighlightSection {...highlightSection} />
         <StepsSection {...stepsSection} />
       </S.Container>

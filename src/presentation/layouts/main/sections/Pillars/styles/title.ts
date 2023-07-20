@@ -20,20 +20,20 @@ export const TitleWrapper = styled.header`
     }
 
     @media (min-width: 320px) {
-      margin: -18px 0 0 calc(100vw - 91%);
+      margin: -18px 0 0 calc(100vw - 76%);
     }
 
     @media (min-width: 365px) {
-      margin: -18px 0 0 calc(100vw - 85%);
+      margin: -18px 0 0 calc(100vw - 75%);
     }
 
     @media (min-width: 428px) {
-      margin: -18px 0 0 calc(100vw - 82%);
+      margin: -18px 0 0 calc(100vw - 72%);
     }
 
     ${media.md`
       & {
-        margin: -35px 0 0 30%;
+        margin: -35px 0 0 39%;
       }
 
       h2 {
@@ -43,7 +43,7 @@ export const TitleWrapper = styled.header`
 
     ${media.lg`
       & {
-        margin: -35px 0 0 37%;
+        margin: -35px 0 0 44%;
       }
 
       h2 {

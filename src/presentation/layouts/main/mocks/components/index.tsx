@@ -16,20 +16,15 @@ vitest.mock('@/presentation/components/molecules', () => ({
   },
 }))
 
-vitest.mock(
-  '@/presentation/layouts/main/sections/Methodology',
-  () => ({
-    MethodologySection: function Mock({
-      children,
-    }: {
-      children: React.ReactNode
-    }) {
-      return (
-        <div data-testid="mock-methodology-section">{children}</div>
-      )
-    },
-  }),
-)
+vitest.mock('@/presentation/layouts/main/sections/Pillars', () => ({
+  PillarsSection: function Mock({
+    children,
+  }: {
+    children: React.ReactNode
+  }) {
+    return <div data-testid="mock-pillars-section">{children}</div>
+  },
+}))
 
 vitest.mock('@/presentation/layouts/main/sections/Highlight', () => ({
   HighlightSection: function Mock({
