@@ -55,9 +55,17 @@ describe('<MainLayout />', () => {
     expect(rememberActionSection).toBeInTheDocument()
   })
 
-  it('should render testimonial ', () => {
+  it('should render testimonial section', () => {
     const testimonialSection = getByTestId('mock-testimonial-section')
 
     expect(testimonialSection).toBeInTheDocument()
+  })
+
+  it('should render subscription section', () => {
+    const subscriptionSection = getByTestId(
+      'mock-subscription-section',
+    )
+
+    expect(subscriptionSection).toBeInTheDocument()
   })
 })
