@@ -58,6 +58,41 @@ export const GlobalStyles = createGlobalStyle`
       list-style: none;
       list-style-type: none;
     }
+
+    .modal-overlay {
+      background: rgba(0, 0, 0, 0.5);
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content {
+      position: relative;
+      width: 100%;
+      max-width: 104.2rem;
+      background: ${theme.colors.gradient};
+      border-radius: ${theme.borders.radius['md']};
+    }
+
+    .modal-close {
+      position: absolute;
+      right: 3.2rem;
+      top: 3.2rem;
+      border: 0;
+      background: transparent;
+      transition: filter 0.2s;
+      box-shadow: 0 0 0 3px #ffbf47;
+      outline: 3px solid transparent;
+
+      &:hover {
+        filter: brightness(0.8);
+      }
+    }
   `}
 
  `
