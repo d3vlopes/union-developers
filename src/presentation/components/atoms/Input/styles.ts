@@ -20,7 +20,7 @@ export const Wrapper = styled.div<WrapperProps>`
     input {
       width: 100%;
       height: 5rem;
-      padding: 1.2rem 0 1.2rem 1.6rem;
+      padding: 1.2rem 1.2rem 1.2rem 1.6rem;
       font-size: ${theme.fonts.size['base']};
       line-height: 157.5%;
       color: ${theme.colors.text['500']};

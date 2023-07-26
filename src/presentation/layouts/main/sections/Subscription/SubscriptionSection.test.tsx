@@ -122,4 +122,14 @@ describe('<SubscriptionSection />', () => {
 
     expect(initialStep).toBeInTheDocument()
   })
+
+  it('should render personal info step', () => {
+    renderWithStepIndexMock(1)
+
+    const personalInfoStep = getByTestId(
+      'mock-subscription-personal-info-step',
+    )
+
+    expect(personalInfoStep).toBeInTheDocument()
+  })
 })
