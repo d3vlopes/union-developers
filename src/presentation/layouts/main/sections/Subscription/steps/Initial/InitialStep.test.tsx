@@ -1,8 +1,6 @@
-import { vitest } from 'vitest'
-
 import { render, screen } from '@/__tests__/helpers'
 
-import { subscriptionMock } from '../../mock'
+import { subscriptionMock } from '../../mocks/data'
 
 import { InitialStep, InitialStepProps } from '.'
 
@@ -10,18 +8,11 @@ const { getByRole, getByText } = screen
 
 const mock: InitialStepProps = {
   ...subscriptionMock,
-  handleNextStep: vitest.fn(),
 }
 
 describe('<InitialStep />', () => {
   beforeEach(() => {
     render(<InitialStep {...mock} />)
-  })
-
-  it('should render description', () => {
-    const description = getByText(mock.description)
-
-    expect(description).toBeInTheDocument()
   })
 
   it('should render requirements list', () => {
