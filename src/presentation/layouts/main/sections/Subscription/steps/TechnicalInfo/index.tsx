@@ -1,76 +1,105 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable no-console */
-import { useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
+import {
+  Button,
+  Input,
+  Textarea,
+} from '@/presentation/components/atoms'
 
-import * as z from 'zod'
-
-import { useSubscriptionForm } from '@/presentation/hooks'
-
-import { Button, Input } from '@/presentation/components/atoms'
+import { useTechnicalInfo } from './hooks'
 
 import * as S from '../styles'
 
-const requiredError = {
-  required_error: 'Campo obrigatório',
-}
-
-const personalInfoStepSchema = z.object({
-  fullName: z
-    .string(requiredError)
-    .min(1, { message: 'Campo obrigatório' }),
-  age: z
-    .number({
-      ...requiredError,
-      invalid_type_error: 'Campo obrigatório',
-    })
-    .min(18, {
-      message: 'É necessário ter no mínimo 18 anos para participar',
-    }),
-})
-
-type PersonalInfoStepType = z.infer<typeof personalInfoStepSchema>
-
-export const TechnicalInformationStep = () => {
+export const TechnicalInfoStep = () => {
   const {
-    handleNextStep,
+    errors,
+    isValid,
+    register,
+    onSubmit,
     handlePreviousStep,
-    formData,
-    setFormData,
-  } = useSubscriptionForm()
-
-  // const {
-  //   register,
-  //   handleSubmit,
-  //   formState: { errors },
-  // } = useForm<PersonalInfoStepType>({
-  //   mode: 'onBlur',
-  //   resolver: zodResolver(personalInfoStepSchema),
-  // })
-
-  // function onSubmit(data: PersonalInfoStepType) {
-  //   const isError = errors === undefined
-
-  //   if (isError) {
-  //     return
-  //   }
-
-  //   setFormData({ ...formData, ...data })
-
-  //   handleNextStep()
-  // }
+    handleSubmit,
+  } = useTechnicalInfo()
 
   return (
     <S.FormWrapper>
       <S.FormField>
-        <label htmlFor="fullName">
-          Quanto tempo você estuda programação?
-        </label>
+        <S.LabelWrapper>
+          <label htmlFor="timeLearning">
+            Quanto tempo você estuda programação?
+          </label>
+          <span>*</span>
+        </S.LabelWrapper>
+
+        <S.RadioWrapper>
+          <S.Radio
+            id="option-one"
+            type="radio"
+            value="1 ano"
+            {...register('timeLearning')}
+          />
+          <label htmlFor="option-one">1 ano</label>
+        </S.RadioWrapper>
+
+        <S.RadioWrapper>
+          <S.Radio
+            id="option-two"
+            type="radio"
+            value="2 anos"
+            {...register('timeLearning')}
+          />
+          <label htmlFor="option-two">2 anos</label>
+        </S.RadioWrapper>
+
+        <S.RadioWrapper>
+          <S.Radio
+            id="option-three"
+            type="radio"
+            value="3 anos"
+            {...register('timeLearning')}
+          />
+          <label htmlFor="option-three">3 anos</label>
+        </S.RadioWrapper>
+
+        <S.RadioWrapper>
+          <S.Radio
+            id="option-four"
+            type="radio"
+            value="Mais de 3 anos"
+            {...register('timeLearning')}
+          />
+          <label htmlFor="option-four">Mais de 3 anos</label>
+        </S.RadioWrapper>
+      </S.FormField>
+
+      <S.FormField>
+        <S.LabelWrapper>
+          <label htmlFor="linkRepoBestProject">
+            Link do repositório do seu melhor projeto
+          </label>
+          <span>*</span>
+        </S.LabelWrapper>
+
         <Input
-          id="fullName"
-          // error={errors.fullName?.message}
-          // placeholder="Qual seu nome completo?"
-          // {...register('fullName')}
+          id="linkRepoBestProject"
+          error={errors.linkRepoBestProject?.message}
+          placeholder="Qual o link para o repositório do seu melhor projeto?"
+          {...register('linkRepoBestProject')}
+        />
+      </S.FormField>
+
+      <S.FormField>
+        <S.LabelWrapper>
+          <label htmlFor="aboutBestProject">
+            Fale sobre como foi construir esse projeto? Quais foram os
+            aprendizados e dificuldades que teve durante o
+            desenvolvimento?
+          </label>
+          <span>*</span>
+        </S.LabelWrapper>
+
+        <Textarea
+          id="aboutBestProject"
+          error={errors.aboutBestProject?.message}
+          placeholder="Fale sobre o seu melhor projeto, nos conte como foi trabalhar nesse projeto?"
+          {...register('aboutBestProject')}
         />
       </S.FormField>
 
@@ -82,9 +111,14 @@ export const TechnicalInformationStep = () => {
         >
           Voltar
         </Button>
-        {/* <Button type="button" onClick={handleSubmit(onSubmit)}>
+
+        <Button
+          type="button"
+          disabled={!isValid}
+          onClick={handleSubmit(onSubmit)}
+        >
           Próximo
-        </Button> */}
+        </Button>
       </S.ButtonsWrapper>
     </S.FormWrapper>
   )

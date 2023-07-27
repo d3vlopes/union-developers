@@ -1,6 +1,10 @@
 import { useSubscriptionForm } from '@/presentation/hooks'
 
-import { InitialStep, PersonalInfoStep } from './steps'
+import {
+  InitialStep,
+  PersonalInfoStep,
+  TechnicalInfoStep,
+} from './steps'
 
 import { FormStepNavLinks } from './components'
 
@@ -54,6 +58,7 @@ export const SubscriptionSection = ({
       )}
 
       {currentStepIndex === 1 && <PersonalInfoStep />}
+      {currentStepIndex === 2 && <TechnicalInfoStep />}
     </S.Wrapper>
   )
 }
