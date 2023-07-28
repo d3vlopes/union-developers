@@ -10,19 +10,23 @@ import {
 
 interface SubscriptionFormContextValues<TFormData> {
   currentStepIndex: number
+  isSubscriptionSuccess: boolean
   handleNextStep: () => void
   handlePreviousStep: () => void
   formData: TFormData
   setFormData: Dispatch<SetStateAction<TFormData>>
+  setIsSubscriptionSuccess: Dispatch<SetStateAction<boolean>>
 }
 
 export const subscriptionFormContextDefaultValues: SubscriptionFormContextValues<any> =
   {
     currentStepIndex: 0,
+    isSubscriptionSuccess: false,
     formData: {},
     handleNextStep: () => null,
     handlePreviousStep: () => null,
     setFormData: () => null,
+    setIsSubscriptionSuccess: () => null,
   }
 
 export const SubscriptionFormContext = createContext<
@@ -40,6 +44,10 @@ export function SubscriptionFormContextProvider({
     subscriptionFormContextDefaultValues.currentStepIndex,
   )
 
+  const [isSubscriptionSuccess, setIsSubscriptionSuccess] = useState(
+    subscriptionFormContextDefaultValues.isSubscriptionSuccess,
+  )
+
   const [formData, setFormData] = useState(
     subscriptionFormContextDefaultValues.formData,
   )
@@ -54,8 +62,10 @@ export function SubscriptionFormContextProvider({
 
   const values = {
     currentStepIndex,
+    isSubscriptionSuccess,
     formData,
     setFormData,
+    setIsSubscriptionSuccess,
     handleNextStep,
     handlePreviousStep,
   }
