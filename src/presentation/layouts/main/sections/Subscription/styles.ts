@@ -34,7 +34,7 @@ export const Wrapper = styled.section`
     }
 
     ${media.md`
-      max-width:104.2rem;
+      max-width: 104.2rem;
       margin-top: 15rem;
       padding: 5.6rem;
 

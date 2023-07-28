@@ -1,9 +1,12 @@
+import { TermModel } from '@/domain/models'
+
 import { useSubscriptionForm } from '@/presentation/hooks'
 
 import {
   InitialStep,
   PersonalInfoStep,
   TechnicalInfoStep,
+  AboutYouStep,
 } from './steps'
 
 import { FormStepNavLinks } from './components'
@@ -24,6 +27,7 @@ export interface SubscriptionSectionProps {
   requirements: string[]
   buttonText: string
   formStepNavLinks: FormStepNavLnk[]
+  terms: TermModel
 }
 
 export const SubscriptionSection = ({
@@ -34,6 +38,7 @@ export const SubscriptionSection = ({
   requirements,
   buttonText,
   formStepNavLinks,
+  terms,
 }: SubscriptionSectionProps) => {
   const { currentStepIndex } = useSubscriptionForm()
 
@@ -59,6 +64,7 @@ export const SubscriptionSection = ({
 
       {currentStepIndex === 1 && <PersonalInfoStep />}
       {currentStepIndex === 2 && <TechnicalInfoStep />}
+      {currentStepIndex === 3 && <AboutYouStep terms={terms} />}
     </S.Wrapper>
   )
 }

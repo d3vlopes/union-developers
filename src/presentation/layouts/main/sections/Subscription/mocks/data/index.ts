@@ -1,5 +1,7 @@
 import { generateId } from '@/utils'
 
+import { termsMock } from '../../steps/AboutYou/components/Terms/mock'
+
 import { SubscriptionSectionProps } from '../..'
 
 export const subscriptionMock: SubscriptionSectionProps = {
@@ -41,4 +43,5 @@ export const subscriptionMock: SubscriptionSectionProps = {
       stepNumber: 4,
     },
   ],
+  terms: termsMock,
 }

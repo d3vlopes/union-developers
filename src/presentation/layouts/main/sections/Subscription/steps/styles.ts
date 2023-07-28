@@ -22,6 +22,7 @@ export const FormField = styled.div`
     gap: 1.6rem;
 
     label {
+      max-width: 64.4rem;
       font-size: ${theme.fonts.size['sm']};
       color: ${theme.colors.text['500']};
     }
@@ -41,6 +42,7 @@ export const LabelWrapper = styled.div`
     gap: 0.4rem;
 
     span {
+      align-self: baseline;
       color: ${theme.colors.error};
     }
   `}
@@ -85,6 +87,49 @@ export const Radio = styled.input`
       &:before {
         opacity: 1;
       }
+    }
+  `}
+`
+
+export const TermsWrapper = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    align-items: center;
+    color ${theme.colors.text['500']};
+    font-weight: 700;
+
+    label, button {
+      font-size: ${theme.fonts.size['base']};
+    }
+
+    label {
+      margin-left: 1.2rem;
+    }
+
+    button {
+      background-color: transparent;
+      color: inherit;
+      font-weight: inherit;
+      margin-left: 4px;
+    }
+
+    a {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    ${media.md`
+      label, button {
+        font-size: ${theme.fonts.size['xl']};
+      }
+    `}
+  `}
+`
+
+export const TermsError = styled.div`
+  ${({ theme }) => css`
+    span {
+      color: ${theme.colors.error};
     }
   `}
 `
