@@ -22,10 +22,10 @@ export const TechnicalInfoStep = () => {
     <S.FormWrapper>
       <S.FormField>
         <S.LabelWrapper>
+          <span>*</span>
           <label htmlFor="timeLearning">
             Quanto tempo você estuda programação?
           </label>
-          <span>*</span>
         </S.LabelWrapper>
 
         <S.RadioWrapper>
@@ -71,10 +71,10 @@ export const TechnicalInfoStep = () => {
 
       <S.FormField>
         <S.LabelWrapper>
+          <span>*</span>
           <label htmlFor="linkRepoBestProject">
             Link do repositório do seu melhor projeto
           </label>
-          <span>*</span>
         </S.LabelWrapper>
 
         <Input
@@ -87,12 +87,12 @@ export const TechnicalInfoStep = () => {
 
       <S.FormField>
         <S.LabelWrapper>
+          <span>*</span>
           <label htmlFor="aboutBestProject">
             Fale sobre como foi construir esse projeto? Quais foram os
             aprendizados e dificuldades que teve durante o
             desenvolvimento?
           </label>
-          <span>*</span>
         </S.LabelWrapper>
 
         <Textarea

@@ -4,6 +4,8 @@ import { useForm, zodResolver } from '@/libs/forms'
 
 import { useSubscriptionForm } from '@/presentation/hooks'
 
+import { autoSaveFormFields } from '../../../helpers'
+
 import {
   TechnicalInfoStepType,
   technicalInfoStepSchema,
@@ -33,15 +35,14 @@ export const useTechnicalInfo = () => {
   })
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      const formValues = getValues()
+    const formValues = getValues()
 
-      const isFieldContainError = Object.keys(errors).length > 0
-
-      if (!isFieldContainError) {
-        setFormData({ ...formData, ...formValues })
-      }
-    }, 5000)
+    const interval = autoSaveFormFields(
+      formValues,
+      formData,
+      errors,
+      setFormData,
+    )
 
     return () => clearInterval(interval)
   }, [formData, errors, getValues, setFormData])

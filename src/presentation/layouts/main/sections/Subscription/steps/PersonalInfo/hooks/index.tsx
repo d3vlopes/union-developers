@@ -4,6 +4,8 @@ import { useForm, z, zodResolver } from '@/libs/forms'
 
 import { useSubscriptionForm } from '@/presentation/hooks'
 
+import { autoSaveFormFields } from '../../../helpers'
+
 import { personalInfoStepSchema } from '../schema'
 
 export type PersonalInfoStepType = z.infer<
@@ -45,15 +47,14 @@ export const usePersonalInfoStep = () => {
   }
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      const formValues = getValues()
+    const formValues = getValues()
 
-      const isFieldContainError = Object.keys(errors).length > 0
-
-      if (!isFieldContainError) {
-        setFormData({ ...formData, ...formValues })
-      }
-    }, 5000)
+    const interval = autoSaveFormFields(
+      formValues,
+      formData,
+      errors,
+      setFormData,
+    )
 
     return () => clearInterval(interval)
   }, [formData, errors, getValues, setFormData])

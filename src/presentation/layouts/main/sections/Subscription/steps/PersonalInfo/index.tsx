@@ -18,8 +18,8 @@ export const PersonalInfoStep = () => {
     <S.FormWrapper>
       <S.FormField>
         <S.LabelWrapper>
-          <label htmlFor="fullName">Nome completo</label>
           <span>*</span>
+          <label htmlFor="fullName">Nome completo</label>
         </S.LabelWrapper>
 
         <Input
@@ -32,8 +32,8 @@ export const PersonalInfoStep = () => {
 
       <S.FormField>
         <S.LabelWrapper>
-          <label htmlFor="age">Idade</label>
           <span>*</span>
+          <label htmlFor="age">Idade</label>
         </S.LabelWrapper>
 
         <Input
@@ -47,8 +47,8 @@ export const PersonalInfoStep = () => {
 
       <S.FormField>
         <S.LabelWrapper>
-          <label htmlFor="email">Email</label>
           <span>*</span>
+          <label htmlFor="email">Email</label>
         </S.LabelWrapper>
 
         <Input
@@ -62,8 +62,8 @@ export const PersonalInfoStep = () => {
 
       <S.FormField>
         <S.LabelWrapper>
-          <label htmlFor="github">Github</label>
           <span>*</span>
+          <label htmlFor="github">Github</label>
         </S.LabelWrapper>
 
         <Input
@@ -77,8 +77,8 @@ export const PersonalInfoStep = () => {
 
       <S.FormField>
         <S.LabelWrapper>
-          <label htmlFor="linkedin">Linkedin</label>
           <span>*</span>
+          <label htmlFor="linkedin">Linkedin</label>
         </S.LabelWrapper>
 
         <Input
@@ -92,10 +92,10 @@ export const PersonalInfoStep = () => {
 
       <S.FormField>
         <S.LabelWrapper>
+          <span>*</span>
           <label htmlFor="developmentSide">
             Onde você gosta mais de trabalhar?
           </label>
-          <span>*</span>
         </S.LabelWrapper>
 
         <S.RadioWrapper>
