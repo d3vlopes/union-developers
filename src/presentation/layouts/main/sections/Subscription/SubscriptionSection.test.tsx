@@ -152,4 +152,12 @@ describe('<SubscriptionSection />', () => {
 
     expect(aboutYouStep).toBeInTheDocument()
   })
+
+  it('should render send step', () => {
+    renderWithStepIndexMock(4)
+
+    const sendStep = getByTestId('mock-subscription-send-step')
+
+    expect(sendStep).toBeInTheDocument()
+  })
 })

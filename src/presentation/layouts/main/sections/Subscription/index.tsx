@@ -7,6 +7,7 @@ import {
   PersonalInfoStep,
   TechnicalInfoStep,
   AboutYouStep,
+  SendStep,
 } from './steps'
 
 import { FormStepNavLinks } from './components'
@@ -65,6 +66,7 @@ export const SubscriptionSection = ({
       {currentStepIndex === 1 && <PersonalInfoStep />}
       {currentStepIndex === 2 && <TechnicalInfoStep />}
       {currentStepIndex === 3 && <AboutYouStep terms={terms} />}
+      {currentStepIndex === 4 && <SendStep />}
     </S.Wrapper>
   )
 }

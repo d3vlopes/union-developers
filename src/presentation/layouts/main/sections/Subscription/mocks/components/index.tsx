@@ -67,3 +67,20 @@ vitest.mock(
     },
   }),
 )
+
+vitest.mock(
+  '@/presentation/layouts/main/sections/Subscription/steps/Send',
+  () => ({
+    SendStep: function Mock({
+      children,
+    }: {
+      children: React.ReactNode
+    }) {
+      return (
+        <div data-testid="mock-subscription-send-step">
+          {children}
+        </div>
+      )
+    },
+  }),
+)

@@ -67,26 +67,21 @@ export const useAboutYouStep = () => {
 
         await new Promise((resolve) => setTimeout(resolve, 1500))
 
-        setFormData({
-          ...formData,
-          ...data,
-        })
-
         setIsSubscriptionSuccess(true)
 
-        handleNextStep()
-
         // TODO: register subscription
+        console.log('FormData =>', formData)
       } catch (error: any) {
-        setFormData({
-          ...formData,
-          ...data,
-        })
-
         setIsSubscriptionSuccess(false)
 
         console.error('Error =>', error)
       } finally {
+        setFormData({
+          ...formData,
+          ...data,
+        })
+
+        handleNextStep()
         setIsLoading(false)
       }
     }
