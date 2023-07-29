@@ -17,7 +17,7 @@ import {
   SubscriptionSection,
 } from './sections'
 
-import { subscriptionMock } from './sections/Subscription/mock'
+import { subscriptionMock } from './sections/Subscription/mocks/data'
 
 import * as S from './styles'
 

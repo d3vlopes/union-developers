@@ -69,6 +69,7 @@ export const GlobalStyles = createGlobalStyle`
       display: flex;
       align-items: center;
       justify-content: center;
+      z-index: ${theme.layers.alwaysOnTop};
     }
 
     .modal-content {
@@ -77,6 +78,9 @@ export const GlobalStyles = createGlobalStyle`
       max-width: 104.2rem;
       background: ${theme.colors.gradient};
       border-radius: ${theme.borders.radius['md']};
+      margin: 1.6rem;
+      max-height: calc(100vh - 2rem);
+      overflow-y: auto;
     }
 
     .modal-close {

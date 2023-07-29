@@ -13,6 +13,7 @@ export const ModalWrapper = ({
   children,
 }: ModalWrapperProps) => {
   ReactModal.setAppElement('#modal-root')
+  ReactModal.defaultStyles = {}
 
   return (
     <ReactModal
@@ -20,6 +21,8 @@ export const ModalWrapper = ({
       onRequestClose={onRequestClose}
       overlayClassName="modal-overlay"
       className="modal-content"
+      onAfterOpen={() => (document.body.style.overflow = 'hidden')}
+      onAfterClose={() => (document.body.style.overflow = 'unset')}
     >
       <button type="button" onClick={onRequestClose}>
         <img
@@ -33,3 +36,5 @@ export const ModalWrapper = ({
     </ReactModal>
   )
 }
+
+export { ReactModal }

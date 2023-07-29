@@ -1,3 +1,5 @@
+import { useSubscriptionForm } from '@/presentation/hooks'
+
 import { Button } from '@/presentation/components/atoms'
 
 import { SubscriptionSectionProps } from '../..'
@@ -6,20 +8,17 @@ import * as S from './styles'
 
 export type InitialStepProps = Pick<
   SubscriptionSectionProps,
-  'description' | 'requirements' | 'buttonText'
-> & {
-  handleNextStep: () => void
-}
+  'requirements' | 'buttonText'
+>
 
 export const InitialStep = ({
-  description,
   requirements,
   buttonText,
-  handleNextStep,
 }: InitialStepProps) => {
+  const { handleNextStep } = useSubscriptionForm()
+
   return (
     <>
-      <S.Description>{description}</S.Description>
       <S.List>
         {requirements.map((requirement) => (
           <S.RequirementWrapper key={requirement}>
