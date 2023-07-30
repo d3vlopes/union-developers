@@ -70,6 +70,7 @@ export const Button = styled.button`
     align-items: center;
     background: none;
     height: min-content;
+    min-height: 3rem;
     animation: fadeIn ${theme.transitions.slow} forwards;
 
     &:focus {
@@ -86,6 +87,8 @@ export const Button = styled.button`
     }
 
     ${media.md`
+      min-height: initial;
+
       img {
         width: 4rem;
         height: 4rem;
