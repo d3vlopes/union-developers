@@ -5,6 +5,7 @@ import { highlightsMock } from '@/presentation/components/molecules/Highlights/m
 import { stepsMock } from '@/presentation/components/molecules/Steps/mock'
 import { rememberActionMock } from '@/presentation/components/molecules/RememberAction/mock'
 import { testimonialsMock } from '@/presentation/components/organisms/TestimonialSlider/mock'
+import { accordionsMock } from '@/presentation/components/organisms/QuestionsAccordion/mock'
 
 import { MainLayoutProps } from '../..'
 
@@ -45,5 +46,10 @@ export const mainLayoutMock: MainLayoutProps = {
     heading: 'Depoimentos',
     description: 'Veja o que dizem sobre nosso trabalho',
     testimonials: testimonialsMock,
+  },
+  faqSection: {
+    id: 'questions',
+    heading: 'Dúvidas',
+    accordions: accordionsMock,
   },
 }

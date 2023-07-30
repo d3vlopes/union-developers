@@ -46,6 +46,9 @@ export const getServerSideProps: GetServerSideProps<
       testimonialSection: {
         ...mainLayoutMock.testimonialSection,
       },
+      faqSection: {
+        ...mainLayoutMock.faqSection,
+      },
     },
   }
 }

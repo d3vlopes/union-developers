@@ -31,7 +31,15 @@ export interface TestimonialSectionType<TypeTestimonialCard = null>
   testimonials: TypeTestimonialCard[]
 }
 
-export interface MainModel<TypeTestimonialCard = null> {
+export interface FaqSectionType<TAccordionType = null>
+  extends Omit<SectionModel, 'description'> {
+  accordions: TAccordionType[]
+}
+
+export interface MainModel<
+  TypeTestimonialCard = null,
+  TAccordionType = null,
+> {
   base: BaseType
   hero: HeroModel
   aboutSection: AboutSectionType
@@ -40,4 +48,5 @@ export interface MainModel<TypeTestimonialCard = null> {
   stepsSection: StepsSectionType
   rememberActionSection: RememberActionSectionType
   testimonialSection: TestimonialSectionType<TypeTestimonialCard>
+  faqSection: FaqSectionType<TAccordionType>
 }
