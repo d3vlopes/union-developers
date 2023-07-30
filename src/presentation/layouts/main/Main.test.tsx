@@ -68,4 +68,10 @@ describe('<MainLayout />', () => {
 
     expect(subscriptionSection).toBeInTheDocument()
   })
+
+  it('should render faq section', () => {
+    const faqSection = getByTestId('mock-faq-section')
+
+    expect(faqSection).toBeInTheDocument()
+  })
 })
