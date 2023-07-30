@@ -35,8 +35,10 @@ export const Header = styled.dt<AccordionModifiersProps>`
     h3 {
       font-size: ${theme.fonts.size['lg']};
       font-weight: 700;
+      text-align: initial;
       line-height: 2.2rem;
       color: ${theme.colors.text['500']};
+      max-width: 27rem;
       animation: ${isActive
         ? `fadeInAndMove ${theme.transitions.default} forwards`
         : 'none'};
@@ -48,7 +50,13 @@ export const Header = styled.dt<AccordionModifiersProps>`
       h3 {
         font-size: ${theme.fonts.size['4xl']};
         line-height: 3.5rem;
-        height: 4rem;
+        max-width: 73rem;
+      }
+    `}
+
+    ${media.xl`
+      h3 {
+        max-width: 107.2rem;
       }
     `}
   `}
@@ -59,9 +67,9 @@ export const Button = styled.button`
     position: relative;
     display: flex;
     flex: 1;
-    height: 3rem;
     align-items: center;
     background: none;
+    height: min-content;
     animation: fadeIn ${theme.transitions.slow} forwards;
 
     &:focus {
@@ -78,8 +86,6 @@ export const Button = styled.button`
     }
 
     ${media.md`
-      height: 4rem;
-
       img {
         width: 4rem;
         height: 4rem;
