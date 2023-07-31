@@ -1,6 +1,5 @@
 import { GetServerSideProps } from 'next'
 
-import { headerMock } from '@/presentation/components/molecules/Header/mock'
 import { heroMockFactory } from '@/presentation/components/molecules/Hero/mock'
 
 import { mainLayoutMock } from '@/presentation/layouts/main/mocks/data'
@@ -16,9 +15,7 @@ export const getServerSideProps: GetServerSideProps<
 > = async () => {
   return {
     props: {
-      base: {
-        header: headerMock,
-      },
+      base: mainLayoutMock.base,
       hero: heroMockFactory['default'],
       aboutSection: {
         id: 'about',

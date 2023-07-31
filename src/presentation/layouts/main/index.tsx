@@ -40,7 +40,7 @@ export const MainLayout = ({
   faqSection,
 }: MainLayoutProps) => {
   return (
-    <BaseLayout header={base.header}>
+    <BaseLayout header={base.header} footer={base.footer}>
       <Hero {...hero} />
 
       <S.Container>
