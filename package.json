@@ -10,6 +10,7 @@
   "scripts": {
     "build": "next build",
     "build-storybook": "storybook build",
+    "codegen": "graphql-codegen --config codegen.yml",
     "dev": "next dev",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "generate": "yarn plop --plopfile plop/plopfile.js",
@@ -41,6 +42,12 @@
   "devDependencies": {
     "@commitlint/cli": "^17.6.6",
     "@commitlint/config-conventional": "^17.6.6",
+    "@graphql-codegen/add": "^5.0.0",
+    "@graphql-codegen/cli": "^5.0.0",
+    "@graphql-codegen/client-preset": "^4.1.0",
+    "@graphql-codegen/typescript": "^4.0.1",
+    "@graphql-codegen/typescript-operations": "^4.0.1",
+    "@graphql-codegen/typescript-react-apollo": "^3.3.7",
     "@storybook/addon-a11y": "^7.0.23",
     "@storybook/addon-essentials": "^7.0.23",
     "@storybook/addon-interactions": "^7.0.23",
