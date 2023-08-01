@@ -1,4 +1,8 @@
+/* eslint-disable no-console */
 import { GetServerSideProps } from 'next'
+import { gql } from '@apollo/client'
+
+import { client } from '@/libs/graphql/client/apollo'
 
 import { heroMockFactory } from '@/presentation/components/molecules/Hero/mock'
 
@@ -13,6 +17,21 @@ export default function Index(props: MainLayoutProps) {
 export const getServerSideProps: GetServerSideProps<
   MainLayoutProps
 > = async () => {
+  const { data } = await client.query({
+    query: gql`
+      query MyQuery {
+        pages {
+          header {
+            buttonText
+            buttonTarget
+          }
+        }
+      }
+    `,
+  })
+
+  console.log(data.pages[0].header)
+
   return {
     props: {
       base: mainLayoutMock.base,
