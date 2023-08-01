@@ -1,0 +1,15 @@
+schema: https://api-sa-east-1.hygraph.com/v2/cljouc4ng0xqh01t99br20zjf/master
+documents: './src/api/**/*.ts'
+generates:
+  src/api/generated/graphql.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+      - add:
+          content: '/* eslint-disable */'
+    config:
+      reactApolloVersion: 3
+      withHooks: true
+      withHOC: false
+      withComponent: false
