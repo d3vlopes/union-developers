@@ -6,12 +6,14 @@ import { stepsMock } from '@/presentation/components/molecules/Steps/mock'
 import { rememberActionMock } from '@/presentation/components/molecules/RememberAction/mock'
 import { testimonialsMock } from '@/presentation/components/organisms/TestimonialSlider/mock'
 import { accordionsMock } from '@/presentation/components/organisms/QuestionsAccordion/mock'
+import { footerMock } from '@/presentation/components/molecules/Footer/mock'
 
 import { MainLayoutProps } from '../..'
 
 export const mainLayoutMock: MainLayoutProps = {
   base: {
     header: headerMock,
+    footer: footerMock,
   },
   hero: heroMockFactory['default'],
   aboutSection: {

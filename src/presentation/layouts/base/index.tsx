@@ -2,18 +2,24 @@ import { ReactNode } from 'react'
 
 import { BaseModel } from '@/domain/models'
 
-import { Header } from '@/presentation/components/molecules'
+import { Footer, Header } from '@/presentation/components/molecules'
 
 import * as S from './styles'
 
 export type BaseLayoutProps = BaseModel<ReactNode>
 
-export const BaseLayout = ({ header, children }: BaseLayoutProps) => {
+export const BaseLayout = ({
+  header,
+  children,
+  footer,
+}: BaseLayoutProps) => {
   return (
     <S.Wrapper>
       <Header {...header} />
 
       <S.Content>{children}</S.Content>
+
+      <Footer {...footer} />
     </S.Wrapper>
   )
 }

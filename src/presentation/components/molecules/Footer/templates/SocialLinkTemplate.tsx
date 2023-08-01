@@ -12,6 +12,7 @@ export const SocialLinkTemplate = (socialLink: SocialLink) => {
       href={
         isEmail ? `mailto:${socialLink.target}` : socialLink.target
       }
+      target="_blank"
     >
       <S.SocialLinkWrapper>
         <img
