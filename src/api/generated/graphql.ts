@@ -2189,6 +2189,7 @@ export type Footer = {
   /** The unique identifier */
   id: Scalars['ID']['output']
   logo: Asset
+  navigationMenuLinks: Array<NavigationMenuLink>
   socialLinks: Array<SocialLink>
   /** System stage field */
   stage: Stage
@@ -2197,6 +2198,18 @@ export type Footer = {
 export type FooterLogoArgs = {
   forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>
   locales?: InputMaybe<Array<Locale>>
+}
+
+export type FooterNavigationMenuLinksArgs = {
+  after?: InputMaybe<Scalars['String']['input']>
+  before?: InputMaybe<Scalars['String']['input']>
+  first?: InputMaybe<Scalars['Int']['input']>
+  forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>
+  last?: InputMaybe<Scalars['Int']['input']>
+  locales?: InputMaybe<Array<Locale>>
+  orderBy?: InputMaybe<NavigationMenuLinkOrderByInput>
+  skip?: InputMaybe<Scalars['Int']['input']>
+  where?: InputMaybe<NavigationMenuLinkWhereInput>
 }
 
 export type FooterSocialLinksArgs = {
@@ -2232,6 +2245,7 @@ export type FooterCreateInput = {
   companyName: Scalars['String']['input']
   companySlogan: Scalars['String']['input']
   logo: AssetCreateOneInlineInput
+  navigationMenuLinks?: InputMaybe<NavigationMenuLinkCreateManyInlineInput>
   socialLinks?: InputMaybe<SocialLinkCreateManyInlineInput>
 }
 
@@ -2339,6 +2353,9 @@ export type FooterManyWhereInput = {
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']['input']>
   logo?: InputMaybe<AssetWhereInput>
+  navigationMenuLinks_every?: InputMaybe<NavigationMenuLinkWhereInput>
+  navigationMenuLinks_none?: InputMaybe<NavigationMenuLinkWhereInput>
+  navigationMenuLinks_some?: InputMaybe<NavigationMenuLinkWhereInput>
   socialLinks_every?: InputMaybe<SocialLinkWhereInput>
   socialLinks_none?: InputMaybe<SocialLinkWhereInput>
   socialLinks_some?: InputMaybe<SocialLinkWhereInput>
@@ -2441,6 +2458,7 @@ export type FooterUpdateInput = {
   companyName?: InputMaybe<Scalars['String']['input']>
   companySlogan?: InputMaybe<Scalars['String']['input']>
   logo?: InputMaybe<AssetUpdateOneInlineInput>
+  navigationMenuLinks?: InputMaybe<NavigationMenuLinkUpdateManyInlineInput>
   socialLinks?: InputMaybe<SocialLinkUpdateManyInlineInput>
 }
 
@@ -2599,6 +2617,9 @@ export type FooterWhereInput = {
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']['input']>
   logo?: InputMaybe<AssetWhereInput>
+  navigationMenuLinks_every?: InputMaybe<NavigationMenuLinkWhereInput>
+  navigationMenuLinks_none?: InputMaybe<NavigationMenuLinkWhereInput>
+  navigationMenuLinks_some?: InputMaybe<NavigationMenuLinkWhereInput>
   socialLinks_every?: InputMaybe<SocialLinkWhereInput>
   socialLinks_none?: InputMaybe<SocialLinkWhereInput>
   socialLinks_some?: InputMaybe<SocialLinkWhereInput>
@@ -3955,6 +3976,392 @@ export type ImageTransformationInput = {
   resize?: InputMaybe<ImageResizeInput>
 }
 
+export type Link = {
+  __typename?: 'Link'
+  /** The unique identifier */
+  id: Scalars['ID']['output']
+  label: Scalars['String']['output']
+  /** System stage field */
+  stage: Stage
+  target: Scalars['String']['output']
+}
+
+export type LinkConnectInput = {
+  /** Allow to specify document position in list of connected documents, will default to appending at end of list */
+  position?: InputMaybe<ConnectPositionInput>
+  /** Document to connect */
+  where: LinkWhereUniqueInput
+}
+
+/** A connection to a list of items. */
+export type LinkConnection = {
+  __typename?: 'LinkConnection'
+  aggregate: Aggregate
+  /** A list of edges. */
+  edges: Array<LinkEdge>
+  /** Information to aid in pagination. */
+  pageInfo: PageInfo
+}
+
+export type LinkCreateInput = {
+  label: Scalars['String']['input']
+  target: Scalars['String']['input']
+}
+
+export type LinkCreateManyInlineInput = {
+  /** Create and connect multiple existing Link documents */
+  create?: InputMaybe<Array<LinkCreateInput>>
+}
+
+export type LinkCreateOneInlineInput = {
+  /** Create and connect one Link document */
+  create?: InputMaybe<LinkCreateInput>
+}
+
+export type LinkCreateWithPositionInput = {
+  /** Document to create */
+  data: LinkCreateInput
+  /** Position in the list of existing component instances, will default to appending at the end of list */
+  position?: InputMaybe<ConnectPositionInput>
+}
+
+/** An edge in a connection. */
+export type LinkEdge = {
+  __typename?: 'LinkEdge'
+  /** A cursor for use in pagination. */
+  cursor: Scalars['String']['output']
+  /** The item at the end of the edge. */
+  node: Link
+}
+
+/** Identifies documents */
+export type LinkManyWhereInput = {
+  /** Logical AND on all given filters. */
+  AND?: InputMaybe<Array<LinkWhereInput>>
+  /** Logical NOT on all given filters combined by AND. */
+  NOT?: InputMaybe<Array<LinkWhereInput>>
+  /** Logical OR on all given filters. */
+  OR?: InputMaybe<Array<LinkWhereInput>>
+  /** Contains search across all appropriate fields. */
+  _search?: InputMaybe<Scalars['String']['input']>
+  id?: InputMaybe<Scalars['ID']['input']>
+  /** All values containing the given string. */
+  id_contains?: InputMaybe<Scalars['ID']['input']>
+  /** All values ending with the given string. */
+  id_ends_with?: InputMaybe<Scalars['ID']['input']>
+  /** All values that are contained in given list. */
+  id_in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
+  /** Any other value that exists and is not equal to the given value. */
+  id_not?: InputMaybe<Scalars['ID']['input']>
+  /** All values not containing the given string. */
+  id_not_contains?: InputMaybe<Scalars['ID']['input']>
+  /** All values not ending with the given string */
+  id_not_ends_with?: InputMaybe<Scalars['ID']['input']>
+  /** All values that are not contained in given list. */
+  id_not_in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
+  /** All values not starting with the given string. */
+  id_not_starts_with?: InputMaybe<Scalars['ID']['input']>
+  /** All values starting with the given string. */
+  id_starts_with?: InputMaybe<Scalars['ID']['input']>
+  label?: InputMaybe<Scalars['String']['input']>
+  /** All values containing the given string. */
+  label_contains?: InputMaybe<Scalars['String']['input']>
+  /** All values ending with the given string. */
+  label_ends_with?: InputMaybe<Scalars['String']['input']>
+  /** All values that are contained in given list. */
+  label_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  /** Any other value that exists and is not equal to the given value. */
+  label_not?: InputMaybe<Scalars['String']['input']>
+  /** All values not containing the given string. */
+  label_not_contains?: InputMaybe<Scalars['String']['input']>
+  /** All values not ending with the given string */
+  label_not_ends_with?: InputMaybe<Scalars['String']['input']>
+  /** All values that are not contained in given list. */
+  label_not_in?: InputMaybe<
+    Array<InputMaybe<Scalars['String']['input']>>
+  >
+  /** All values not starting with the given string. */
+  label_not_starts_with?: InputMaybe<Scalars['String']['input']>
+  /** All values starting with the given string. */
+  label_starts_with?: InputMaybe<Scalars['String']['input']>
+  target?: InputMaybe<Scalars['String']['input']>
+  /** All values containing the given string. */
+  target_contains?: InputMaybe<Scalars['String']['input']>
+  /** All values ending with the given string. */
+  target_ends_with?: InputMaybe<Scalars['String']['input']>
+  /** All values that are contained in given list. */
+  target_in?: InputMaybe<
+    Array<InputMaybe<Scalars['String']['input']>>
+  >
+  /** Any other value that exists and is not equal to the given value. */
+  target_not?: InputMaybe<Scalars['String']['input']>
+  /** All values not containing the given string. */
+  target_not_contains?: InputMaybe<Scalars['String']['input']>
+  /** All values not ending with the given string */
+  target_not_ends_with?: InputMaybe<Scalars['String']['input']>
+  /** All values that are not contained in given list. */
+  target_not_in?: InputMaybe<
+    Array<InputMaybe<Scalars['String']['input']>>
+  >
+  /** All values not starting with the given string. */
+  target_not_starts_with?: InputMaybe<Scalars['String']['input']>
+  /** All values starting with the given string. */
+  target_starts_with?: InputMaybe<Scalars['String']['input']>
+}
+
+export enum LinkOrderByInput {
+  IdAsc = 'id_ASC',
+  IdDesc = 'id_DESC',
+  LabelAsc = 'label_ASC',
+  LabelDesc = 'label_DESC',
+  TargetAsc = 'target_ASC',
+  TargetDesc = 'target_DESC',
+}
+
+export type LinkParent = NavigationMenuLink
+
+export type LinkParentConnectInput = {
+  NavigationMenuLink?: InputMaybe<NavigationMenuLinkConnectInput>
+}
+
+export type LinkParentCreateInput = {
+  NavigationMenuLink?: InputMaybe<NavigationMenuLinkCreateInput>
+}
+
+export type LinkParentCreateManyInlineInput = {
+  /** Create and connect multiple existing LinkParent documents */
+  create?: InputMaybe<Array<LinkParentCreateInput>>
+}
+
+export type LinkParentCreateOneInlineInput = {
+  /** Create and connect one LinkParent document */
+  create?: InputMaybe<LinkParentCreateInput>
+}
+
+export type LinkParentCreateWithPositionInput = {
+  NavigationMenuLink?: InputMaybe<NavigationMenuLinkCreateWithPositionInput>
+}
+
+export type LinkParentUpdateInput = {
+  NavigationMenuLink?: InputMaybe<NavigationMenuLinkUpdateInput>
+}
+
+export type LinkParentUpdateManyInlineInput = {
+  /** Create and connect multiple LinkParent component instances */
+  create?: InputMaybe<Array<LinkParentCreateWithPositionInput>>
+  /** Delete multiple LinkParent documents */
+  delete?: InputMaybe<Array<LinkParentWhereUniqueInput>>
+  /** Update multiple LinkParent component instances */
+  update?: InputMaybe<
+    Array<LinkParentUpdateWithNestedWhereUniqueAndPositionInput>
+  >
+  /** Upsert multiple LinkParent component instances */
+  upsert?: InputMaybe<
+    Array<LinkParentUpsertWithNestedWhereUniqueAndPositionInput>
+  >
+}
+
+export type LinkParentUpdateManyWithNestedWhereInput = {
+  NavigationMenuLink?: InputMaybe<NavigationMenuLinkUpdateManyWithNestedWhereInput>
+}
+
+export type LinkParentUpdateOneInlineInput = {
+  /** Create and connect one LinkParent document */
+  create?: InputMaybe<LinkParentCreateInput>
+  /** Delete currently connected LinkParent document */
+  delete?: InputMaybe<Scalars['Boolean']['input']>
+  /** Update single LinkParent document */
+  update?: InputMaybe<LinkParentUpdateWithNestedWhereUniqueInput>
+  /** Upsert single LinkParent document */
+  upsert?: InputMaybe<LinkParentUpsertWithNestedWhereUniqueInput>
+}
+
+export type LinkParentUpdateWithNestedWhereUniqueAndPositionInput = {
+  NavigationMenuLink?: InputMaybe<NavigationMenuLinkUpdateWithNestedWhereUniqueAndPositionInput>
+}
+
+export type LinkParentUpdateWithNestedWhereUniqueInput = {
+  NavigationMenuLink?: InputMaybe<NavigationMenuLinkUpdateWithNestedWhereUniqueInput>
+}
+
+export type LinkParentUpsertWithNestedWhereUniqueAndPositionInput = {
+  NavigationMenuLink?: InputMaybe<NavigationMenuLinkUpsertWithNestedWhereUniqueAndPositionInput>
+}
+
+export type LinkParentUpsertWithNestedWhereUniqueInput = {
+  NavigationMenuLink?: InputMaybe<NavigationMenuLinkUpsertWithNestedWhereUniqueInput>
+}
+
+export type LinkParentWhereInput = {
+  NavigationMenuLink?: InputMaybe<NavigationMenuLinkWhereInput>
+}
+
+export type LinkParentWhereUniqueInput = {
+  NavigationMenuLink?: InputMaybe<NavigationMenuLinkWhereUniqueInput>
+}
+
+export type LinkUpdateInput = {
+  label?: InputMaybe<Scalars['String']['input']>
+  target?: InputMaybe<Scalars['String']['input']>
+}
+
+export type LinkUpdateManyInlineInput = {
+  /** Create and connect multiple Link component instances */
+  create?: InputMaybe<Array<LinkCreateWithPositionInput>>
+  /** Delete multiple Link documents */
+  delete?: InputMaybe<Array<LinkWhereUniqueInput>>
+  /** Update multiple Link component instances */
+  update?: InputMaybe<
+    Array<LinkUpdateWithNestedWhereUniqueAndPositionInput>
+  >
+  /** Upsert multiple Link component instances */
+  upsert?: InputMaybe<
+    Array<LinkUpsertWithNestedWhereUniqueAndPositionInput>
+  >
+}
+
+export type LinkUpdateManyInput = {
+  label?: InputMaybe<Scalars['String']['input']>
+  target?: InputMaybe<Scalars['String']['input']>
+}
+
+export type LinkUpdateManyWithNestedWhereInput = {
+  /** Update many input */
+  data: LinkUpdateManyInput
+  /** Document search */
+  where: LinkWhereInput
+}
+
+export type LinkUpdateOneInlineInput = {
+  /** Create and connect one Link document */
+  create?: InputMaybe<LinkCreateInput>
+  /** Delete currently connected Link document */
+  delete?: InputMaybe<Scalars['Boolean']['input']>
+  /** Update single Link document */
+  update?: InputMaybe<LinkUpdateWithNestedWhereUniqueInput>
+  /** Upsert single Link document */
+  upsert?: InputMaybe<LinkUpsertWithNestedWhereUniqueInput>
+}
+
+export type LinkUpdateWithNestedWhereUniqueAndPositionInput = {
+  /** Document to update */
+  data?: InputMaybe<LinkUpdateInput>
+  /** Position in the list of existing component instances, will default to appending at the end of list */
+  position?: InputMaybe<ConnectPositionInput>
+  /** Unique component instance search */
+  where: LinkWhereUniqueInput
+}
+
+export type LinkUpdateWithNestedWhereUniqueInput = {
+  /** Document to update */
+  data: LinkUpdateInput
+  /** Unique document search */
+  where: LinkWhereUniqueInput
+}
+
+export type LinkUpsertInput = {
+  /** Create document if it didn't exist */
+  create: LinkCreateInput
+  /** Update document if it exists */
+  update: LinkUpdateInput
+}
+
+export type LinkUpsertWithNestedWhereUniqueAndPositionInput = {
+  /** Document to upsert */
+  data?: InputMaybe<LinkUpsertInput>
+  /** Position in the list of existing component instances, will default to appending at the end of list */
+  position?: InputMaybe<ConnectPositionInput>
+  /** Unique component instance search */
+  where: LinkWhereUniqueInput
+}
+
+export type LinkUpsertWithNestedWhereUniqueInput = {
+  /** Upsert data */
+  data: LinkUpsertInput
+  /** Unique document search */
+  where: LinkWhereUniqueInput
+}
+
+/** Identifies documents */
+export type LinkWhereInput = {
+  /** Logical AND on all given filters. */
+  AND?: InputMaybe<Array<LinkWhereInput>>
+  /** Logical NOT on all given filters combined by AND. */
+  NOT?: InputMaybe<Array<LinkWhereInput>>
+  /** Logical OR on all given filters. */
+  OR?: InputMaybe<Array<LinkWhereInput>>
+  /** Contains search across all appropriate fields. */
+  _search?: InputMaybe<Scalars['String']['input']>
+  id?: InputMaybe<Scalars['ID']['input']>
+  /** All values containing the given string. */
+  id_contains?: InputMaybe<Scalars['ID']['input']>
+  /** All values ending with the given string. */
+  id_ends_with?: InputMaybe<Scalars['ID']['input']>
+  /** All values that are contained in given list. */
+  id_in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
+  /** Any other value that exists and is not equal to the given value. */
+  id_not?: InputMaybe<Scalars['ID']['input']>
+  /** All values not containing the given string. */
+  id_not_contains?: InputMaybe<Scalars['ID']['input']>
+  /** All values not ending with the given string */
+  id_not_ends_with?: InputMaybe<Scalars['ID']['input']>
+  /** All values that are not contained in given list. */
+  id_not_in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
+  /** All values not starting with the given string. */
+  id_not_starts_with?: InputMaybe<Scalars['ID']['input']>
+  /** All values starting with the given string. */
+  id_starts_with?: InputMaybe<Scalars['ID']['input']>
+  label?: InputMaybe<Scalars['String']['input']>
+  /** All values containing the given string. */
+  label_contains?: InputMaybe<Scalars['String']['input']>
+  /** All values ending with the given string. */
+  label_ends_with?: InputMaybe<Scalars['String']['input']>
+  /** All values that are contained in given list. */
+  label_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  /** Any other value that exists and is not equal to the given value. */
+  label_not?: InputMaybe<Scalars['String']['input']>
+  /** All values not containing the given string. */
+  label_not_contains?: InputMaybe<Scalars['String']['input']>
+  /** All values not ending with the given string */
+  label_not_ends_with?: InputMaybe<Scalars['String']['input']>
+  /** All values that are not contained in given list. */
+  label_not_in?: InputMaybe<
+    Array<InputMaybe<Scalars['String']['input']>>
+  >
+  /** All values not starting with the given string. */
+  label_not_starts_with?: InputMaybe<Scalars['String']['input']>
+  /** All values starting with the given string. */
+  label_starts_with?: InputMaybe<Scalars['String']['input']>
+  target?: InputMaybe<Scalars['String']['input']>
+  /** All values containing the given string. */
+  target_contains?: InputMaybe<Scalars['String']['input']>
+  /** All values ending with the given string. */
+  target_ends_with?: InputMaybe<Scalars['String']['input']>
+  /** All values that are contained in given list. */
+  target_in?: InputMaybe<
+    Array<InputMaybe<Scalars['String']['input']>>
+  >
+  /** Any other value that exists and is not equal to the given value. */
+  target_not?: InputMaybe<Scalars['String']['input']>
+  /** All values not containing the given string. */
+  target_not_contains?: InputMaybe<Scalars['String']['input']>
+  /** All values not ending with the given string */
+  target_not_ends_with?: InputMaybe<Scalars['String']['input']>
+  /** All values that are not contained in given list. */
+  target_not_in?: InputMaybe<
+    Array<InputMaybe<Scalars['String']['input']>>
+  >
+  /** All values not starting with the given string. */
+  target_not_starts_with?: InputMaybe<Scalars['String']['input']>
+  /** All values starting with the given string. */
+  target_starts_with?: InputMaybe<Scalars['String']['input']>
+}
+
+/** References Link record uniquely */
+export type LinkWhereUniqueInput = {
+  id?: InputMaybe<Scalars['ID']['input']>
+}
+
 /** Locale system enumeration */
 export enum Locale {
   /** System locale */
@@ -5259,6 +5666,371 @@ export type NavigationItemWhereInput = {
 export type NavigationItemWhereUniqueInput = {
   id?: InputMaybe<Scalars['ID']['input']>
   label?: InputMaybe<Scalars['String']['input']>
+}
+
+export type NavigationMenuLink = {
+  __typename?: 'NavigationMenuLink'
+  /** The unique identifier */
+  id: Scalars['ID']['output']
+  links: Array<Link>
+  /** System stage field */
+  stage: Stage
+  title: Scalars['String']['output']
+}
+
+export type NavigationMenuLinkLinksArgs = {
+  after?: InputMaybe<Scalars['String']['input']>
+  before?: InputMaybe<Scalars['String']['input']>
+  first?: InputMaybe<Scalars['Int']['input']>
+  forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>
+  last?: InputMaybe<Scalars['Int']['input']>
+  locales?: InputMaybe<Array<Locale>>
+  orderBy?: InputMaybe<LinkOrderByInput>
+  skip?: InputMaybe<Scalars['Int']['input']>
+  where?: InputMaybe<LinkWhereInput>
+}
+
+export type NavigationMenuLinkConnectInput = {
+  /** Allow to specify document position in list of connected documents, will default to appending at end of list */
+  position?: InputMaybe<ConnectPositionInput>
+  /** Document to connect */
+  where: NavigationMenuLinkWhereUniqueInput
+}
+
+/** A connection to a list of items. */
+export type NavigationMenuLinkConnection = {
+  __typename?: 'NavigationMenuLinkConnection'
+  aggregate: Aggregate
+  /** A list of edges. */
+  edges: Array<NavigationMenuLinkEdge>
+  /** Information to aid in pagination. */
+  pageInfo: PageInfo
+}
+
+export type NavigationMenuLinkCreateInput = {
+  links?: InputMaybe<LinkCreateManyInlineInput>
+  title: Scalars['String']['input']
+}
+
+export type NavigationMenuLinkCreateManyInlineInput = {
+  /** Create and connect multiple existing NavigationMenuLink documents */
+  create?: InputMaybe<Array<NavigationMenuLinkCreateInput>>
+}
+
+export type NavigationMenuLinkCreateOneInlineInput = {
+  /** Create and connect one NavigationMenuLink document */
+  create?: InputMaybe<NavigationMenuLinkCreateInput>
+}
+
+export type NavigationMenuLinkCreateWithPositionInput = {
+  /** Document to create */
+  data: NavigationMenuLinkCreateInput
+  /** Position in the list of existing component instances, will default to appending at the end of list */
+  position?: InputMaybe<ConnectPositionInput>
+}
+
+/** An edge in a connection. */
+export type NavigationMenuLinkEdge = {
+  __typename?: 'NavigationMenuLinkEdge'
+  /** A cursor for use in pagination. */
+  cursor: Scalars['String']['output']
+  /** The item at the end of the edge. */
+  node: NavigationMenuLink
+}
+
+/** Identifies documents */
+export type NavigationMenuLinkManyWhereInput = {
+  /** Logical AND on all given filters. */
+  AND?: InputMaybe<Array<NavigationMenuLinkWhereInput>>
+  /** Logical NOT on all given filters combined by AND. */
+  NOT?: InputMaybe<Array<NavigationMenuLinkWhereInput>>
+  /** Logical OR on all given filters. */
+  OR?: InputMaybe<Array<NavigationMenuLinkWhereInput>>
+  /** Contains search across all appropriate fields. */
+  _search?: InputMaybe<Scalars['String']['input']>
+  id?: InputMaybe<Scalars['ID']['input']>
+  /** All values containing the given string. */
+  id_contains?: InputMaybe<Scalars['ID']['input']>
+  /** All values ending with the given string. */
+  id_ends_with?: InputMaybe<Scalars['ID']['input']>
+  /** All values that are contained in given list. */
+  id_in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
+  /** Any other value that exists and is not equal to the given value. */
+  id_not?: InputMaybe<Scalars['ID']['input']>
+  /** All values not containing the given string. */
+  id_not_contains?: InputMaybe<Scalars['ID']['input']>
+  /** All values not ending with the given string */
+  id_not_ends_with?: InputMaybe<Scalars['ID']['input']>
+  /** All values that are not contained in given list. */
+  id_not_in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
+  /** All values not starting with the given string. */
+  id_not_starts_with?: InputMaybe<Scalars['ID']['input']>
+  /** All values starting with the given string. */
+  id_starts_with?: InputMaybe<Scalars['ID']['input']>
+  links_every?: InputMaybe<LinkWhereInput>
+  links_none?: InputMaybe<LinkWhereInput>
+  links_some?: InputMaybe<LinkWhereInput>
+  title?: InputMaybe<Scalars['String']['input']>
+  /** All values containing the given string. */
+  title_contains?: InputMaybe<Scalars['String']['input']>
+  /** All values ending with the given string. */
+  title_ends_with?: InputMaybe<Scalars['String']['input']>
+  /** All values that are contained in given list. */
+  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  /** Any other value that exists and is not equal to the given value. */
+  title_not?: InputMaybe<Scalars['String']['input']>
+  /** All values not containing the given string. */
+  title_not_contains?: InputMaybe<Scalars['String']['input']>
+  /** All values not ending with the given string */
+  title_not_ends_with?: InputMaybe<Scalars['String']['input']>
+  /** All values that are not contained in given list. */
+  title_not_in?: InputMaybe<
+    Array<InputMaybe<Scalars['String']['input']>>
+  >
+  /** All values not starting with the given string. */
+  title_not_starts_with?: InputMaybe<Scalars['String']['input']>
+  /** All values starting with the given string. */
+  title_starts_with?: InputMaybe<Scalars['String']['input']>
+}
+
+export enum NavigationMenuLinkOrderByInput {
+  IdAsc = 'id_ASC',
+  IdDesc = 'id_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC',
+}
+
+export type NavigationMenuLinkParent = Footer
+
+export type NavigationMenuLinkParentConnectInput = {
+  Footer?: InputMaybe<FooterConnectInput>
+}
+
+export type NavigationMenuLinkParentCreateInput = {
+  Footer?: InputMaybe<FooterCreateInput>
+}
+
+export type NavigationMenuLinkParentCreateManyInlineInput = {
+  /** Create and connect multiple existing NavigationMenuLinkParent documents */
+  create?: InputMaybe<Array<NavigationMenuLinkParentCreateInput>>
+}
+
+export type NavigationMenuLinkParentCreateOneInlineInput = {
+  /** Create and connect one NavigationMenuLinkParent document */
+  create?: InputMaybe<NavigationMenuLinkParentCreateInput>
+}
+
+export type NavigationMenuLinkParentCreateWithPositionInput = {
+  Footer?: InputMaybe<FooterCreateWithPositionInput>
+}
+
+export type NavigationMenuLinkParentUpdateInput = {
+  Footer?: InputMaybe<FooterUpdateInput>
+}
+
+export type NavigationMenuLinkParentUpdateManyInlineInput = {
+  /** Create and connect multiple NavigationMenuLinkParent component instances */
+  create?: InputMaybe<
+    Array<NavigationMenuLinkParentCreateWithPositionInput>
+  >
+  /** Delete multiple NavigationMenuLinkParent documents */
+  delete?: InputMaybe<Array<NavigationMenuLinkParentWhereUniqueInput>>
+  /** Update multiple NavigationMenuLinkParent component instances */
+  update?: InputMaybe<
+    Array<NavigationMenuLinkParentUpdateWithNestedWhereUniqueAndPositionInput>
+  >
+  /** Upsert multiple NavigationMenuLinkParent component instances */
+  upsert?: InputMaybe<
+    Array<NavigationMenuLinkParentUpsertWithNestedWhereUniqueAndPositionInput>
+  >
+}
+
+export type NavigationMenuLinkParentUpdateManyWithNestedWhereInput = {
+  Footer?: InputMaybe<FooterUpdateManyWithNestedWhereInput>
+}
+
+export type NavigationMenuLinkParentUpdateOneInlineInput = {
+  /** Create and connect one NavigationMenuLinkParent document */
+  create?: InputMaybe<NavigationMenuLinkParentCreateInput>
+  /** Delete currently connected NavigationMenuLinkParent document */
+  delete?: InputMaybe<Scalars['Boolean']['input']>
+  /** Update single NavigationMenuLinkParent document */
+  update?: InputMaybe<NavigationMenuLinkParentUpdateWithNestedWhereUniqueInput>
+  /** Upsert single NavigationMenuLinkParent document */
+  upsert?: InputMaybe<NavigationMenuLinkParentUpsertWithNestedWhereUniqueInput>
+}
+
+export type NavigationMenuLinkParentUpdateWithNestedWhereUniqueAndPositionInput =
+  {
+    Footer?: InputMaybe<FooterUpdateWithNestedWhereUniqueAndPositionInput>
+  }
+
+export type NavigationMenuLinkParentUpdateWithNestedWhereUniqueInput =
+  {
+    Footer?: InputMaybe<FooterUpdateWithNestedWhereUniqueInput>
+  }
+
+export type NavigationMenuLinkParentUpsertWithNestedWhereUniqueAndPositionInput =
+  {
+    Footer?: InputMaybe<FooterUpsertWithNestedWhereUniqueAndPositionInput>
+  }
+
+export type NavigationMenuLinkParentUpsertWithNestedWhereUniqueInput =
+  {
+    Footer?: InputMaybe<FooterUpsertWithNestedWhereUniqueInput>
+  }
+
+export type NavigationMenuLinkParentWhereInput = {
+  Footer?: InputMaybe<FooterWhereInput>
+}
+
+export type NavigationMenuLinkParentWhereUniqueInput = {
+  Footer?: InputMaybe<FooterWhereUniqueInput>
+}
+
+export type NavigationMenuLinkUpdateInput = {
+  links?: InputMaybe<LinkUpdateManyInlineInput>
+  title?: InputMaybe<Scalars['String']['input']>
+}
+
+export type NavigationMenuLinkUpdateManyInlineInput = {
+  /** Create and connect multiple NavigationMenuLink component instances */
+  create?: InputMaybe<
+    Array<NavigationMenuLinkCreateWithPositionInput>
+  >
+  /** Delete multiple NavigationMenuLink documents */
+  delete?: InputMaybe<Array<NavigationMenuLinkWhereUniqueInput>>
+  /** Update multiple NavigationMenuLink component instances */
+  update?: InputMaybe<
+    Array<NavigationMenuLinkUpdateWithNestedWhereUniqueAndPositionInput>
+  >
+  /** Upsert multiple NavigationMenuLink component instances */
+  upsert?: InputMaybe<
+    Array<NavigationMenuLinkUpsertWithNestedWhereUniqueAndPositionInput>
+  >
+}
+
+export type NavigationMenuLinkUpdateManyInput = {
+  title?: InputMaybe<Scalars['String']['input']>
+}
+
+export type NavigationMenuLinkUpdateManyWithNestedWhereInput = {
+  /** Update many input */
+  data: NavigationMenuLinkUpdateManyInput
+  /** Document search */
+  where: NavigationMenuLinkWhereInput
+}
+
+export type NavigationMenuLinkUpdateOneInlineInput = {
+  /** Create and connect one NavigationMenuLink document */
+  create?: InputMaybe<NavigationMenuLinkCreateInput>
+  /** Delete currently connected NavigationMenuLink document */
+  delete?: InputMaybe<Scalars['Boolean']['input']>
+  /** Update single NavigationMenuLink document */
+  update?: InputMaybe<NavigationMenuLinkUpdateWithNestedWhereUniqueInput>
+  /** Upsert single NavigationMenuLink document */
+  upsert?: InputMaybe<NavigationMenuLinkUpsertWithNestedWhereUniqueInput>
+}
+
+export type NavigationMenuLinkUpdateWithNestedWhereUniqueAndPositionInput =
+  {
+    /** Document to update */
+    data?: InputMaybe<NavigationMenuLinkUpdateInput>
+    /** Position in the list of existing component instances, will default to appending at the end of list */
+    position?: InputMaybe<ConnectPositionInput>
+    /** Unique component instance search */
+    where: NavigationMenuLinkWhereUniqueInput
+  }
+
+export type NavigationMenuLinkUpdateWithNestedWhereUniqueInput = {
+  /** Document to update */
+  data: NavigationMenuLinkUpdateInput
+  /** Unique document search */
+  where: NavigationMenuLinkWhereUniqueInput
+}
+
+export type NavigationMenuLinkUpsertInput = {
+  /** Create document if it didn't exist */
+  create: NavigationMenuLinkCreateInput
+  /** Update document if it exists */
+  update: NavigationMenuLinkUpdateInput
+}
+
+export type NavigationMenuLinkUpsertWithNestedWhereUniqueAndPositionInput =
+  {
+    /** Document to upsert */
+    data?: InputMaybe<NavigationMenuLinkUpsertInput>
+    /** Position in the list of existing component instances, will default to appending at the end of list */
+    position?: InputMaybe<ConnectPositionInput>
+    /** Unique component instance search */
+    where: NavigationMenuLinkWhereUniqueInput
+  }
+
+export type NavigationMenuLinkUpsertWithNestedWhereUniqueInput = {
+  /** Upsert data */
+  data: NavigationMenuLinkUpsertInput
+  /** Unique document search */
+  where: NavigationMenuLinkWhereUniqueInput
+}
+
+/** Identifies documents */
+export type NavigationMenuLinkWhereInput = {
+  /** Logical AND on all given filters. */
+  AND?: InputMaybe<Array<NavigationMenuLinkWhereInput>>
+  /** Logical NOT on all given filters combined by AND. */
+  NOT?: InputMaybe<Array<NavigationMenuLinkWhereInput>>
+  /** Logical OR on all given filters. */
+  OR?: InputMaybe<Array<NavigationMenuLinkWhereInput>>
+  /** Contains search across all appropriate fields. */
+  _search?: InputMaybe<Scalars['String']['input']>
+  id?: InputMaybe<Scalars['ID']['input']>
+  /** All values containing the given string. */
+  id_contains?: InputMaybe<Scalars['ID']['input']>
+  /** All values ending with the given string. */
+  id_ends_with?: InputMaybe<Scalars['ID']['input']>
+  /** All values that are contained in given list. */
+  id_in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
+  /** Any other value that exists and is not equal to the given value. */
+  id_not?: InputMaybe<Scalars['ID']['input']>
+  /** All values not containing the given string. */
+  id_not_contains?: InputMaybe<Scalars['ID']['input']>
+  /** All values not ending with the given string */
+  id_not_ends_with?: InputMaybe<Scalars['ID']['input']>
+  /** All values that are not contained in given list. */
+  id_not_in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
+  /** All values not starting with the given string. */
+  id_not_starts_with?: InputMaybe<Scalars['ID']['input']>
+  /** All values starting with the given string. */
+  id_starts_with?: InputMaybe<Scalars['ID']['input']>
+  links_every?: InputMaybe<LinkWhereInput>
+  links_none?: InputMaybe<LinkWhereInput>
+  links_some?: InputMaybe<LinkWhereInput>
+  title?: InputMaybe<Scalars['String']['input']>
+  /** All values containing the given string. */
+  title_contains?: InputMaybe<Scalars['String']['input']>
+  /** All values ending with the given string. */
+  title_ends_with?: InputMaybe<Scalars['String']['input']>
+  /** All values that are contained in given list. */
+  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  /** Any other value that exists and is not equal to the given value. */
+  title_not?: InputMaybe<Scalars['String']['input']>
+  /** All values not containing the given string. */
+  title_not_contains?: InputMaybe<Scalars['String']['input']>
+  /** All values not ending with the given string */
+  title_not_ends_with?: InputMaybe<Scalars['String']['input']>
+  /** All values that are not contained in given list. */
+  title_not_in?: InputMaybe<
+    Array<InputMaybe<Scalars['String']['input']>>
+  >
+  /** All values not starting with the given string. */
+  title_not_starts_with?: InputMaybe<Scalars['String']['input']>
+  /** All values starting with the given string. */
+  title_starts_with?: InputMaybe<Scalars['String']['input']>
+}
+
+/** References NavigationMenuLink record uniquely */
+export type NavigationMenuLinkWhereUniqueInput = {
+  id?: InputMaybe<Scalars['ID']['input']>
 }
 
 /** An object with an ID */
@@ -12985,6 +13757,16 @@ export type MainQuery = {
         url: string
         icon: { __typename?: 'Asset'; url: string }
       }>
+      navigationMenuLinks: Array<{
+        __typename?: 'NavigationMenuLink'
+        id: string
+        title: string
+        links: Array<{
+          __typename?: 'Link'
+          label: string
+          target: string
+        }>
+      }>
     } | null
   } | null
 }
@@ -13120,6 +13902,14 @@ export const MainDocument = gql`
           id
           name
           url
+        }
+        navigationMenuLinks {
+          id
+          title
+          links {
+            label
+            target
+          }
         }
       }
     }

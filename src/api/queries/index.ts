@@ -132,6 +132,14 @@ export const GET_MAIN = gql`
           name
           url
         }
+        navigationMenuLinks {
+          id
+          title
+          links {
+            label
+            target
+          }
+        }
       }
     }
   }
