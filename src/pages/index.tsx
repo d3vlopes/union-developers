@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { GetStaticProps } from 'next'
 
 import { client } from '@/libs/graphql/client/apollo'
@@ -13,6 +12,8 @@ import { mainLayoutMock } from '@/presentation/layouts/main/mocks/data'
 
 import { MainLayout, MainLayoutProps } from '@/presentation/layouts'
 
+import { HeaderMapper } from '@/presentation/mappers'
+
 export default function Index(props: MainLayoutProps) {
   return <MainLayout {...props} />
 }
@@ -24,11 +25,14 @@ export const getStaticProps: GetStaticProps<
     query: GET_MAIN,
   })
 
-  console.log(data.page)
+  const api = data.pages[0]
 
   return {
     props: {
-      base: mainLayoutMock.base,
+      base: {
+        header: HeaderMapper.toDomain(api.header),
+        footer: mainLayoutMock.base.footer,
+      },
       hero: heroMockFactory['default'],
       aboutSection: {
         id: 'about',

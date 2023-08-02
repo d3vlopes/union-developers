@@ -2,7 +2,7 @@ import { gql } from '@apollo/client'
 
 export const GET_MAIN = gql`
   query Main {
-    page(where: { id: "clkrmn77r1qcn0bkiyuxchaor" }) {
+    pages {
       header {
         logo {
           description
@@ -62,15 +62,13 @@ export const GET_MAIN = gql`
         }
       }
       pillarsSection {
-        ... on PillarSection {
+        sectionId
+        heading
+        description
+        methodologys {
+          id
+          name
           description
-          heading
-          sectionId
-          methodologys {
-            description
-            id
-            name
-          }
         }
       }
       benefitsSection {

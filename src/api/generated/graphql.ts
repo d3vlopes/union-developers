@@ -4529,95 +4529,87 @@ export enum MethodologyOrderByInput {
   NameDesc = 'name_DESC',
 }
 
-export type MethodologyParent = Page | PillarSection
+export type MethodologyParent = PillarSection
 
 export type MethodologyParentConnectInput = {
-  Page?: InputMaybe<PageConnectInput>
   PillarSection?: InputMaybe<PillarSectionConnectInput>
 }
 
 export type MethodologyParentCreateInput = {
-  Page?: InputMaybe<PageCreateInput>
   PillarSection?: InputMaybe<PillarSectionCreateInput>
 }
 
 export type MethodologyParentCreateManyInlineInput = {
-  /** Connect multiple existing MethodologyParent documents */
-  connect?: InputMaybe<Array<MethodologyParentWhereUniqueInput>>
   /** Create and connect multiple existing MethodologyParent documents */
   create?: InputMaybe<Array<MethodologyParentCreateInput>>
 }
 
 export type MethodologyParentCreateOneInlineInput = {
-  /** Connect one existing MethodologyParent document */
-  connect?: InputMaybe<MethodologyParentWhereUniqueInput>
   /** Create and connect one MethodologyParent document */
   create?: InputMaybe<MethodologyParentCreateInput>
 }
 
+export type MethodologyParentCreateWithPositionInput = {
+  PillarSection?: InputMaybe<PillarSectionCreateWithPositionInput>
+}
+
 export type MethodologyParentUpdateInput = {
-  Page?: InputMaybe<PageUpdateInput>
   PillarSection?: InputMaybe<PillarSectionUpdateInput>
 }
 
 export type MethodologyParentUpdateManyInlineInput = {
-  /** Connect multiple existing MethodologyParent documents */
-  connect?: InputMaybe<Array<MethodologyParentConnectInput>>
-  /** Create and connect multiple MethodologyParent documents */
-  create?: InputMaybe<Array<MethodologyParentCreateInput>>
+  /** Create and connect multiple MethodologyParent component instances */
+  create?: InputMaybe<Array<MethodologyParentCreateWithPositionInput>>
   /** Delete multiple MethodologyParent documents */
   delete?: InputMaybe<Array<MethodologyParentWhereUniqueInput>>
-  /** Disconnect multiple MethodologyParent documents */
-  disconnect?: InputMaybe<Array<MethodologyParentWhereUniqueInput>>
-  /** Override currently-connected documents with multiple existing MethodologyParent documents */
-  set?: InputMaybe<Array<MethodologyParentWhereUniqueInput>>
-  /** Update multiple MethodologyParent documents */
+  /** Update multiple MethodologyParent component instances */
   update?: InputMaybe<
-    Array<MethodologyParentUpdateWithNestedWhereUniqueInput>
+    Array<MethodologyParentUpdateWithNestedWhereUniqueAndPositionInput>
   >
-  /** Upsert multiple MethodologyParent documents */
+  /** Upsert multiple MethodologyParent component instances */
   upsert?: InputMaybe<
-    Array<MethodologyParentUpsertWithNestedWhereUniqueInput>
+    Array<MethodologyParentUpsertWithNestedWhereUniqueAndPositionInput>
   >
 }
 
 export type MethodologyParentUpdateManyWithNestedWhereInput = {
-  Page?: InputMaybe<PageUpdateManyWithNestedWhereInput>
   PillarSection?: InputMaybe<PillarSectionUpdateManyWithNestedWhereInput>
 }
 
 export type MethodologyParentUpdateOneInlineInput = {
-  /** Connect existing MethodologyParent document */
-  connect?: InputMaybe<MethodologyParentWhereUniqueInput>
   /** Create and connect one MethodologyParent document */
   create?: InputMaybe<MethodologyParentCreateInput>
   /** Delete currently connected MethodologyParent document */
   delete?: InputMaybe<Scalars['Boolean']['input']>
-  /** Disconnect currently connected MethodologyParent document */
-  disconnect?: InputMaybe<Scalars['Boolean']['input']>
   /** Update single MethodologyParent document */
   update?: InputMaybe<MethodologyParentUpdateWithNestedWhereUniqueInput>
   /** Upsert single MethodologyParent document */
   upsert?: InputMaybe<MethodologyParentUpsertWithNestedWhereUniqueInput>
 }
 
+export type MethodologyParentUpdateWithNestedWhereUniqueAndPositionInput =
+  {
+    PillarSection?: InputMaybe<PillarSectionUpdateWithNestedWhereUniqueAndPositionInput>
+  }
+
 export type MethodologyParentUpdateWithNestedWhereUniqueInput = {
-  Page?: InputMaybe<PageUpdateWithNestedWhereUniqueInput>
   PillarSection?: InputMaybe<PillarSectionUpdateWithNestedWhereUniqueInput>
 }
 
+export type MethodologyParentUpsertWithNestedWhereUniqueAndPositionInput =
+  {
+    PillarSection?: InputMaybe<PillarSectionUpsertWithNestedWhereUniqueAndPositionInput>
+  }
+
 export type MethodologyParentUpsertWithNestedWhereUniqueInput = {
-  Page?: InputMaybe<PageUpsertWithNestedWhereUniqueInput>
   PillarSection?: InputMaybe<PillarSectionUpsertWithNestedWhereUniqueInput>
 }
 
 export type MethodologyParentWhereInput = {
-  Page?: InputMaybe<PageWhereInput>
   PillarSection?: InputMaybe<PillarSectionWhereInput>
 }
 
 export type MethodologyParentWhereUniqueInput = {
-  Page?: InputMaybe<PageWhereUniqueInput>
   PillarSection?: InputMaybe<PillarSectionWhereUniqueInput>
 }
 
@@ -6043,36 +6035,36 @@ export type Node = {
 
 export type Page = Node & {
   __typename?: 'Page'
-  aboutSection?: Maybe<AboutSection>
-  benefitsSection?: Maybe<BenefitSection>
+  aboutSection: AboutSection
+  benefitsSection: BenefitSection
   /** The time the document was created */
   createdAt: Scalars['DateTime']['output']
   /** User that created this document */
   createdBy?: Maybe<User>
   /** Get the document in other stages */
   documentInStages: Array<Page>
-  faqSection?: Maybe<FaqSection>
-  footer?: Maybe<Footer>
+  faqSection: FaqSection
+  footer: Footer
   /** Cabeçalho */
   header: Header
   /** Seção inicial da landing page */
-  hero?: Maybe<Hero>
+  hero: Hero
   /** List of Page versions */
   history: Array<Version>
   /** The unique identifier */
   id: Scalars['ID']['output']
-  pillarsSection?: Maybe<PagepillarsSectionUnion>
+  pillarsSection: PillarSection
   /** The time the document was published. Null on documents in draft stage. */
   publishedAt?: Maybe<Scalars['DateTime']['output']>
   /** User that last published this document */
   publishedBy?: Maybe<User>
   /** Seção para relembrar os visitantes a se inscrever */
-  rememberActionSection?: Maybe<RememberActionSection>
+  rememberActionSection: RememberActionSection
   scheduledIn: Array<ScheduledOperation>
   /** System stage field */
   stage: Stage
-  stepsSection?: Maybe<StepSection>
-  testimonialSection?: Maybe<TestimonialSection>
+  stepsSection: StepSection
+  testimonialSection: TestimonialSection
   /** The time the document was updated */
   updatedAt: Scalars['DateTime']['output']
   /** User that last updated this document */
@@ -6185,17 +6177,17 @@ export type PageConnection = {
 }
 
 export type PageCreateInput = {
-  aboutSection?: InputMaybe<AboutSectionCreateOneInlineInput>
-  benefitsSection?: InputMaybe<BenefitSectionCreateOneInlineInput>
+  aboutSection: AboutSectionCreateOneInlineInput
+  benefitsSection: BenefitSectionCreateOneInlineInput
   createdAt?: InputMaybe<Scalars['DateTime']['input']>
-  faqSection?: InputMaybe<FaqSectionCreateOneInlineInput>
-  footer?: InputMaybe<FooterCreateOneInlineInput>
+  faqSection: FaqSectionCreateOneInlineInput
+  footer: FooterCreateOneInlineInput
   header: HeaderCreateOneInlineInput
-  hero?: InputMaybe<HeroCreateOneInlineInput>
-  pillarsSection?: InputMaybe<PagepillarsSectionUnionCreateOneInlineInput>
-  rememberActionSection?: InputMaybe<RememberActionSectionCreateOneInlineInput>
-  stepsSection?: InputMaybe<StepSectionCreateOneInlineInput>
-  testimonialSection?: InputMaybe<TestimonialSectionCreateOneInlineInput>
+  hero: HeroCreateOneInlineInput
+  pillarsSection: PillarSectionCreateOneInlineInput
+  rememberActionSection: RememberActionSectionCreateOneInlineInput
+  stepsSection: StepSectionCreateOneInlineInput
+  testimonialSection: TestimonialSectionCreateOneInlineInput
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>
 }
 
@@ -6295,10 +6287,7 @@ export type PageManyWhereInput = {
   id_not_starts_with?: InputMaybe<Scalars['ID']['input']>
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']['input']>
-  /** All values in which the modular component is connected to the given models */
-  pillarsSection?: InputMaybe<PagepillarsSectionUnionWhereInput>
-  /** All values in which the union is empty. */
-  pillarsSection_empty?: InputMaybe<Scalars['Boolean']['input']>
+  pillarsSection?: InputMaybe<PillarSectionWhereInput>
   publishedAt?: InputMaybe<Scalars['DateTime']['input']>
   /** All values greater than the given value. */
   publishedAt_gt?: InputMaybe<Scalars['DateTime']['input']>
@@ -6365,7 +6354,7 @@ export type PageUpdateInput = {
   footer?: InputMaybe<FooterUpdateOneInlineInput>
   header?: InputMaybe<HeaderUpdateOneInlineInput>
   hero?: InputMaybe<HeroUpdateOneInlineInput>
-  pillarsSection?: InputMaybe<PagepillarsSectionUnionUpdateOneInlineInput>
+  pillarsSection?: InputMaybe<PillarSectionUpdateOneInlineInput>
   rememberActionSection?: InputMaybe<RememberActionSectionUpdateOneInlineInput>
   stepsSection?: InputMaybe<StepSectionUpdateOneInlineInput>
   testimonialSection?: InputMaybe<TestimonialSectionUpdateOneInlineInput>
@@ -6500,10 +6489,7 @@ export type PageWhereInput = {
   id_not_starts_with?: InputMaybe<Scalars['ID']['input']>
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']['input']>
-  /** All values in which the modular component is connected to the given models */
-  pillarsSection?: InputMaybe<PagepillarsSectionUnionWhereInput>
-  /** All values in which the union is empty. */
-  pillarsSection_empty?: InputMaybe<Scalars['Boolean']['input']>
+  pillarsSection?: InputMaybe<PillarSectionWhereInput>
   publishedAt?: InputMaybe<Scalars['DateTime']['input']>
   /** All values greater than the given value. */
   publishedAt_gt?: InputMaybe<Scalars['DateTime']['input']>
@@ -6569,105 +6555,6 @@ export type PageWhereStageInput = {
 /** References Page record uniquely */
 export type PageWhereUniqueInput = {
   id?: InputMaybe<Scalars['ID']['input']>
-}
-
-export type PagepillarsSectionUnion = Methodology | PillarSection
-
-export type PagepillarsSectionUnionConnectInput = {
-  Methodology?: InputMaybe<MethodologyConnectInput>
-  PillarSection?: InputMaybe<PillarSectionConnectInput>
-}
-
-export type PagepillarsSectionUnionCreateInput = {
-  Methodology?: InputMaybe<MethodologyCreateInput>
-  PillarSection?: InputMaybe<PillarSectionCreateInput>
-}
-
-export type PagepillarsSectionUnionCreateManyInlineInput = {
-  /** Create and connect multiple existing PagepillarsSectionUnion documents */
-  create?: InputMaybe<Array<PagepillarsSectionUnionCreateInput>>
-}
-
-export type PagepillarsSectionUnionCreateOneInlineInput = {
-  /** Create and connect one PagepillarsSectionUnion document */
-  create?: InputMaybe<PagepillarsSectionUnionCreateInput>
-}
-
-export type PagepillarsSectionUnionCreateWithPositionInput = {
-  Methodology?: InputMaybe<MethodologyCreateWithPositionInput>
-  PillarSection?: InputMaybe<PillarSectionCreateWithPositionInput>
-}
-
-export type PagepillarsSectionUnionUpdateInput = {
-  Methodology?: InputMaybe<MethodologyUpdateInput>
-  PillarSection?: InputMaybe<PillarSectionUpdateInput>
-}
-
-export type PagepillarsSectionUnionUpdateManyInlineInput = {
-  /** Create and connect multiple PagepillarsSectionUnion component instances */
-  create?: InputMaybe<
-    Array<PagepillarsSectionUnionCreateWithPositionInput>
-  >
-  /** Delete multiple PagepillarsSectionUnion documents */
-  delete?: InputMaybe<Array<PagepillarsSectionUnionWhereUniqueInput>>
-  /** Update multiple PagepillarsSectionUnion component instances */
-  update?: InputMaybe<
-    Array<PagepillarsSectionUnionUpdateWithNestedWhereUniqueAndPositionInput>
-  >
-  /** Upsert multiple PagepillarsSectionUnion component instances */
-  upsert?: InputMaybe<
-    Array<PagepillarsSectionUnionUpsertWithNestedWhereUniqueAndPositionInput>
-  >
-}
-
-export type PagepillarsSectionUnionUpdateManyWithNestedWhereInput = {
-  Methodology?: InputMaybe<MethodologyUpdateManyWithNestedWhereInput>
-  PillarSection?: InputMaybe<PillarSectionUpdateManyWithNestedWhereInput>
-}
-
-export type PagepillarsSectionUnionUpdateOneInlineInput = {
-  /** Create and connect one PagepillarsSectionUnion document */
-  create?: InputMaybe<PagepillarsSectionUnionCreateInput>
-  /** Delete currently connected PagepillarsSectionUnion document */
-  delete?: InputMaybe<Scalars['Boolean']['input']>
-  /** Update single PagepillarsSectionUnion document */
-  update?: InputMaybe<PagepillarsSectionUnionUpdateWithNestedWhereUniqueInput>
-  /** Upsert single PagepillarsSectionUnion document */
-  upsert?: InputMaybe<PagepillarsSectionUnionUpsertWithNestedWhereUniqueInput>
-}
-
-export type PagepillarsSectionUnionUpdateWithNestedWhereUniqueAndPositionInput =
-  {
-    Methodology?: InputMaybe<MethodologyUpdateWithNestedWhereUniqueAndPositionInput>
-    PillarSection?: InputMaybe<PillarSectionUpdateWithNestedWhereUniqueAndPositionInput>
-  }
-
-export type PagepillarsSectionUnionUpdateWithNestedWhereUniqueInput =
-  {
-    Methodology?: InputMaybe<MethodologyUpdateWithNestedWhereUniqueInput>
-    PillarSection?: InputMaybe<PillarSectionUpdateWithNestedWhereUniqueInput>
-  }
-
-export type PagepillarsSectionUnionUpsertWithNestedWhereUniqueAndPositionInput =
-  {
-    Methodology?: InputMaybe<MethodologyUpsertWithNestedWhereUniqueAndPositionInput>
-    PillarSection?: InputMaybe<PillarSectionUpsertWithNestedWhereUniqueAndPositionInput>
-  }
-
-export type PagepillarsSectionUnionUpsertWithNestedWhereUniqueInput =
-  {
-    Methodology?: InputMaybe<MethodologyUpsertWithNestedWhereUniqueInput>
-    PillarSection?: InputMaybe<PillarSectionUpsertWithNestedWhereUniqueInput>
-  }
-
-export type PagepillarsSectionUnionWhereInput = {
-  Methodology?: InputMaybe<MethodologyWhereInput>
-  PillarSection?: InputMaybe<PillarSectionWhereInput>
-}
-
-export type PagepillarsSectionUnionWhereUniqueInput = {
-  Methodology?: InputMaybe<MethodologyWhereUniqueInput>
-  PillarSection?: InputMaybe<PillarSectionWhereUniqueInput>
 }
 
 export type PillarSection = {
@@ -13616,7 +13503,7 @@ export type MainQueryVariables = Exact<{ [key: string]: never }>
 
 export type MainQuery = {
   __typename?: 'Query'
-  page?: {
+  pages: Array<{
     __typename?: 'Page'
     header: {
       __typename?: 'Header'
@@ -13633,7 +13520,7 @@ export type MainQuery = {
         target: string
       }>
     }
-    hero?: {
+    hero: {
       __typename?: 'Hero'
       buttonTarget: string
       buttonText: string
@@ -13646,14 +13533,14 @@ export type MainQuery = {
       backgroundDesktop: { __typename?: 'Asset'; url: string }
       backgroundMobile: { __typename?: 'Asset'; url: string }
       title: { __typename?: 'RichText'; html: string }
-    } | null
-    aboutSection?: {
+    }
+    aboutSection: {
       __typename?: 'AboutSection'
       sectionId: string
       heading: string
       description: { __typename?: 'RichText'; html: string }
-    } | null
-    stepsSection?: {
+    }
+    stepsSection: {
       __typename?: 'StepSection'
       sectionId: string
       heading: string
@@ -13665,8 +13552,8 @@ export type MainQuery = {
         title: string
         id: string
       }>
-    } | null
-    rememberActionSection?: {
+    }
+    rememberActionSection: {
       __typename?: 'RememberActionSection'
       buttonText: string
       buttonTarget: string
@@ -13677,23 +13564,20 @@ export type MainQuery = {
         description?: string | null
         url: string
       }
-    } | null
-    pillarsSection?:
-      | { __typename?: 'Methodology' }
-      | {
-          __typename?: 'PillarSection'
-          description: string
-          heading: string
-          sectionId: string
-          methodologys: Array<{
-            __typename?: 'Methodology'
-            description: string
-            id: string
-            name: string
-          }>
-        }
-      | null
-    benefitsSection?: {
+    }
+    pillarsSection: {
+      __typename?: 'PillarSection'
+      sectionId: string
+      heading: string
+      description: string
+      methodologys: Array<{
+        __typename?: 'Methodology'
+        id: string
+        name: string
+        description: string
+      }>
+    }
+    benefitsSection: {
       __typename?: 'BenefitSection'
       sectionId: string
       heading: string
@@ -13710,8 +13594,8 @@ export type MainQuery = {
           url: string
         }
       }>
-    } | null
-    testimonialSection?: {
+    }
+    testimonialSection: {
       __typename?: 'TestimonialSection'
       sectionId: string
       heading: string
@@ -13730,8 +13614,8 @@ export type MainQuery = {
           icon: { __typename?: 'Asset'; url: string }
         }>
       }>
-    } | null
-    faqSection?: {
+    }
+    faqSection: {
       __typename?: 'FaqSection'
       sectionId: string
       heading: string
@@ -13740,8 +13624,8 @@ export type MainQuery = {
         title: string
         content: { __typename?: 'RichText'; html: string }
       }>
-    } | null
-    footer?: {
+    }
+    footer: {
       __typename?: 'Footer'
       companySlogan: string
       companyName: string
@@ -13767,13 +13651,13 @@ export type MainQuery = {
           target: string
         }>
       }>
-    } | null
-  } | null
+    }
+  }>
 }
 
 export const MainDocument = gql`
   query Main {
-    page(where: { id: "clkrmn77r1qcn0bkiyuxchaor" }) {
+    pages {
       header {
         logo {
           description
@@ -13833,15 +13717,13 @@ export const MainDocument = gql`
         }
       }
       pillarsSection {
-        ... on PillarSection {
+        sectionId
+        heading
+        description
+        methodologys {
+          id
+          name
           description
-          heading
-          sectionId
-          methodologys {
-            description
-            id
-            name
-          }
         }
       }
       benefitsSection {
