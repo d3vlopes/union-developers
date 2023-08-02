@@ -6,13 +6,11 @@ import { MainQuery } from '@/api/generated/graphql'
 
 import { GET_MAIN } from '@/api/queries'
 
-import { heroMockFactory } from '@/presentation/components/molecules/Hero/mock'
-
 import { mainLayoutMock } from '@/presentation/layouts/main/mocks/data'
 
 import { MainLayout, MainLayoutProps } from '@/presentation/layouts'
 
-import { HeaderMapper } from '@/presentation/mappers'
+import { HeaderMapper, HeroMapper } from '@/presentation/mappers'
 
 export default function Index(props: MainLayoutProps) {
   return <MainLayout {...props} />
@@ -33,7 +31,7 @@ export const getStaticProps: GetStaticProps<
         header: HeaderMapper.toDomain(api.header),
         footer: mainLayoutMock.base.footer,
       },
-      hero: heroMockFactory['default'],
+      hero: HeroMapper.toDomain(api.hero),
       aboutSection: {
         id: 'about',
         heading: 'Quem somos?',
