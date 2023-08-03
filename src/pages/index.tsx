@@ -15,6 +15,7 @@ import {
   HeroMapper,
   AboutSectionMapper,
   PillarsSectionMapper,
+  HighlightSectionMapper,
 } from '@/presentation/mappers'
 
 export default function Index(props: MainLayoutProps) {
@@ -41,9 +42,9 @@ export const getStaticProps: GetStaticProps<
       pillarsSection: PillarsSectionMapper.toDomain(
         api.pillarsSection,
       ),
-      highlightSection: {
-        ...mainLayoutMock.highlightSection,
-      },
+      highlightSection: HighlightSectionMapper.toDomain(
+        api.benefitsSection,
+      ),
       stepsSection: {
         ...mainLayoutMock.stepsSection,
       },
