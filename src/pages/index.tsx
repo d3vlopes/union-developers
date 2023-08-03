@@ -48,9 +48,9 @@ export const getStaticProps: GetStaticProps<
         mappers.RememberActionSectionMapper.toDomain(
           api.rememberActionSection,
         ),
-      testimonialSection: {
-        ...mainLayoutMock.testimonialSection,
-      },
+      testimonialSection: mappers.TestimonialSectionMapper.toDomain(
+        api.testimonialSection,
+      ),
       faqSection: {
         ...mainLayoutMock.faqSection,
       },
