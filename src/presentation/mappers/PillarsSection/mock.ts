@@ -4,8 +4,9 @@ import { methodologyCardsMock } from '@/presentation/components/molecules/Method
 export const pillarsSectionMapperMock: PillarsSectionRemote = {
   sectionId: 'pillars',
   heading: 'Pilares',
-  description:
-    'Na Union combinamos o uso de 3 metodologias para você conquistar experiência, saber se posicionar profissionalmente e acelerar sua evolução!',
+  description: {
+    html: '<p>Na Union combinamos o uso de 3 metodologias para você conquistar experiência, saber se posicionar profissionalmente e acelerar sua evolução!</p>',
+  },
   methodologys: methodologyCardsMock.map((methodology) => ({
     id: methodology.id,
     name: methodology.title,

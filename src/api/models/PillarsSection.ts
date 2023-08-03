@@ -5,7 +5,10 @@ import {
 
 export type PillarsSectionRemote = Omit<
   PillarsSectionApi,
-  '__typename' | 'stage' | 'id' | 'methodologys'
+  '__typename' | 'stage' | 'id' | 'methodologys' | 'description'
 > & {
   methodologys: Omit<MethodologyApi, 'stage'>[]
+  description: {
+    html: string
+  }
 }

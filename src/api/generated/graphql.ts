@@ -6559,7 +6559,7 @@ export type PageWhereUniqueInput = {
 
 export type PillarSection = {
   __typename?: 'PillarSection'
-  description: Scalars['String']['output']
+  description: RichText
   heading: Scalars['String']['output']
   /** The unique identifier */
   id: Scalars['ID']['output']
@@ -6599,7 +6599,7 @@ export type PillarSectionConnection = {
 }
 
 export type PillarSectionCreateInput = {
-  description: Scalars['String']['input']
+  description: Scalars['RichTextAST']['input']
   heading: Scalars['String']['input']
   methodologys?: InputMaybe<MethodologyCreateManyInlineInput>
   sectionId: Scalars['String']['input']
@@ -6641,29 +6641,6 @@ export type PillarSectionManyWhereInput = {
   OR?: InputMaybe<Array<PillarSectionWhereInput>>
   /** Contains search across all appropriate fields. */
   _search?: InputMaybe<Scalars['String']['input']>
-  description?: InputMaybe<Scalars['String']['input']>
-  /** All values containing the given string. */
-  description_contains?: InputMaybe<Scalars['String']['input']>
-  /** All values ending with the given string. */
-  description_ends_with?: InputMaybe<Scalars['String']['input']>
-  /** All values that are contained in given list. */
-  description_in?: InputMaybe<
-    Array<InputMaybe<Scalars['String']['input']>>
-  >
-  /** Any other value that exists and is not equal to the given value. */
-  description_not?: InputMaybe<Scalars['String']['input']>
-  /** All values not containing the given string. */
-  description_not_contains?: InputMaybe<Scalars['String']['input']>
-  /** All values not ending with the given string */
-  description_not_ends_with?: InputMaybe<Scalars['String']['input']>
-  /** All values that are not contained in given list. */
-  description_not_in?: InputMaybe<
-    Array<InputMaybe<Scalars['String']['input']>>
-  >
-  /** All values not starting with the given string. */
-  description_not_starts_with?: InputMaybe<Scalars['String']['input']>
-  /** All values starting with the given string. */
-  description_starts_with?: InputMaybe<Scalars['String']['input']>
   heading?: InputMaybe<Scalars['String']['input']>
   /** All values containing the given string. */
   heading_contains?: InputMaybe<Scalars['String']['input']>
@@ -6735,8 +6712,6 @@ export type PillarSectionManyWhereInput = {
 }
 
 export enum PillarSectionOrderByInput {
-  DescriptionAsc = 'description_ASC',
-  DescriptionDesc = 'description_DESC',
   HeadingAsc = 'heading_ASC',
   HeadingDesc = 'heading_DESC',
   IdAsc = 'id_ASC',
@@ -6830,7 +6805,7 @@ export type PillarSectionParentWhereUniqueInput = {
 }
 
 export type PillarSectionUpdateInput = {
-  description?: InputMaybe<Scalars['String']['input']>
+  description?: InputMaybe<Scalars['RichTextAST']['input']>
   heading?: InputMaybe<Scalars['String']['input']>
   methodologys?: InputMaybe<MethodologyUpdateManyInlineInput>
   sectionId?: InputMaybe<Scalars['String']['input']>
@@ -6852,7 +6827,7 @@ export type PillarSectionUpdateManyInlineInput = {
 }
 
 export type PillarSectionUpdateManyInput = {
-  description?: InputMaybe<Scalars['String']['input']>
+  description?: InputMaybe<Scalars['RichTextAST']['input']>
   heading?: InputMaybe<Scalars['String']['input']>
   sectionId?: InputMaybe<Scalars['String']['input']>
 }
@@ -6926,29 +6901,6 @@ export type PillarSectionWhereInput = {
   OR?: InputMaybe<Array<PillarSectionWhereInput>>
   /** Contains search across all appropriate fields. */
   _search?: InputMaybe<Scalars['String']['input']>
-  description?: InputMaybe<Scalars['String']['input']>
-  /** All values containing the given string. */
-  description_contains?: InputMaybe<Scalars['String']['input']>
-  /** All values ending with the given string. */
-  description_ends_with?: InputMaybe<Scalars['String']['input']>
-  /** All values that are contained in given list. */
-  description_in?: InputMaybe<
-    Array<InputMaybe<Scalars['String']['input']>>
-  >
-  /** Any other value that exists and is not equal to the given value. */
-  description_not?: InputMaybe<Scalars['String']['input']>
-  /** All values not containing the given string. */
-  description_not_contains?: InputMaybe<Scalars['String']['input']>
-  /** All values not ending with the given string */
-  description_not_ends_with?: InputMaybe<Scalars['String']['input']>
-  /** All values that are not contained in given list. */
-  description_not_in?: InputMaybe<
-    Array<InputMaybe<Scalars['String']['input']>>
-  >
-  /** All values not starting with the given string. */
-  description_not_starts_with?: InputMaybe<Scalars['String']['input']>
-  /** All values starting with the given string. */
-  description_starts_with?: InputMaybe<Scalars['String']['input']>
   heading?: InputMaybe<Scalars['String']['input']>
   /** All values containing the given string. */
   heading_contains?: InputMaybe<Scalars['String']['input']>
@@ -13569,7 +13521,7 @@ export type MainQuery = {
       __typename?: 'PillarSection'
       sectionId: string
       heading: string
-      description: string
+      description: { __typename?: 'RichText'; html: string }
       methodologys: Array<{
         __typename?: 'Methodology'
         id: string
@@ -13719,7 +13671,9 @@ export const MainDocument = gql`
       pillarsSection {
         sectionId
         heading
-        description
+        description {
+          html
+        }
         methodologys {
           id
           name

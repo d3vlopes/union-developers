@@ -12,7 +12,7 @@ describe('PillarsSectionMapper', () => {
       expect(data).toStrictEqual({
         id: mock.sectionId,
         heading: mock.heading,
-        description: mock.description,
+        description: mock.description.html,
         methodologyCards: mock.methodologys.map((methodology) => ({
           id: methodology.id,
           title: methodology.name,

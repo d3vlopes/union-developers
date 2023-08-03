@@ -8,7 +8,7 @@ export class PillarsSectionMapper {
     return {
       id: pillarsSectionRemote.sectionId,
       heading: pillarsSectionRemote.heading,
-      description: pillarsSectionRemote.description,
+      description: pillarsSectionRemote.description.html,
       methodologyCards: pillarsSectionRemote.methodologys.map(
         (methodology) => ({
           id: methodology.id,

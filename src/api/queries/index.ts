@@ -64,7 +64,9 @@ export const GET_MAIN = gql`
       pillarsSection {
         sectionId
         heading
-        description
+        description {
+          html
+        }
         methodologys {
           id
           name
