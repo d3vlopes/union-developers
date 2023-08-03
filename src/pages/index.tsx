@@ -51,9 +51,7 @@ export const getStaticProps: GetStaticProps<
       testimonialSection: mappers.TestimonialSectionMapper.toDomain(
         api.testimonialSection,
       ),
-      faqSection: {
-        ...mainLayoutMock.faqSection,
-      },
+      faqSection: mappers.FaqSectionMapper.toDomain(api.faqSection),
     },
   }
 }
