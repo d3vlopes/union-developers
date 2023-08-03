@@ -1,6 +1,6 @@
 import { useSubscriptionForm } from '@/presentation/hooks'
 
-import { PersonalInfoStepType } from '../../PersonalInfo/hooks'
+import { PersonalInfoStepType } from '../../PersonalInfo/schema'
 
 export const SuccessMessage = () => {
   const { formData } = useSubscriptionForm<PersonalInfoStepType>()
