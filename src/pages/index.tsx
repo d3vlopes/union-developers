@@ -14,6 +14,7 @@ import {
   HeaderMapper,
   HeroMapper,
   AboutSectionMapper,
+  PillarsSectionMapper,
 } from '@/presentation/mappers'
 
 export default function Index(props: MainLayoutProps) {
@@ -37,13 +38,9 @@ export const getStaticProps: GetStaticProps<
       },
       hero: HeroMapper.toDomain(api.hero),
       aboutSection: AboutSectionMapper.toDomain(api.aboutSection),
-      pillarsSection: {
-        ...mainLayoutMock.pillarsSection,
-        description:
-          '<p>Na Union combinamos o uso de 3 metodologias para você conquistar experiência, saber se posicionar profissionalmente e acelerar sua evolução!</p>',
-        methodologyCards:
-          mainLayoutMock.pillarsSection.methodologyCards,
-      },
+      pillarsSection: PillarsSectionMapper.toDomain(
+        api.pillarsSection,
+      ),
       highlightSection: {
         ...mainLayoutMock.highlightSection,
       },
