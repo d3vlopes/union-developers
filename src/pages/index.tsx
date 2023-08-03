@@ -8,7 +8,7 @@ import { GET_MAIN } from '@/api/queries'
 
 import { MainLayout, MainLayoutProps } from '@/presentation/layouts'
 
-import * as mappers from '@/presentation/mappers'
+import { mapperData } from '@/api/helpers'
 
 export default function Index(props: MainLayoutProps) {
   return <MainLayout {...props} />
@@ -21,35 +21,11 @@ export const getStaticProps: GetStaticProps<
     query: GET_MAIN,
   })
 
-  const api = data.pages[0]
+  const mappedData = mapperData(data)
 
   return {
     props: {
-      base: {
-        header: mappers.HeaderMapper.toDomain(api.header),
-        footer: mappers.FooterMapper.toDomain(api.footer),
-      },
-      hero: mappers.HeroMapper.toDomain(api.hero),
-      aboutSection: mappers.AboutSectionMapper.toDomain(
-        api.aboutSection,
-      ),
-      pillarsSection: mappers.PillarsSectionMapper.toDomain(
-        api.pillarsSection,
-      ),
-      highlightSection: mappers.HighlightSectionMapper.toDomain(
-        api.benefitsSection,
-      ),
-      stepsSection: mappers.StepsSectionMapper.toDomain(
-        api.stepsSection,
-      ),
-      rememberActionSection:
-        mappers.RememberActionSectionMapper.toDomain(
-          api.rememberActionSection,
-        ),
-      testimonialSection: mappers.TestimonialSectionMapper.toDomain(
-        api.testimonialSection,
-      ),
-      faqSection: mappers.FaqSectionMapper.toDomain(api.faqSection),
+      ...mappedData,
     },
   }
 }
