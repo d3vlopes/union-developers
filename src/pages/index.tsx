@@ -10,13 +10,7 @@ import { mainLayoutMock } from '@/presentation/layouts/main/mocks/data'
 
 import { MainLayout, MainLayoutProps } from '@/presentation/layouts'
 
-import {
-  HeaderMapper,
-  HeroMapper,
-  AboutSectionMapper,
-  PillarsSectionMapper,
-  HighlightSectionMapper,
-} from '@/presentation/mappers'
+import * as mappers from '@/presentation/mappers'
 
 export default function Index(props: MainLayoutProps) {
   return <MainLayout {...props} />
@@ -34,20 +28,22 @@ export const getStaticProps: GetStaticProps<
   return {
     props: {
       base: {
-        header: HeaderMapper.toDomain(api.header),
+        header: mappers.HeaderMapper.toDomain(api.header),
         footer: mainLayoutMock.base.footer,
       },
-      hero: HeroMapper.toDomain(api.hero),
-      aboutSection: AboutSectionMapper.toDomain(api.aboutSection),
-      pillarsSection: PillarsSectionMapper.toDomain(
+      hero: mappers.HeroMapper.toDomain(api.hero),
+      aboutSection: mappers.AboutSectionMapper.toDomain(
+        api.aboutSection,
+      ),
+      pillarsSection: mappers.PillarsSectionMapper.toDomain(
         api.pillarsSection,
       ),
-      highlightSection: HighlightSectionMapper.toDomain(
+      highlightSection: mappers.HighlightSectionMapper.toDomain(
         api.benefitsSection,
       ),
-      stepsSection: {
-        ...mainLayoutMock.stepsSection,
-      },
+      stepsSection: mappers.StepsSectionMapper.toDomain(
+        api.stepsSection,
+      ),
       rememberActionSection: {
         ...mainLayoutMock.rememberActionSection,
       },
