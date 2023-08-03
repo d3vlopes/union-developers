@@ -6,8 +6,6 @@ import { MainQuery } from '@/api/generated/graphql'
 
 import { GET_MAIN } from '@/api/queries'
 
-import { mainLayoutMock } from '@/presentation/layouts/main/mocks/data'
-
 import { MainLayout, MainLayoutProps } from '@/presentation/layouts'
 
 import * as mappers from '@/presentation/mappers'
@@ -29,7 +27,7 @@ export const getStaticProps: GetStaticProps<
     props: {
       base: {
         header: mappers.HeaderMapper.toDomain(api.header),
-        footer: mainLayoutMock.base.footer,
+        footer: mappers.FooterMapper.toDomain(api.footer),
       },
       hero: mappers.HeroMapper.toDomain(api.hero),
       aboutSection: mappers.AboutSectionMapper.toDomain(
