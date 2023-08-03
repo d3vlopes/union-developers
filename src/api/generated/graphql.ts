@@ -2189,6 +2189,7 @@ export type Footer = {
   /** The unique identifier */
   id: Scalars['ID']['output']
   logo: Asset
+  navigationMenuLinks: Array<NavigationMenuLink>
   socialLinks: Array<SocialLink>
   /** System stage field */
   stage: Stage
@@ -2197,6 +2198,18 @@ export type Footer = {
 export type FooterLogoArgs = {
   forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>
   locales?: InputMaybe<Array<Locale>>
+}
+
+export type FooterNavigationMenuLinksArgs = {
+  after?: InputMaybe<Scalars['String']['input']>
+  before?: InputMaybe<Scalars['String']['input']>
+  first?: InputMaybe<Scalars['Int']['input']>
+  forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>
+  last?: InputMaybe<Scalars['Int']['input']>
+  locales?: InputMaybe<Array<Locale>>
+  orderBy?: InputMaybe<NavigationMenuLinkOrderByInput>
+  skip?: InputMaybe<Scalars['Int']['input']>
+  where?: InputMaybe<NavigationMenuLinkWhereInput>
 }
 
 export type FooterSocialLinksArgs = {
@@ -2232,6 +2245,7 @@ export type FooterCreateInput = {
   companyName: Scalars['String']['input']
   companySlogan: Scalars['String']['input']
   logo: AssetCreateOneInlineInput
+  navigationMenuLinks?: InputMaybe<NavigationMenuLinkCreateManyInlineInput>
   socialLinks?: InputMaybe<SocialLinkCreateManyInlineInput>
 }
 
@@ -2339,6 +2353,9 @@ export type FooterManyWhereInput = {
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']['input']>
   logo?: InputMaybe<AssetWhereInput>
+  navigationMenuLinks_every?: InputMaybe<NavigationMenuLinkWhereInput>
+  navigationMenuLinks_none?: InputMaybe<NavigationMenuLinkWhereInput>
+  navigationMenuLinks_some?: InputMaybe<NavigationMenuLinkWhereInput>
   socialLinks_every?: InputMaybe<SocialLinkWhereInput>
   socialLinks_none?: InputMaybe<SocialLinkWhereInput>
   socialLinks_some?: InputMaybe<SocialLinkWhereInput>
@@ -2441,6 +2458,7 @@ export type FooterUpdateInput = {
   companyName?: InputMaybe<Scalars['String']['input']>
   companySlogan?: InputMaybe<Scalars['String']['input']>
   logo?: InputMaybe<AssetUpdateOneInlineInput>
+  navigationMenuLinks?: InputMaybe<NavigationMenuLinkUpdateManyInlineInput>
   socialLinks?: InputMaybe<SocialLinkUpdateManyInlineInput>
 }
 
@@ -2599,6 +2617,9 @@ export type FooterWhereInput = {
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']['input']>
   logo?: InputMaybe<AssetWhereInput>
+  navigationMenuLinks_every?: InputMaybe<NavigationMenuLinkWhereInput>
+  navigationMenuLinks_none?: InputMaybe<NavigationMenuLinkWhereInput>
+  navigationMenuLinks_some?: InputMaybe<NavigationMenuLinkWhereInput>
   socialLinks_every?: InputMaybe<SocialLinkWhereInput>
   socialLinks_none?: InputMaybe<SocialLinkWhereInput>
   socialLinks_some?: InputMaybe<SocialLinkWhereInput>
@@ -3955,6 +3976,392 @@ export type ImageTransformationInput = {
   resize?: InputMaybe<ImageResizeInput>
 }
 
+export type Link = {
+  __typename?: 'Link'
+  /** The unique identifier */
+  id: Scalars['ID']['output']
+  label: Scalars['String']['output']
+  /** System stage field */
+  stage: Stage
+  target: Scalars['String']['output']
+}
+
+export type LinkConnectInput = {
+  /** Allow to specify document position in list of connected documents, will default to appending at end of list */
+  position?: InputMaybe<ConnectPositionInput>
+  /** Document to connect */
+  where: LinkWhereUniqueInput
+}
+
+/** A connection to a list of items. */
+export type LinkConnection = {
+  __typename?: 'LinkConnection'
+  aggregate: Aggregate
+  /** A list of edges. */
+  edges: Array<LinkEdge>
+  /** Information to aid in pagination. */
+  pageInfo: PageInfo
+}
+
+export type LinkCreateInput = {
+  label: Scalars['String']['input']
+  target: Scalars['String']['input']
+}
+
+export type LinkCreateManyInlineInput = {
+  /** Create and connect multiple existing Link documents */
+  create?: InputMaybe<Array<LinkCreateInput>>
+}
+
+export type LinkCreateOneInlineInput = {
+  /** Create and connect one Link document */
+  create?: InputMaybe<LinkCreateInput>
+}
+
+export type LinkCreateWithPositionInput = {
+  /** Document to create */
+  data: LinkCreateInput
+  /** Position in the list of existing component instances, will default to appending at the end of list */
+  position?: InputMaybe<ConnectPositionInput>
+}
+
+/** An edge in a connection. */
+export type LinkEdge = {
+  __typename?: 'LinkEdge'
+  /** A cursor for use in pagination. */
+  cursor: Scalars['String']['output']
+  /** The item at the end of the edge. */
+  node: Link
+}
+
+/** Identifies documents */
+export type LinkManyWhereInput = {
+  /** Logical AND on all given filters. */
+  AND?: InputMaybe<Array<LinkWhereInput>>
+  /** Logical NOT on all given filters combined by AND. */
+  NOT?: InputMaybe<Array<LinkWhereInput>>
+  /** Logical OR on all given filters. */
+  OR?: InputMaybe<Array<LinkWhereInput>>
+  /** Contains search across all appropriate fields. */
+  _search?: InputMaybe<Scalars['String']['input']>
+  id?: InputMaybe<Scalars['ID']['input']>
+  /** All values containing the given string. */
+  id_contains?: InputMaybe<Scalars['ID']['input']>
+  /** All values ending with the given string. */
+  id_ends_with?: InputMaybe<Scalars['ID']['input']>
+  /** All values that are contained in given list. */
+  id_in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
+  /** Any other value that exists and is not equal to the given value. */
+  id_not?: InputMaybe<Scalars['ID']['input']>
+  /** All values not containing the given string. */
+  id_not_contains?: InputMaybe<Scalars['ID']['input']>
+  /** All values not ending with the given string */
+  id_not_ends_with?: InputMaybe<Scalars['ID']['input']>
+  /** All values that are not contained in given list. */
+  id_not_in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
+  /** All values not starting with the given string. */
+  id_not_starts_with?: InputMaybe<Scalars['ID']['input']>
+  /** All values starting with the given string. */
+  id_starts_with?: InputMaybe<Scalars['ID']['input']>
+  label?: InputMaybe<Scalars['String']['input']>
+  /** All values containing the given string. */
+  label_contains?: InputMaybe<Scalars['String']['input']>
+  /** All values ending with the given string. */
+  label_ends_with?: InputMaybe<Scalars['String']['input']>
+  /** All values that are contained in given list. */
+  label_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  /** Any other value that exists and is not equal to the given value. */
+  label_not?: InputMaybe<Scalars['String']['input']>
+  /** All values not containing the given string. */
+  label_not_contains?: InputMaybe<Scalars['String']['input']>
+  /** All values not ending with the given string */
+  label_not_ends_with?: InputMaybe<Scalars['String']['input']>
+  /** All values that are not contained in given list. */
+  label_not_in?: InputMaybe<
+    Array<InputMaybe<Scalars['String']['input']>>
+  >
+  /** All values not starting with the given string. */
+  label_not_starts_with?: InputMaybe<Scalars['String']['input']>
+  /** All values starting with the given string. */
+  label_starts_with?: InputMaybe<Scalars['String']['input']>
+  target?: InputMaybe<Scalars['String']['input']>
+  /** All values containing the given string. */
+  target_contains?: InputMaybe<Scalars['String']['input']>
+  /** All values ending with the given string. */
+  target_ends_with?: InputMaybe<Scalars['String']['input']>
+  /** All values that are contained in given list. */
+  target_in?: InputMaybe<
+    Array<InputMaybe<Scalars['String']['input']>>
+  >
+  /** Any other value that exists and is not equal to the given value. */
+  target_not?: InputMaybe<Scalars['String']['input']>
+  /** All values not containing the given string. */
+  target_not_contains?: InputMaybe<Scalars['String']['input']>
+  /** All values not ending with the given string */
+  target_not_ends_with?: InputMaybe<Scalars['String']['input']>
+  /** All values that are not contained in given list. */
+  target_not_in?: InputMaybe<
+    Array<InputMaybe<Scalars['String']['input']>>
+  >
+  /** All values not starting with the given string. */
+  target_not_starts_with?: InputMaybe<Scalars['String']['input']>
+  /** All values starting with the given string. */
+  target_starts_with?: InputMaybe<Scalars['String']['input']>
+}
+
+export enum LinkOrderByInput {
+  IdAsc = 'id_ASC',
+  IdDesc = 'id_DESC',
+  LabelAsc = 'label_ASC',
+  LabelDesc = 'label_DESC',
+  TargetAsc = 'target_ASC',
+  TargetDesc = 'target_DESC',
+}
+
+export type LinkParent = NavigationMenuLink
+
+export type LinkParentConnectInput = {
+  NavigationMenuLink?: InputMaybe<NavigationMenuLinkConnectInput>
+}
+
+export type LinkParentCreateInput = {
+  NavigationMenuLink?: InputMaybe<NavigationMenuLinkCreateInput>
+}
+
+export type LinkParentCreateManyInlineInput = {
+  /** Create and connect multiple existing LinkParent documents */
+  create?: InputMaybe<Array<LinkParentCreateInput>>
+}
+
+export type LinkParentCreateOneInlineInput = {
+  /** Create and connect one LinkParent document */
+  create?: InputMaybe<LinkParentCreateInput>
+}
+
+export type LinkParentCreateWithPositionInput = {
+  NavigationMenuLink?: InputMaybe<NavigationMenuLinkCreateWithPositionInput>
+}
+
+export type LinkParentUpdateInput = {
+  NavigationMenuLink?: InputMaybe<NavigationMenuLinkUpdateInput>
+}
+
+export type LinkParentUpdateManyInlineInput = {
+  /** Create and connect multiple LinkParent component instances */
+  create?: InputMaybe<Array<LinkParentCreateWithPositionInput>>
+  /** Delete multiple LinkParent documents */
+  delete?: InputMaybe<Array<LinkParentWhereUniqueInput>>
+  /** Update multiple LinkParent component instances */
+  update?: InputMaybe<
+    Array<LinkParentUpdateWithNestedWhereUniqueAndPositionInput>
+  >
+  /** Upsert multiple LinkParent component instances */
+  upsert?: InputMaybe<
+    Array<LinkParentUpsertWithNestedWhereUniqueAndPositionInput>
+  >
+}
+
+export type LinkParentUpdateManyWithNestedWhereInput = {
+  NavigationMenuLink?: InputMaybe<NavigationMenuLinkUpdateManyWithNestedWhereInput>
+}
+
+export type LinkParentUpdateOneInlineInput = {
+  /** Create and connect one LinkParent document */
+  create?: InputMaybe<LinkParentCreateInput>
+  /** Delete currently connected LinkParent document */
+  delete?: InputMaybe<Scalars['Boolean']['input']>
+  /** Update single LinkParent document */
+  update?: InputMaybe<LinkParentUpdateWithNestedWhereUniqueInput>
+  /** Upsert single LinkParent document */
+  upsert?: InputMaybe<LinkParentUpsertWithNestedWhereUniqueInput>
+}
+
+export type LinkParentUpdateWithNestedWhereUniqueAndPositionInput = {
+  NavigationMenuLink?: InputMaybe<NavigationMenuLinkUpdateWithNestedWhereUniqueAndPositionInput>
+}
+
+export type LinkParentUpdateWithNestedWhereUniqueInput = {
+  NavigationMenuLink?: InputMaybe<NavigationMenuLinkUpdateWithNestedWhereUniqueInput>
+}
+
+export type LinkParentUpsertWithNestedWhereUniqueAndPositionInput = {
+  NavigationMenuLink?: InputMaybe<NavigationMenuLinkUpsertWithNestedWhereUniqueAndPositionInput>
+}
+
+export type LinkParentUpsertWithNestedWhereUniqueInput = {
+  NavigationMenuLink?: InputMaybe<NavigationMenuLinkUpsertWithNestedWhereUniqueInput>
+}
+
+export type LinkParentWhereInput = {
+  NavigationMenuLink?: InputMaybe<NavigationMenuLinkWhereInput>
+}
+
+export type LinkParentWhereUniqueInput = {
+  NavigationMenuLink?: InputMaybe<NavigationMenuLinkWhereUniqueInput>
+}
+
+export type LinkUpdateInput = {
+  label?: InputMaybe<Scalars['String']['input']>
+  target?: InputMaybe<Scalars['String']['input']>
+}
+
+export type LinkUpdateManyInlineInput = {
+  /** Create and connect multiple Link component instances */
+  create?: InputMaybe<Array<LinkCreateWithPositionInput>>
+  /** Delete multiple Link documents */
+  delete?: InputMaybe<Array<LinkWhereUniqueInput>>
+  /** Update multiple Link component instances */
+  update?: InputMaybe<
+    Array<LinkUpdateWithNestedWhereUniqueAndPositionInput>
+  >
+  /** Upsert multiple Link component instances */
+  upsert?: InputMaybe<
+    Array<LinkUpsertWithNestedWhereUniqueAndPositionInput>
+  >
+}
+
+export type LinkUpdateManyInput = {
+  label?: InputMaybe<Scalars['String']['input']>
+  target?: InputMaybe<Scalars['String']['input']>
+}
+
+export type LinkUpdateManyWithNestedWhereInput = {
+  /** Update many input */
+  data: LinkUpdateManyInput
+  /** Document search */
+  where: LinkWhereInput
+}
+
+export type LinkUpdateOneInlineInput = {
+  /** Create and connect one Link document */
+  create?: InputMaybe<LinkCreateInput>
+  /** Delete currently connected Link document */
+  delete?: InputMaybe<Scalars['Boolean']['input']>
+  /** Update single Link document */
+  update?: InputMaybe<LinkUpdateWithNestedWhereUniqueInput>
+  /** Upsert single Link document */
+  upsert?: InputMaybe<LinkUpsertWithNestedWhereUniqueInput>
+}
+
+export type LinkUpdateWithNestedWhereUniqueAndPositionInput = {
+  /** Document to update */
+  data?: InputMaybe<LinkUpdateInput>
+  /** Position in the list of existing component instances, will default to appending at the end of list */
+  position?: InputMaybe<ConnectPositionInput>
+  /** Unique component instance search */
+  where: LinkWhereUniqueInput
+}
+
+export type LinkUpdateWithNestedWhereUniqueInput = {
+  /** Document to update */
+  data: LinkUpdateInput
+  /** Unique document search */
+  where: LinkWhereUniqueInput
+}
+
+export type LinkUpsertInput = {
+  /** Create document if it didn't exist */
+  create: LinkCreateInput
+  /** Update document if it exists */
+  update: LinkUpdateInput
+}
+
+export type LinkUpsertWithNestedWhereUniqueAndPositionInput = {
+  /** Document to upsert */
+  data?: InputMaybe<LinkUpsertInput>
+  /** Position in the list of existing component instances, will default to appending at the end of list */
+  position?: InputMaybe<ConnectPositionInput>
+  /** Unique component instance search */
+  where: LinkWhereUniqueInput
+}
+
+export type LinkUpsertWithNestedWhereUniqueInput = {
+  /** Upsert data */
+  data: LinkUpsertInput
+  /** Unique document search */
+  where: LinkWhereUniqueInput
+}
+
+/** Identifies documents */
+export type LinkWhereInput = {
+  /** Logical AND on all given filters. */
+  AND?: InputMaybe<Array<LinkWhereInput>>
+  /** Logical NOT on all given filters combined by AND. */
+  NOT?: InputMaybe<Array<LinkWhereInput>>
+  /** Logical OR on all given filters. */
+  OR?: InputMaybe<Array<LinkWhereInput>>
+  /** Contains search across all appropriate fields. */
+  _search?: InputMaybe<Scalars['String']['input']>
+  id?: InputMaybe<Scalars['ID']['input']>
+  /** All values containing the given string. */
+  id_contains?: InputMaybe<Scalars['ID']['input']>
+  /** All values ending with the given string. */
+  id_ends_with?: InputMaybe<Scalars['ID']['input']>
+  /** All values that are contained in given list. */
+  id_in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
+  /** Any other value that exists and is not equal to the given value. */
+  id_not?: InputMaybe<Scalars['ID']['input']>
+  /** All values not containing the given string. */
+  id_not_contains?: InputMaybe<Scalars['ID']['input']>
+  /** All values not ending with the given string */
+  id_not_ends_with?: InputMaybe<Scalars['ID']['input']>
+  /** All values that are not contained in given list. */
+  id_not_in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
+  /** All values not starting with the given string. */
+  id_not_starts_with?: InputMaybe<Scalars['ID']['input']>
+  /** All values starting with the given string. */
+  id_starts_with?: InputMaybe<Scalars['ID']['input']>
+  label?: InputMaybe<Scalars['String']['input']>
+  /** All values containing the given string. */
+  label_contains?: InputMaybe<Scalars['String']['input']>
+  /** All values ending with the given string. */
+  label_ends_with?: InputMaybe<Scalars['String']['input']>
+  /** All values that are contained in given list. */
+  label_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  /** Any other value that exists and is not equal to the given value. */
+  label_not?: InputMaybe<Scalars['String']['input']>
+  /** All values not containing the given string. */
+  label_not_contains?: InputMaybe<Scalars['String']['input']>
+  /** All values not ending with the given string */
+  label_not_ends_with?: InputMaybe<Scalars['String']['input']>
+  /** All values that are not contained in given list. */
+  label_not_in?: InputMaybe<
+    Array<InputMaybe<Scalars['String']['input']>>
+  >
+  /** All values not starting with the given string. */
+  label_not_starts_with?: InputMaybe<Scalars['String']['input']>
+  /** All values starting with the given string. */
+  label_starts_with?: InputMaybe<Scalars['String']['input']>
+  target?: InputMaybe<Scalars['String']['input']>
+  /** All values containing the given string. */
+  target_contains?: InputMaybe<Scalars['String']['input']>
+  /** All values ending with the given string. */
+  target_ends_with?: InputMaybe<Scalars['String']['input']>
+  /** All values that are contained in given list. */
+  target_in?: InputMaybe<
+    Array<InputMaybe<Scalars['String']['input']>>
+  >
+  /** Any other value that exists and is not equal to the given value. */
+  target_not?: InputMaybe<Scalars['String']['input']>
+  /** All values not containing the given string. */
+  target_not_contains?: InputMaybe<Scalars['String']['input']>
+  /** All values not ending with the given string */
+  target_not_ends_with?: InputMaybe<Scalars['String']['input']>
+  /** All values that are not contained in given list. */
+  target_not_in?: InputMaybe<
+    Array<InputMaybe<Scalars['String']['input']>>
+  >
+  /** All values not starting with the given string. */
+  target_not_starts_with?: InputMaybe<Scalars['String']['input']>
+  /** All values starting with the given string. */
+  target_starts_with?: InputMaybe<Scalars['String']['input']>
+}
+
+/** References Link record uniquely */
+export type LinkWhereUniqueInput = {
+  id?: InputMaybe<Scalars['ID']['input']>
+}
+
 /** Locale system enumeration */
 export enum Locale {
   /** System locale */
@@ -4122,95 +4529,87 @@ export enum MethodologyOrderByInput {
   NameDesc = 'name_DESC',
 }
 
-export type MethodologyParent = Page | PillarSection
+export type MethodologyParent = PillarSection
 
 export type MethodologyParentConnectInput = {
-  Page?: InputMaybe<PageConnectInput>
   PillarSection?: InputMaybe<PillarSectionConnectInput>
 }
 
 export type MethodologyParentCreateInput = {
-  Page?: InputMaybe<PageCreateInput>
   PillarSection?: InputMaybe<PillarSectionCreateInput>
 }
 
 export type MethodologyParentCreateManyInlineInput = {
-  /** Connect multiple existing MethodologyParent documents */
-  connect?: InputMaybe<Array<MethodologyParentWhereUniqueInput>>
   /** Create and connect multiple existing MethodologyParent documents */
   create?: InputMaybe<Array<MethodologyParentCreateInput>>
 }
 
 export type MethodologyParentCreateOneInlineInput = {
-  /** Connect one existing MethodologyParent document */
-  connect?: InputMaybe<MethodologyParentWhereUniqueInput>
   /** Create and connect one MethodologyParent document */
   create?: InputMaybe<MethodologyParentCreateInput>
 }
 
+export type MethodologyParentCreateWithPositionInput = {
+  PillarSection?: InputMaybe<PillarSectionCreateWithPositionInput>
+}
+
 export type MethodologyParentUpdateInput = {
-  Page?: InputMaybe<PageUpdateInput>
   PillarSection?: InputMaybe<PillarSectionUpdateInput>
 }
 
 export type MethodologyParentUpdateManyInlineInput = {
-  /** Connect multiple existing MethodologyParent documents */
-  connect?: InputMaybe<Array<MethodologyParentConnectInput>>
-  /** Create and connect multiple MethodologyParent documents */
-  create?: InputMaybe<Array<MethodologyParentCreateInput>>
+  /** Create and connect multiple MethodologyParent component instances */
+  create?: InputMaybe<Array<MethodologyParentCreateWithPositionInput>>
   /** Delete multiple MethodologyParent documents */
   delete?: InputMaybe<Array<MethodologyParentWhereUniqueInput>>
-  /** Disconnect multiple MethodologyParent documents */
-  disconnect?: InputMaybe<Array<MethodologyParentWhereUniqueInput>>
-  /** Override currently-connected documents with multiple existing MethodologyParent documents */
-  set?: InputMaybe<Array<MethodologyParentWhereUniqueInput>>
-  /** Update multiple MethodologyParent documents */
+  /** Update multiple MethodologyParent component instances */
   update?: InputMaybe<
-    Array<MethodologyParentUpdateWithNestedWhereUniqueInput>
+    Array<MethodologyParentUpdateWithNestedWhereUniqueAndPositionInput>
   >
-  /** Upsert multiple MethodologyParent documents */
+  /** Upsert multiple MethodologyParent component instances */
   upsert?: InputMaybe<
-    Array<MethodologyParentUpsertWithNestedWhereUniqueInput>
+    Array<MethodologyParentUpsertWithNestedWhereUniqueAndPositionInput>
   >
 }
 
 export type MethodologyParentUpdateManyWithNestedWhereInput = {
-  Page?: InputMaybe<PageUpdateManyWithNestedWhereInput>
   PillarSection?: InputMaybe<PillarSectionUpdateManyWithNestedWhereInput>
 }
 
 export type MethodologyParentUpdateOneInlineInput = {
-  /** Connect existing MethodologyParent document */
-  connect?: InputMaybe<MethodologyParentWhereUniqueInput>
   /** Create and connect one MethodologyParent document */
   create?: InputMaybe<MethodologyParentCreateInput>
   /** Delete currently connected MethodologyParent document */
   delete?: InputMaybe<Scalars['Boolean']['input']>
-  /** Disconnect currently connected MethodologyParent document */
-  disconnect?: InputMaybe<Scalars['Boolean']['input']>
   /** Update single MethodologyParent document */
   update?: InputMaybe<MethodologyParentUpdateWithNestedWhereUniqueInput>
   /** Upsert single MethodologyParent document */
   upsert?: InputMaybe<MethodologyParentUpsertWithNestedWhereUniqueInput>
 }
 
+export type MethodologyParentUpdateWithNestedWhereUniqueAndPositionInput =
+  {
+    PillarSection?: InputMaybe<PillarSectionUpdateWithNestedWhereUniqueAndPositionInput>
+  }
+
 export type MethodologyParentUpdateWithNestedWhereUniqueInput = {
-  Page?: InputMaybe<PageUpdateWithNestedWhereUniqueInput>
   PillarSection?: InputMaybe<PillarSectionUpdateWithNestedWhereUniqueInput>
 }
 
+export type MethodologyParentUpsertWithNestedWhereUniqueAndPositionInput =
+  {
+    PillarSection?: InputMaybe<PillarSectionUpsertWithNestedWhereUniqueAndPositionInput>
+  }
+
 export type MethodologyParentUpsertWithNestedWhereUniqueInput = {
-  Page?: InputMaybe<PageUpsertWithNestedWhereUniqueInput>
   PillarSection?: InputMaybe<PillarSectionUpsertWithNestedWhereUniqueInput>
 }
 
 export type MethodologyParentWhereInput = {
-  Page?: InputMaybe<PageWhereInput>
   PillarSection?: InputMaybe<PillarSectionWhereInput>
 }
 
 export type MethodologyParentWhereUniqueInput = {
-  Page?: InputMaybe<PageWhereUniqueInput>
   PillarSection?: InputMaybe<PillarSectionWhereUniqueInput>
 }
 
@@ -5261,6 +5660,371 @@ export type NavigationItemWhereUniqueInput = {
   label?: InputMaybe<Scalars['String']['input']>
 }
 
+export type NavigationMenuLink = {
+  __typename?: 'NavigationMenuLink'
+  /** The unique identifier */
+  id: Scalars['ID']['output']
+  links: Array<Link>
+  /** System stage field */
+  stage: Stage
+  title: Scalars['String']['output']
+}
+
+export type NavigationMenuLinkLinksArgs = {
+  after?: InputMaybe<Scalars['String']['input']>
+  before?: InputMaybe<Scalars['String']['input']>
+  first?: InputMaybe<Scalars['Int']['input']>
+  forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>
+  last?: InputMaybe<Scalars['Int']['input']>
+  locales?: InputMaybe<Array<Locale>>
+  orderBy?: InputMaybe<LinkOrderByInput>
+  skip?: InputMaybe<Scalars['Int']['input']>
+  where?: InputMaybe<LinkWhereInput>
+}
+
+export type NavigationMenuLinkConnectInput = {
+  /** Allow to specify document position in list of connected documents, will default to appending at end of list */
+  position?: InputMaybe<ConnectPositionInput>
+  /** Document to connect */
+  where: NavigationMenuLinkWhereUniqueInput
+}
+
+/** A connection to a list of items. */
+export type NavigationMenuLinkConnection = {
+  __typename?: 'NavigationMenuLinkConnection'
+  aggregate: Aggregate
+  /** A list of edges. */
+  edges: Array<NavigationMenuLinkEdge>
+  /** Information to aid in pagination. */
+  pageInfo: PageInfo
+}
+
+export type NavigationMenuLinkCreateInput = {
+  links?: InputMaybe<LinkCreateManyInlineInput>
+  title: Scalars['String']['input']
+}
+
+export type NavigationMenuLinkCreateManyInlineInput = {
+  /** Create and connect multiple existing NavigationMenuLink documents */
+  create?: InputMaybe<Array<NavigationMenuLinkCreateInput>>
+}
+
+export type NavigationMenuLinkCreateOneInlineInput = {
+  /** Create and connect one NavigationMenuLink document */
+  create?: InputMaybe<NavigationMenuLinkCreateInput>
+}
+
+export type NavigationMenuLinkCreateWithPositionInput = {
+  /** Document to create */
+  data: NavigationMenuLinkCreateInput
+  /** Position in the list of existing component instances, will default to appending at the end of list */
+  position?: InputMaybe<ConnectPositionInput>
+}
+
+/** An edge in a connection. */
+export type NavigationMenuLinkEdge = {
+  __typename?: 'NavigationMenuLinkEdge'
+  /** A cursor for use in pagination. */
+  cursor: Scalars['String']['output']
+  /** The item at the end of the edge. */
+  node: NavigationMenuLink
+}
+
+/** Identifies documents */
+export type NavigationMenuLinkManyWhereInput = {
+  /** Logical AND on all given filters. */
+  AND?: InputMaybe<Array<NavigationMenuLinkWhereInput>>
+  /** Logical NOT on all given filters combined by AND. */
+  NOT?: InputMaybe<Array<NavigationMenuLinkWhereInput>>
+  /** Logical OR on all given filters. */
+  OR?: InputMaybe<Array<NavigationMenuLinkWhereInput>>
+  /** Contains search across all appropriate fields. */
+  _search?: InputMaybe<Scalars['String']['input']>
+  id?: InputMaybe<Scalars['ID']['input']>
+  /** All values containing the given string. */
+  id_contains?: InputMaybe<Scalars['ID']['input']>
+  /** All values ending with the given string. */
+  id_ends_with?: InputMaybe<Scalars['ID']['input']>
+  /** All values that are contained in given list. */
+  id_in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
+  /** Any other value that exists and is not equal to the given value. */
+  id_not?: InputMaybe<Scalars['ID']['input']>
+  /** All values not containing the given string. */
+  id_not_contains?: InputMaybe<Scalars['ID']['input']>
+  /** All values not ending with the given string */
+  id_not_ends_with?: InputMaybe<Scalars['ID']['input']>
+  /** All values that are not contained in given list. */
+  id_not_in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
+  /** All values not starting with the given string. */
+  id_not_starts_with?: InputMaybe<Scalars['ID']['input']>
+  /** All values starting with the given string. */
+  id_starts_with?: InputMaybe<Scalars['ID']['input']>
+  links_every?: InputMaybe<LinkWhereInput>
+  links_none?: InputMaybe<LinkWhereInput>
+  links_some?: InputMaybe<LinkWhereInput>
+  title?: InputMaybe<Scalars['String']['input']>
+  /** All values containing the given string. */
+  title_contains?: InputMaybe<Scalars['String']['input']>
+  /** All values ending with the given string. */
+  title_ends_with?: InputMaybe<Scalars['String']['input']>
+  /** All values that are contained in given list. */
+  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  /** Any other value that exists and is not equal to the given value. */
+  title_not?: InputMaybe<Scalars['String']['input']>
+  /** All values not containing the given string. */
+  title_not_contains?: InputMaybe<Scalars['String']['input']>
+  /** All values not ending with the given string */
+  title_not_ends_with?: InputMaybe<Scalars['String']['input']>
+  /** All values that are not contained in given list. */
+  title_not_in?: InputMaybe<
+    Array<InputMaybe<Scalars['String']['input']>>
+  >
+  /** All values not starting with the given string. */
+  title_not_starts_with?: InputMaybe<Scalars['String']['input']>
+  /** All values starting with the given string. */
+  title_starts_with?: InputMaybe<Scalars['String']['input']>
+}
+
+export enum NavigationMenuLinkOrderByInput {
+  IdAsc = 'id_ASC',
+  IdDesc = 'id_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC',
+}
+
+export type NavigationMenuLinkParent = Footer
+
+export type NavigationMenuLinkParentConnectInput = {
+  Footer?: InputMaybe<FooterConnectInput>
+}
+
+export type NavigationMenuLinkParentCreateInput = {
+  Footer?: InputMaybe<FooterCreateInput>
+}
+
+export type NavigationMenuLinkParentCreateManyInlineInput = {
+  /** Create and connect multiple existing NavigationMenuLinkParent documents */
+  create?: InputMaybe<Array<NavigationMenuLinkParentCreateInput>>
+}
+
+export type NavigationMenuLinkParentCreateOneInlineInput = {
+  /** Create and connect one NavigationMenuLinkParent document */
+  create?: InputMaybe<NavigationMenuLinkParentCreateInput>
+}
+
+export type NavigationMenuLinkParentCreateWithPositionInput = {
+  Footer?: InputMaybe<FooterCreateWithPositionInput>
+}
+
+export type NavigationMenuLinkParentUpdateInput = {
+  Footer?: InputMaybe<FooterUpdateInput>
+}
+
+export type NavigationMenuLinkParentUpdateManyInlineInput = {
+  /** Create and connect multiple NavigationMenuLinkParent component instances */
+  create?: InputMaybe<
+    Array<NavigationMenuLinkParentCreateWithPositionInput>
+  >
+  /** Delete multiple NavigationMenuLinkParent documents */
+  delete?: InputMaybe<Array<NavigationMenuLinkParentWhereUniqueInput>>
+  /** Update multiple NavigationMenuLinkParent component instances */
+  update?: InputMaybe<
+    Array<NavigationMenuLinkParentUpdateWithNestedWhereUniqueAndPositionInput>
+  >
+  /** Upsert multiple NavigationMenuLinkParent component instances */
+  upsert?: InputMaybe<
+    Array<NavigationMenuLinkParentUpsertWithNestedWhereUniqueAndPositionInput>
+  >
+}
+
+export type NavigationMenuLinkParentUpdateManyWithNestedWhereInput = {
+  Footer?: InputMaybe<FooterUpdateManyWithNestedWhereInput>
+}
+
+export type NavigationMenuLinkParentUpdateOneInlineInput = {
+  /** Create and connect one NavigationMenuLinkParent document */
+  create?: InputMaybe<NavigationMenuLinkParentCreateInput>
+  /** Delete currently connected NavigationMenuLinkParent document */
+  delete?: InputMaybe<Scalars['Boolean']['input']>
+  /** Update single NavigationMenuLinkParent document */
+  update?: InputMaybe<NavigationMenuLinkParentUpdateWithNestedWhereUniqueInput>
+  /** Upsert single NavigationMenuLinkParent document */
+  upsert?: InputMaybe<NavigationMenuLinkParentUpsertWithNestedWhereUniqueInput>
+}
+
+export type NavigationMenuLinkParentUpdateWithNestedWhereUniqueAndPositionInput =
+  {
+    Footer?: InputMaybe<FooterUpdateWithNestedWhereUniqueAndPositionInput>
+  }
+
+export type NavigationMenuLinkParentUpdateWithNestedWhereUniqueInput =
+  {
+    Footer?: InputMaybe<FooterUpdateWithNestedWhereUniqueInput>
+  }
+
+export type NavigationMenuLinkParentUpsertWithNestedWhereUniqueAndPositionInput =
+  {
+    Footer?: InputMaybe<FooterUpsertWithNestedWhereUniqueAndPositionInput>
+  }
+
+export type NavigationMenuLinkParentUpsertWithNestedWhereUniqueInput =
+  {
+    Footer?: InputMaybe<FooterUpsertWithNestedWhereUniqueInput>
+  }
+
+export type NavigationMenuLinkParentWhereInput = {
+  Footer?: InputMaybe<FooterWhereInput>
+}
+
+export type NavigationMenuLinkParentWhereUniqueInput = {
+  Footer?: InputMaybe<FooterWhereUniqueInput>
+}
+
+export type NavigationMenuLinkUpdateInput = {
+  links?: InputMaybe<LinkUpdateManyInlineInput>
+  title?: InputMaybe<Scalars['String']['input']>
+}
+
+export type NavigationMenuLinkUpdateManyInlineInput = {
+  /** Create and connect multiple NavigationMenuLink component instances */
+  create?: InputMaybe<
+    Array<NavigationMenuLinkCreateWithPositionInput>
+  >
+  /** Delete multiple NavigationMenuLink documents */
+  delete?: InputMaybe<Array<NavigationMenuLinkWhereUniqueInput>>
+  /** Update multiple NavigationMenuLink component instances */
+  update?: InputMaybe<
+    Array<NavigationMenuLinkUpdateWithNestedWhereUniqueAndPositionInput>
+  >
+  /** Upsert multiple NavigationMenuLink component instances */
+  upsert?: InputMaybe<
+    Array<NavigationMenuLinkUpsertWithNestedWhereUniqueAndPositionInput>
+  >
+}
+
+export type NavigationMenuLinkUpdateManyInput = {
+  title?: InputMaybe<Scalars['String']['input']>
+}
+
+export type NavigationMenuLinkUpdateManyWithNestedWhereInput = {
+  /** Update many input */
+  data: NavigationMenuLinkUpdateManyInput
+  /** Document search */
+  where: NavigationMenuLinkWhereInput
+}
+
+export type NavigationMenuLinkUpdateOneInlineInput = {
+  /** Create and connect one NavigationMenuLink document */
+  create?: InputMaybe<NavigationMenuLinkCreateInput>
+  /** Delete currently connected NavigationMenuLink document */
+  delete?: InputMaybe<Scalars['Boolean']['input']>
+  /** Update single NavigationMenuLink document */
+  update?: InputMaybe<NavigationMenuLinkUpdateWithNestedWhereUniqueInput>
+  /** Upsert single NavigationMenuLink document */
+  upsert?: InputMaybe<NavigationMenuLinkUpsertWithNestedWhereUniqueInput>
+}
+
+export type NavigationMenuLinkUpdateWithNestedWhereUniqueAndPositionInput =
+  {
+    /** Document to update */
+    data?: InputMaybe<NavigationMenuLinkUpdateInput>
+    /** Position in the list of existing component instances, will default to appending at the end of list */
+    position?: InputMaybe<ConnectPositionInput>
+    /** Unique component instance search */
+    where: NavigationMenuLinkWhereUniqueInput
+  }
+
+export type NavigationMenuLinkUpdateWithNestedWhereUniqueInput = {
+  /** Document to update */
+  data: NavigationMenuLinkUpdateInput
+  /** Unique document search */
+  where: NavigationMenuLinkWhereUniqueInput
+}
+
+export type NavigationMenuLinkUpsertInput = {
+  /** Create document if it didn't exist */
+  create: NavigationMenuLinkCreateInput
+  /** Update document if it exists */
+  update: NavigationMenuLinkUpdateInput
+}
+
+export type NavigationMenuLinkUpsertWithNestedWhereUniqueAndPositionInput =
+  {
+    /** Document to upsert */
+    data?: InputMaybe<NavigationMenuLinkUpsertInput>
+    /** Position in the list of existing component instances, will default to appending at the end of list */
+    position?: InputMaybe<ConnectPositionInput>
+    /** Unique component instance search */
+    where: NavigationMenuLinkWhereUniqueInput
+  }
+
+export type NavigationMenuLinkUpsertWithNestedWhereUniqueInput = {
+  /** Upsert data */
+  data: NavigationMenuLinkUpsertInput
+  /** Unique document search */
+  where: NavigationMenuLinkWhereUniqueInput
+}
+
+/** Identifies documents */
+export type NavigationMenuLinkWhereInput = {
+  /** Logical AND on all given filters. */
+  AND?: InputMaybe<Array<NavigationMenuLinkWhereInput>>
+  /** Logical NOT on all given filters combined by AND. */
+  NOT?: InputMaybe<Array<NavigationMenuLinkWhereInput>>
+  /** Logical OR on all given filters. */
+  OR?: InputMaybe<Array<NavigationMenuLinkWhereInput>>
+  /** Contains search across all appropriate fields. */
+  _search?: InputMaybe<Scalars['String']['input']>
+  id?: InputMaybe<Scalars['ID']['input']>
+  /** All values containing the given string. */
+  id_contains?: InputMaybe<Scalars['ID']['input']>
+  /** All values ending with the given string. */
+  id_ends_with?: InputMaybe<Scalars['ID']['input']>
+  /** All values that are contained in given list. */
+  id_in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
+  /** Any other value that exists and is not equal to the given value. */
+  id_not?: InputMaybe<Scalars['ID']['input']>
+  /** All values not containing the given string. */
+  id_not_contains?: InputMaybe<Scalars['ID']['input']>
+  /** All values not ending with the given string */
+  id_not_ends_with?: InputMaybe<Scalars['ID']['input']>
+  /** All values that are not contained in given list. */
+  id_not_in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
+  /** All values not starting with the given string. */
+  id_not_starts_with?: InputMaybe<Scalars['ID']['input']>
+  /** All values starting with the given string. */
+  id_starts_with?: InputMaybe<Scalars['ID']['input']>
+  links_every?: InputMaybe<LinkWhereInput>
+  links_none?: InputMaybe<LinkWhereInput>
+  links_some?: InputMaybe<LinkWhereInput>
+  title?: InputMaybe<Scalars['String']['input']>
+  /** All values containing the given string. */
+  title_contains?: InputMaybe<Scalars['String']['input']>
+  /** All values ending with the given string. */
+  title_ends_with?: InputMaybe<Scalars['String']['input']>
+  /** All values that are contained in given list. */
+  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
+  /** Any other value that exists and is not equal to the given value. */
+  title_not?: InputMaybe<Scalars['String']['input']>
+  /** All values not containing the given string. */
+  title_not_contains?: InputMaybe<Scalars['String']['input']>
+  /** All values not ending with the given string */
+  title_not_ends_with?: InputMaybe<Scalars['String']['input']>
+  /** All values that are not contained in given list. */
+  title_not_in?: InputMaybe<
+    Array<InputMaybe<Scalars['String']['input']>>
+  >
+  /** All values not starting with the given string. */
+  title_not_starts_with?: InputMaybe<Scalars['String']['input']>
+  /** All values starting with the given string. */
+  title_starts_with?: InputMaybe<Scalars['String']['input']>
+}
+
+/** References NavigationMenuLink record uniquely */
+export type NavigationMenuLinkWhereUniqueInput = {
+  id?: InputMaybe<Scalars['ID']['input']>
+}
+
 /** An object with an ID */
 export type Node = {
   /** The id of the object. */
@@ -5271,36 +6035,36 @@ export type Node = {
 
 export type Page = Node & {
   __typename?: 'Page'
-  aboutSection?: Maybe<AboutSection>
-  benefitsSection?: Maybe<BenefitSection>
+  aboutSection: AboutSection
+  benefitsSection: BenefitSection
   /** The time the document was created */
   createdAt: Scalars['DateTime']['output']
   /** User that created this document */
   createdBy?: Maybe<User>
   /** Get the document in other stages */
   documentInStages: Array<Page>
-  faqSection?: Maybe<FaqSection>
-  footer?: Maybe<Footer>
+  faqSection: FaqSection
+  footer: Footer
   /** Cabeçalho */
   header: Header
   /** Seção inicial da landing page */
-  hero?: Maybe<Hero>
+  hero: Hero
   /** List of Page versions */
   history: Array<Version>
   /** The unique identifier */
   id: Scalars['ID']['output']
-  pillarsSection?: Maybe<PagepillarsSectionUnion>
+  pillarsSection: PillarSection
   /** The time the document was published. Null on documents in draft stage. */
   publishedAt?: Maybe<Scalars['DateTime']['output']>
   /** User that last published this document */
   publishedBy?: Maybe<User>
   /** Seção para relembrar os visitantes a se inscrever */
-  rememberActionSection?: Maybe<RememberActionSection>
+  rememberActionSection: RememberActionSection
   scheduledIn: Array<ScheduledOperation>
   /** System stage field */
   stage: Stage
-  stepsSection?: Maybe<StepSection>
-  testimonialSection?: Maybe<TestimonialSection>
+  stepsSection: StepSection
+  testimonialSection: TestimonialSection
   /** The time the document was updated */
   updatedAt: Scalars['DateTime']['output']
   /** User that last updated this document */
@@ -5413,17 +6177,17 @@ export type PageConnection = {
 }
 
 export type PageCreateInput = {
-  aboutSection?: InputMaybe<AboutSectionCreateOneInlineInput>
-  benefitsSection?: InputMaybe<BenefitSectionCreateOneInlineInput>
+  aboutSection: AboutSectionCreateOneInlineInput
+  benefitsSection: BenefitSectionCreateOneInlineInput
   createdAt?: InputMaybe<Scalars['DateTime']['input']>
-  faqSection?: InputMaybe<FaqSectionCreateOneInlineInput>
-  footer?: InputMaybe<FooterCreateOneInlineInput>
+  faqSection: FaqSectionCreateOneInlineInput
+  footer: FooterCreateOneInlineInput
   header: HeaderCreateOneInlineInput
-  hero?: InputMaybe<HeroCreateOneInlineInput>
-  pillarsSection?: InputMaybe<PagepillarsSectionUnionCreateOneInlineInput>
-  rememberActionSection?: InputMaybe<RememberActionSectionCreateOneInlineInput>
-  stepsSection?: InputMaybe<StepSectionCreateOneInlineInput>
-  testimonialSection?: InputMaybe<TestimonialSectionCreateOneInlineInput>
+  hero: HeroCreateOneInlineInput
+  pillarsSection: PillarSectionCreateOneInlineInput
+  rememberActionSection: RememberActionSectionCreateOneInlineInput
+  stepsSection: StepSectionCreateOneInlineInput
+  testimonialSection: TestimonialSectionCreateOneInlineInput
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>
 }
 
@@ -5523,10 +6287,7 @@ export type PageManyWhereInput = {
   id_not_starts_with?: InputMaybe<Scalars['ID']['input']>
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']['input']>
-  /** All values in which the modular component is connected to the given models */
-  pillarsSection?: InputMaybe<PagepillarsSectionUnionWhereInput>
-  /** All values in which the union is empty. */
-  pillarsSection_empty?: InputMaybe<Scalars['Boolean']['input']>
+  pillarsSection?: InputMaybe<PillarSectionWhereInput>
   publishedAt?: InputMaybe<Scalars['DateTime']['input']>
   /** All values greater than the given value. */
   publishedAt_gt?: InputMaybe<Scalars['DateTime']['input']>
@@ -5593,7 +6354,7 @@ export type PageUpdateInput = {
   footer?: InputMaybe<FooterUpdateOneInlineInput>
   header?: InputMaybe<HeaderUpdateOneInlineInput>
   hero?: InputMaybe<HeroUpdateOneInlineInput>
-  pillarsSection?: InputMaybe<PagepillarsSectionUnionUpdateOneInlineInput>
+  pillarsSection?: InputMaybe<PillarSectionUpdateOneInlineInput>
   rememberActionSection?: InputMaybe<RememberActionSectionUpdateOneInlineInput>
   stepsSection?: InputMaybe<StepSectionUpdateOneInlineInput>
   testimonialSection?: InputMaybe<TestimonialSectionUpdateOneInlineInput>
@@ -5728,10 +6489,7 @@ export type PageWhereInput = {
   id_not_starts_with?: InputMaybe<Scalars['ID']['input']>
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']['input']>
-  /** All values in which the modular component is connected to the given models */
-  pillarsSection?: InputMaybe<PagepillarsSectionUnionWhereInput>
-  /** All values in which the union is empty. */
-  pillarsSection_empty?: InputMaybe<Scalars['Boolean']['input']>
+  pillarsSection?: InputMaybe<PillarSectionWhereInput>
   publishedAt?: InputMaybe<Scalars['DateTime']['input']>
   /** All values greater than the given value. */
   publishedAt_gt?: InputMaybe<Scalars['DateTime']['input']>
@@ -5799,108 +6557,9 @@ export type PageWhereUniqueInput = {
   id?: InputMaybe<Scalars['ID']['input']>
 }
 
-export type PagepillarsSectionUnion = Methodology | PillarSection
-
-export type PagepillarsSectionUnionConnectInput = {
-  Methodology?: InputMaybe<MethodologyConnectInput>
-  PillarSection?: InputMaybe<PillarSectionConnectInput>
-}
-
-export type PagepillarsSectionUnionCreateInput = {
-  Methodology?: InputMaybe<MethodologyCreateInput>
-  PillarSection?: InputMaybe<PillarSectionCreateInput>
-}
-
-export type PagepillarsSectionUnionCreateManyInlineInput = {
-  /** Create and connect multiple existing PagepillarsSectionUnion documents */
-  create?: InputMaybe<Array<PagepillarsSectionUnionCreateInput>>
-}
-
-export type PagepillarsSectionUnionCreateOneInlineInput = {
-  /** Create and connect one PagepillarsSectionUnion document */
-  create?: InputMaybe<PagepillarsSectionUnionCreateInput>
-}
-
-export type PagepillarsSectionUnionCreateWithPositionInput = {
-  Methodology?: InputMaybe<MethodologyCreateWithPositionInput>
-  PillarSection?: InputMaybe<PillarSectionCreateWithPositionInput>
-}
-
-export type PagepillarsSectionUnionUpdateInput = {
-  Methodology?: InputMaybe<MethodologyUpdateInput>
-  PillarSection?: InputMaybe<PillarSectionUpdateInput>
-}
-
-export type PagepillarsSectionUnionUpdateManyInlineInput = {
-  /** Create and connect multiple PagepillarsSectionUnion component instances */
-  create?: InputMaybe<
-    Array<PagepillarsSectionUnionCreateWithPositionInput>
-  >
-  /** Delete multiple PagepillarsSectionUnion documents */
-  delete?: InputMaybe<Array<PagepillarsSectionUnionWhereUniqueInput>>
-  /** Update multiple PagepillarsSectionUnion component instances */
-  update?: InputMaybe<
-    Array<PagepillarsSectionUnionUpdateWithNestedWhereUniqueAndPositionInput>
-  >
-  /** Upsert multiple PagepillarsSectionUnion component instances */
-  upsert?: InputMaybe<
-    Array<PagepillarsSectionUnionUpsertWithNestedWhereUniqueAndPositionInput>
-  >
-}
-
-export type PagepillarsSectionUnionUpdateManyWithNestedWhereInput = {
-  Methodology?: InputMaybe<MethodologyUpdateManyWithNestedWhereInput>
-  PillarSection?: InputMaybe<PillarSectionUpdateManyWithNestedWhereInput>
-}
-
-export type PagepillarsSectionUnionUpdateOneInlineInput = {
-  /** Create and connect one PagepillarsSectionUnion document */
-  create?: InputMaybe<PagepillarsSectionUnionCreateInput>
-  /** Delete currently connected PagepillarsSectionUnion document */
-  delete?: InputMaybe<Scalars['Boolean']['input']>
-  /** Update single PagepillarsSectionUnion document */
-  update?: InputMaybe<PagepillarsSectionUnionUpdateWithNestedWhereUniqueInput>
-  /** Upsert single PagepillarsSectionUnion document */
-  upsert?: InputMaybe<PagepillarsSectionUnionUpsertWithNestedWhereUniqueInput>
-}
-
-export type PagepillarsSectionUnionUpdateWithNestedWhereUniqueAndPositionInput =
-  {
-    Methodology?: InputMaybe<MethodologyUpdateWithNestedWhereUniqueAndPositionInput>
-    PillarSection?: InputMaybe<PillarSectionUpdateWithNestedWhereUniqueAndPositionInput>
-  }
-
-export type PagepillarsSectionUnionUpdateWithNestedWhereUniqueInput =
-  {
-    Methodology?: InputMaybe<MethodologyUpdateWithNestedWhereUniqueInput>
-    PillarSection?: InputMaybe<PillarSectionUpdateWithNestedWhereUniqueInput>
-  }
-
-export type PagepillarsSectionUnionUpsertWithNestedWhereUniqueAndPositionInput =
-  {
-    Methodology?: InputMaybe<MethodologyUpsertWithNestedWhereUniqueAndPositionInput>
-    PillarSection?: InputMaybe<PillarSectionUpsertWithNestedWhereUniqueAndPositionInput>
-  }
-
-export type PagepillarsSectionUnionUpsertWithNestedWhereUniqueInput =
-  {
-    Methodology?: InputMaybe<MethodologyUpsertWithNestedWhereUniqueInput>
-    PillarSection?: InputMaybe<PillarSectionUpsertWithNestedWhereUniqueInput>
-  }
-
-export type PagepillarsSectionUnionWhereInput = {
-  Methodology?: InputMaybe<MethodologyWhereInput>
-  PillarSection?: InputMaybe<PillarSectionWhereInput>
-}
-
-export type PagepillarsSectionUnionWhereUniqueInput = {
-  Methodology?: InputMaybe<MethodologyWhereUniqueInput>
-  PillarSection?: InputMaybe<PillarSectionWhereUniqueInput>
-}
-
 export type PillarSection = {
   __typename?: 'PillarSection'
-  description: Scalars['String']['output']
+  description: RichText
   heading: Scalars['String']['output']
   /** The unique identifier */
   id: Scalars['ID']['output']
@@ -5940,7 +6599,7 @@ export type PillarSectionConnection = {
 }
 
 export type PillarSectionCreateInput = {
-  description: Scalars['String']['input']
+  description: Scalars['RichTextAST']['input']
   heading: Scalars['String']['input']
   methodologys?: InputMaybe<MethodologyCreateManyInlineInput>
   sectionId: Scalars['String']['input']
@@ -5982,29 +6641,6 @@ export type PillarSectionManyWhereInput = {
   OR?: InputMaybe<Array<PillarSectionWhereInput>>
   /** Contains search across all appropriate fields. */
   _search?: InputMaybe<Scalars['String']['input']>
-  description?: InputMaybe<Scalars['String']['input']>
-  /** All values containing the given string. */
-  description_contains?: InputMaybe<Scalars['String']['input']>
-  /** All values ending with the given string. */
-  description_ends_with?: InputMaybe<Scalars['String']['input']>
-  /** All values that are contained in given list. */
-  description_in?: InputMaybe<
-    Array<InputMaybe<Scalars['String']['input']>>
-  >
-  /** Any other value that exists and is not equal to the given value. */
-  description_not?: InputMaybe<Scalars['String']['input']>
-  /** All values not containing the given string. */
-  description_not_contains?: InputMaybe<Scalars['String']['input']>
-  /** All values not ending with the given string */
-  description_not_ends_with?: InputMaybe<Scalars['String']['input']>
-  /** All values that are not contained in given list. */
-  description_not_in?: InputMaybe<
-    Array<InputMaybe<Scalars['String']['input']>>
-  >
-  /** All values not starting with the given string. */
-  description_not_starts_with?: InputMaybe<Scalars['String']['input']>
-  /** All values starting with the given string. */
-  description_starts_with?: InputMaybe<Scalars['String']['input']>
   heading?: InputMaybe<Scalars['String']['input']>
   /** All values containing the given string. */
   heading_contains?: InputMaybe<Scalars['String']['input']>
@@ -6076,8 +6712,6 @@ export type PillarSectionManyWhereInput = {
 }
 
 export enum PillarSectionOrderByInput {
-  DescriptionAsc = 'description_ASC',
-  DescriptionDesc = 'description_DESC',
   HeadingAsc = 'heading_ASC',
   HeadingDesc = 'heading_DESC',
   IdAsc = 'id_ASC',
@@ -6171,7 +6805,7 @@ export type PillarSectionParentWhereUniqueInput = {
 }
 
 export type PillarSectionUpdateInput = {
-  description?: InputMaybe<Scalars['String']['input']>
+  description?: InputMaybe<Scalars['RichTextAST']['input']>
   heading?: InputMaybe<Scalars['String']['input']>
   methodologys?: InputMaybe<MethodologyUpdateManyInlineInput>
   sectionId?: InputMaybe<Scalars['String']['input']>
@@ -6193,7 +6827,7 @@ export type PillarSectionUpdateManyInlineInput = {
 }
 
 export type PillarSectionUpdateManyInput = {
-  description?: InputMaybe<Scalars['String']['input']>
+  description?: InputMaybe<Scalars['RichTextAST']['input']>
   heading?: InputMaybe<Scalars['String']['input']>
   sectionId?: InputMaybe<Scalars['String']['input']>
 }
@@ -6267,29 +6901,6 @@ export type PillarSectionWhereInput = {
   OR?: InputMaybe<Array<PillarSectionWhereInput>>
   /** Contains search across all appropriate fields. */
   _search?: InputMaybe<Scalars['String']['input']>
-  description?: InputMaybe<Scalars['String']['input']>
-  /** All values containing the given string. */
-  description_contains?: InputMaybe<Scalars['String']['input']>
-  /** All values ending with the given string. */
-  description_ends_with?: InputMaybe<Scalars['String']['input']>
-  /** All values that are contained in given list. */
-  description_in?: InputMaybe<
-    Array<InputMaybe<Scalars['String']['input']>>
-  >
-  /** Any other value that exists and is not equal to the given value. */
-  description_not?: InputMaybe<Scalars['String']['input']>
-  /** All values not containing the given string. */
-  description_not_contains?: InputMaybe<Scalars['String']['input']>
-  /** All values not ending with the given string */
-  description_not_ends_with?: InputMaybe<Scalars['String']['input']>
-  /** All values that are not contained in given list. */
-  description_not_in?: InputMaybe<
-    Array<InputMaybe<Scalars['String']['input']>>
-  >
-  /** All values not starting with the given string. */
-  description_not_starts_with?: InputMaybe<Scalars['String']['input']>
-  /** All values starting with the given string. */
-  description_starts_with?: InputMaybe<Scalars['String']['input']>
   heading?: InputMaybe<Scalars['String']['input']>
   /** All values containing the given string. */
   heading_contains?: InputMaybe<Scalars['String']['input']>
@@ -6985,7 +7596,7 @@ export type RememberActionSection = {
   logo: Asset
   /** System stage field */
   stage: Stage
-  subitle: Scalars['String']['output']
+  subtitle: Scalars['String']['output']
   title: Scalars['String']['output']
 }
 
@@ -7015,7 +7626,7 @@ export type RememberActionSectionCreateInput = {
   buttonTarget: Scalars['String']['input']
   buttonText: Scalars['String']['input']
   logo: AssetCreateOneInlineInput
-  subitle: Scalars['String']['input']
+  subtitle: Scalars['String']['input']
   title: Scalars['String']['input']
 }
 
@@ -7123,29 +7734,29 @@ export type RememberActionSectionManyWhereInput = {
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']['input']>
   logo?: InputMaybe<AssetWhereInput>
-  subitle?: InputMaybe<Scalars['String']['input']>
+  subtitle?: InputMaybe<Scalars['String']['input']>
   /** All values containing the given string. */
-  subitle_contains?: InputMaybe<Scalars['String']['input']>
+  subtitle_contains?: InputMaybe<Scalars['String']['input']>
   /** All values ending with the given string. */
-  subitle_ends_with?: InputMaybe<Scalars['String']['input']>
+  subtitle_ends_with?: InputMaybe<Scalars['String']['input']>
   /** All values that are contained in given list. */
-  subitle_in?: InputMaybe<
+  subtitle_in?: InputMaybe<
     Array<InputMaybe<Scalars['String']['input']>>
   >
   /** Any other value that exists and is not equal to the given value. */
-  subitle_not?: InputMaybe<Scalars['String']['input']>
+  subtitle_not?: InputMaybe<Scalars['String']['input']>
   /** All values not containing the given string. */
-  subitle_not_contains?: InputMaybe<Scalars['String']['input']>
+  subtitle_not_contains?: InputMaybe<Scalars['String']['input']>
   /** All values not ending with the given string */
-  subitle_not_ends_with?: InputMaybe<Scalars['String']['input']>
+  subtitle_not_ends_with?: InputMaybe<Scalars['String']['input']>
   /** All values that are not contained in given list. */
-  subitle_not_in?: InputMaybe<
+  subtitle_not_in?: InputMaybe<
     Array<InputMaybe<Scalars['String']['input']>>
   >
   /** All values not starting with the given string. */
-  subitle_not_starts_with?: InputMaybe<Scalars['String']['input']>
+  subtitle_not_starts_with?: InputMaybe<Scalars['String']['input']>
   /** All values starting with the given string. */
-  subitle_starts_with?: InputMaybe<Scalars['String']['input']>
+  subtitle_starts_with?: InputMaybe<Scalars['String']['input']>
   title?: InputMaybe<Scalars['String']['input']>
   /** All values containing the given string. */
   title_contains?: InputMaybe<Scalars['String']['input']>
@@ -7176,8 +7787,8 @@ export enum RememberActionSectionOrderByInput {
   ButtonTextDesc = 'buttonText_DESC',
   IdAsc = 'id_ASC',
   IdDesc = 'id_DESC',
-  SubitleAsc = 'subitle_ASC',
-  SubitleDesc = 'subitle_DESC',
+  SubtitleAsc = 'subtitle_ASC',
+  SubtitleDesc = 'subtitle_DESC',
   TitleAsc = 'title_ASC',
   TitleDesc = 'title_DESC',
 }
@@ -7279,7 +7890,7 @@ export type RememberActionSectionUpdateInput = {
   buttonTarget?: InputMaybe<Scalars['String']['input']>
   buttonText?: InputMaybe<Scalars['String']['input']>
   logo?: InputMaybe<AssetUpdateOneInlineInput>
-  subitle?: InputMaybe<Scalars['String']['input']>
+  subtitle?: InputMaybe<Scalars['String']['input']>
   title?: InputMaybe<Scalars['String']['input']>
 }
 
@@ -7303,7 +7914,7 @@ export type RememberActionSectionUpdateManyInlineInput = {
 export type RememberActionSectionUpdateManyInput = {
   buttonTarget?: InputMaybe<Scalars['String']['input']>
   buttonText?: InputMaybe<Scalars['String']['input']>
-  subitle?: InputMaybe<Scalars['String']['input']>
+  subtitle?: InputMaybe<Scalars['String']['input']>
   title?: InputMaybe<Scalars['String']['input']>
 }
 
@@ -7444,29 +8055,29 @@ export type RememberActionSectionWhereInput = {
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']['input']>
   logo?: InputMaybe<AssetWhereInput>
-  subitle?: InputMaybe<Scalars['String']['input']>
+  subtitle?: InputMaybe<Scalars['String']['input']>
   /** All values containing the given string. */
-  subitle_contains?: InputMaybe<Scalars['String']['input']>
+  subtitle_contains?: InputMaybe<Scalars['String']['input']>
   /** All values ending with the given string. */
-  subitle_ends_with?: InputMaybe<Scalars['String']['input']>
+  subtitle_ends_with?: InputMaybe<Scalars['String']['input']>
   /** All values that are contained in given list. */
-  subitle_in?: InputMaybe<
+  subtitle_in?: InputMaybe<
     Array<InputMaybe<Scalars['String']['input']>>
   >
   /** Any other value that exists and is not equal to the given value. */
-  subitle_not?: InputMaybe<Scalars['String']['input']>
+  subtitle_not?: InputMaybe<Scalars['String']['input']>
   /** All values not containing the given string. */
-  subitle_not_contains?: InputMaybe<Scalars['String']['input']>
+  subtitle_not_contains?: InputMaybe<Scalars['String']['input']>
   /** All values not ending with the given string */
-  subitle_not_ends_with?: InputMaybe<Scalars['String']['input']>
+  subtitle_not_ends_with?: InputMaybe<Scalars['String']['input']>
   /** All values that are not contained in given list. */
-  subitle_not_in?: InputMaybe<
+  subtitle_not_in?: InputMaybe<
     Array<InputMaybe<Scalars['String']['input']>>
   >
   /** All values not starting with the given string. */
-  subitle_not_starts_with?: InputMaybe<Scalars['String']['input']>
+  subtitle_not_starts_with?: InputMaybe<Scalars['String']['input']>
   /** All values starting with the given string. */
-  subitle_starts_with?: InputMaybe<Scalars['String']['input']>
+  subtitle_starts_with?: InputMaybe<Scalars['String']['input']>
   title?: InputMaybe<Scalars['String']['input']>
   /** All values containing the given string. */
   title_contains?: InputMaybe<Scalars['String']['input']>
@@ -12844,7 +13455,7 @@ export type MainQueryVariables = Exact<{ [key: string]: never }>
 
 export type MainQuery = {
   __typename?: 'Query'
-  page?: {
+  pages: Array<{
     __typename?: 'Page'
     header: {
       __typename?: 'Header'
@@ -12861,7 +13472,7 @@ export type MainQuery = {
         target: string
       }>
     }
-    hero?: {
+    hero: {
       __typename?: 'Hero'
       buttonTarget: string
       buttonText: string
@@ -12874,14 +13485,14 @@ export type MainQuery = {
       backgroundDesktop: { __typename?: 'Asset'; url: string }
       backgroundMobile: { __typename?: 'Asset'; url: string }
       title: { __typename?: 'RichText'; html: string }
-    } | null
-    aboutSection?: {
+    }
+    aboutSection: {
       __typename?: 'AboutSection'
       sectionId: string
       heading: string
       description: { __typename?: 'RichText'; html: string }
-    } | null
-    stepsSection?: {
+    }
+    stepsSection: {
       __typename?: 'StepSection'
       sectionId: string
       heading: string
@@ -12893,35 +13504,32 @@ export type MainQuery = {
         title: string
         id: string
       }>
-    } | null
-    rememberActionSection?: {
+    }
+    rememberActionSection: {
       __typename?: 'RememberActionSection'
       buttonText: string
       buttonTarget: string
-      subitle: string
+      subtitle: string
       title: string
       logo: {
         __typename?: 'Asset'
         description?: string | null
         url: string
       }
-    } | null
-    pillarsSection?:
-      | { __typename?: 'Methodology' }
-      | {
-          __typename?: 'PillarSection'
-          description: string
-          heading: string
-          sectionId: string
-          methodologys: Array<{
-            __typename?: 'Methodology'
-            description: string
-            id: string
-            name: string
-          }>
-        }
-      | null
-    benefitsSection?: {
+    }
+    pillarsSection: {
+      __typename?: 'PillarSection'
+      sectionId: string
+      heading: string
+      description: { __typename?: 'RichText'; html: string }
+      methodologys: Array<{
+        __typename?: 'Methodology'
+        id: string
+        name: string
+        description: string
+      }>
+    }
+    benefitsSection: {
       __typename?: 'BenefitSection'
       sectionId: string
       heading: string
@@ -12938,8 +13546,8 @@ export type MainQuery = {
           url: string
         }
       }>
-    } | null
-    testimonialSection?: {
+    }
+    testimonialSection: {
       __typename?: 'TestimonialSection'
       sectionId: string
       heading: string
@@ -12958,8 +13566,8 @@ export type MainQuery = {
           icon: { __typename?: 'Asset'; url: string }
         }>
       }>
-    } | null
-    faqSection?: {
+    }
+    faqSection: {
       __typename?: 'FaqSection'
       sectionId: string
       heading: string
@@ -12968,8 +13576,8 @@ export type MainQuery = {
         title: string
         content: { __typename?: 'RichText'; html: string }
       }>
-    } | null
-    footer?: {
+    }
+    footer: {
       __typename?: 'Footer'
       companySlogan: string
       companyName: string
@@ -12985,13 +13593,23 @@ export type MainQuery = {
         url: string
         icon: { __typename?: 'Asset'; url: string }
       }>
-    } | null
-  } | null
+      navigationMenuLinks: Array<{
+        __typename?: 'NavigationMenuLink'
+        id: string
+        title: string
+        links: Array<{
+          __typename?: 'Link'
+          label: string
+          target: string
+        }>
+      }>
+    }
+  }>
 }
 
 export const MainDocument = gql`
   query Main {
-    page(where: { id: "clkrmn77r1qcn0bkiyuxchaor" }) {
+    pages {
       header {
         logo {
           description
@@ -13043,7 +13661,7 @@ export const MainDocument = gql`
       rememberActionSection {
         buttonText
         buttonTarget
-        subitle
+        subtitle
         title
         logo {
           description
@@ -13051,15 +13669,15 @@ export const MainDocument = gql`
         }
       }
       pillarsSection {
-        ... on PillarSection {
+        sectionId
+        heading
+        description {
+          html
+        }
+        methodologys {
+          id
+          name
           description
-          heading
-          sectionId
-          methodologys {
-            description
-            id
-            name
-          }
         }
       }
       benefitsSection {
@@ -13120,6 +13738,14 @@ export const MainDocument = gql`
           id
           name
           url
+        }
+        navigationMenuLinks {
+          id
+          title
+          links {
+            label
+            target
+          }
         }
       }
     }

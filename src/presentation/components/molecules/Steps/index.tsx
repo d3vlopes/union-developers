@@ -9,10 +9,12 @@ export interface StepsProps {
 }
 
 export const Steps = ({ steps }: StepsProps) => {
+  const items = [...steps]
+
   return (
     <S.Wrapper>
       <S.StepsWrapper>
-        {steps.sort((a, b) => a.number - b.number).map(StepTemplate)}
+        {items.sort((a, b) => a.number - b.number).map(StepTemplate)}
       </S.StepsWrapper>
       <S.Line />
     </S.Wrapper>

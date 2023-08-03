@@ -5,7 +5,7 @@ import { termsMock } from '../../steps/AboutYou/components/Terms/mock'
 import { SubscriptionSectionProps } from '../..'
 
 export const subscriptionMock: SubscriptionSectionProps = {
-  id: 'join',
+  id: 'formulario',
   title: 'Junte-se ao time!',
   initialStepDescription:
     'Tem interesse em participar do Union? Confira abaixo os requisitos para participar',
