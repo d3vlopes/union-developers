@@ -54,7 +54,7 @@ export const GET_MAIN = gql`
       rememberActionSection {
         buttonText
         buttonTarget
-        subitle
+        subtitle
         title
         logo {
           description

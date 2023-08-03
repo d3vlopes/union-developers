@@ -7644,7 +7644,7 @@ export type RememberActionSection = {
   logo: Asset
   /** System stage field */
   stage: Stage
-  subitle: Scalars['String']['output']
+  subtitle: Scalars['String']['output']
   title: Scalars['String']['output']
 }
 
@@ -7674,7 +7674,7 @@ export type RememberActionSectionCreateInput = {
   buttonTarget: Scalars['String']['input']
   buttonText: Scalars['String']['input']
   logo: AssetCreateOneInlineInput
-  subitle: Scalars['String']['input']
+  subtitle: Scalars['String']['input']
   title: Scalars['String']['input']
 }
 
@@ -7782,29 +7782,29 @@ export type RememberActionSectionManyWhereInput = {
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']['input']>
   logo?: InputMaybe<AssetWhereInput>
-  subitle?: InputMaybe<Scalars['String']['input']>
+  subtitle?: InputMaybe<Scalars['String']['input']>
   /** All values containing the given string. */
-  subitle_contains?: InputMaybe<Scalars['String']['input']>
+  subtitle_contains?: InputMaybe<Scalars['String']['input']>
   /** All values ending with the given string. */
-  subitle_ends_with?: InputMaybe<Scalars['String']['input']>
+  subtitle_ends_with?: InputMaybe<Scalars['String']['input']>
   /** All values that are contained in given list. */
-  subitle_in?: InputMaybe<
+  subtitle_in?: InputMaybe<
     Array<InputMaybe<Scalars['String']['input']>>
   >
   /** Any other value that exists and is not equal to the given value. */
-  subitle_not?: InputMaybe<Scalars['String']['input']>
+  subtitle_not?: InputMaybe<Scalars['String']['input']>
   /** All values not containing the given string. */
-  subitle_not_contains?: InputMaybe<Scalars['String']['input']>
+  subtitle_not_contains?: InputMaybe<Scalars['String']['input']>
   /** All values not ending with the given string */
-  subitle_not_ends_with?: InputMaybe<Scalars['String']['input']>
+  subtitle_not_ends_with?: InputMaybe<Scalars['String']['input']>
   /** All values that are not contained in given list. */
-  subitle_not_in?: InputMaybe<
+  subtitle_not_in?: InputMaybe<
     Array<InputMaybe<Scalars['String']['input']>>
   >
   /** All values not starting with the given string. */
-  subitle_not_starts_with?: InputMaybe<Scalars['String']['input']>
+  subtitle_not_starts_with?: InputMaybe<Scalars['String']['input']>
   /** All values starting with the given string. */
-  subitle_starts_with?: InputMaybe<Scalars['String']['input']>
+  subtitle_starts_with?: InputMaybe<Scalars['String']['input']>
   title?: InputMaybe<Scalars['String']['input']>
   /** All values containing the given string. */
   title_contains?: InputMaybe<Scalars['String']['input']>
@@ -7835,8 +7835,8 @@ export enum RememberActionSectionOrderByInput {
   ButtonTextDesc = 'buttonText_DESC',
   IdAsc = 'id_ASC',
   IdDesc = 'id_DESC',
-  SubitleAsc = 'subitle_ASC',
-  SubitleDesc = 'subitle_DESC',
+  SubtitleAsc = 'subtitle_ASC',
+  SubtitleDesc = 'subtitle_DESC',
   TitleAsc = 'title_ASC',
   TitleDesc = 'title_DESC',
 }
@@ -7938,7 +7938,7 @@ export type RememberActionSectionUpdateInput = {
   buttonTarget?: InputMaybe<Scalars['String']['input']>
   buttonText?: InputMaybe<Scalars['String']['input']>
   logo?: InputMaybe<AssetUpdateOneInlineInput>
-  subitle?: InputMaybe<Scalars['String']['input']>
+  subtitle?: InputMaybe<Scalars['String']['input']>
   title?: InputMaybe<Scalars['String']['input']>
 }
 
@@ -7962,7 +7962,7 @@ export type RememberActionSectionUpdateManyInlineInput = {
 export type RememberActionSectionUpdateManyInput = {
   buttonTarget?: InputMaybe<Scalars['String']['input']>
   buttonText?: InputMaybe<Scalars['String']['input']>
-  subitle?: InputMaybe<Scalars['String']['input']>
+  subtitle?: InputMaybe<Scalars['String']['input']>
   title?: InputMaybe<Scalars['String']['input']>
 }
 
@@ -8103,29 +8103,29 @@ export type RememberActionSectionWhereInput = {
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']['input']>
   logo?: InputMaybe<AssetWhereInput>
-  subitle?: InputMaybe<Scalars['String']['input']>
+  subtitle?: InputMaybe<Scalars['String']['input']>
   /** All values containing the given string. */
-  subitle_contains?: InputMaybe<Scalars['String']['input']>
+  subtitle_contains?: InputMaybe<Scalars['String']['input']>
   /** All values ending with the given string. */
-  subitle_ends_with?: InputMaybe<Scalars['String']['input']>
+  subtitle_ends_with?: InputMaybe<Scalars['String']['input']>
   /** All values that are contained in given list. */
-  subitle_in?: InputMaybe<
+  subtitle_in?: InputMaybe<
     Array<InputMaybe<Scalars['String']['input']>>
   >
   /** Any other value that exists and is not equal to the given value. */
-  subitle_not?: InputMaybe<Scalars['String']['input']>
+  subtitle_not?: InputMaybe<Scalars['String']['input']>
   /** All values not containing the given string. */
-  subitle_not_contains?: InputMaybe<Scalars['String']['input']>
+  subtitle_not_contains?: InputMaybe<Scalars['String']['input']>
   /** All values not ending with the given string */
-  subitle_not_ends_with?: InputMaybe<Scalars['String']['input']>
+  subtitle_not_ends_with?: InputMaybe<Scalars['String']['input']>
   /** All values that are not contained in given list. */
-  subitle_not_in?: InputMaybe<
+  subtitle_not_in?: InputMaybe<
     Array<InputMaybe<Scalars['String']['input']>>
   >
   /** All values not starting with the given string. */
-  subitle_not_starts_with?: InputMaybe<Scalars['String']['input']>
+  subtitle_not_starts_with?: InputMaybe<Scalars['String']['input']>
   /** All values starting with the given string. */
-  subitle_starts_with?: InputMaybe<Scalars['String']['input']>
+  subtitle_starts_with?: InputMaybe<Scalars['String']['input']>
   title?: InputMaybe<Scalars['String']['input']>
   /** All values containing the given string. */
   title_contains?: InputMaybe<Scalars['String']['input']>
@@ -13557,7 +13557,7 @@ export type MainQuery = {
       __typename?: 'RememberActionSection'
       buttonText: string
       buttonTarget: string
-      subitle: string
+      subtitle: string
       title: string
       logo: {
         __typename?: 'Asset'
@@ -13709,7 +13709,7 @@ export const MainDocument = gql`
       rememberActionSection {
         buttonText
         buttonTarget
-        subitle
+        subtitle
         title
         logo {
           description
