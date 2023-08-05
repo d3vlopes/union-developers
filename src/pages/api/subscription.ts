@@ -28,7 +28,10 @@ export default async function handler(
       const isError = data.errors?.length > 0
 
       if (!data || isError) {
-        return res.status(400).json({ message: 'Bad request' })
+        return res.status(400).json({
+          message: 'Bad request',
+          payload: { error: data?.errors },
+        })
       }
 
       return res.status(201).json({
@@ -36,7 +39,7 @@ export default async function handler(
         payload: { ...data },
       })
     } catch (error: any) {
-      throw new Error(error)
+      throw new Error(error?.message)
     }
   } else {
     res.status(404).json({ message: 'Method not allowed' })
