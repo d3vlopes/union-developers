@@ -16,3 +16,7 @@ export const personalInfoStepSchema = z.object({
     required_error: 'Campo obrigatório',
   }),
 })
+
+export type PersonalInfoStepType = z.infer<
+  typeof personalInfoStepSchema
+>

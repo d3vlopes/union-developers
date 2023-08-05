@@ -28,7 +28,7 @@ describe('<SendStep />', () => {
 
     it('should render correct message', () => {
       const errorMessage = getByText(
-        'Aconteceu um erro ao durante o processamento da inscrição, entre em contato com nossa equipe.',
+        'Aconteceu um erro durante o processamento da inscrição, entre em contato com nossa equipe.',
       )
 
       expect(errorMessage).toBeInTheDocument()

@@ -1,16 +1,15 @@
 import { useEffect } from 'react'
 
-import { useForm, z, zodResolver } from '@/libs/forms'
+import { useForm, zodResolver } from '@/libs/forms'
 
 import { useSubscriptionForm } from '@/presentation/hooks'
 
 import { autoSaveFormFields } from '../../../helpers'
 
-import { personalInfoStepSchema } from '../schema'
-
-export type PersonalInfoStepType = z.infer<
-  typeof personalInfoStepSchema
->
+import {
+  PersonalInfoStepType,
+  personalInfoStepSchema,
+} from '../schema'
 
 export const usePersonalInfoStep = () => {
   const {

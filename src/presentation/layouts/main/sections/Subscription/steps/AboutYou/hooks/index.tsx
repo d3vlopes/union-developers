@@ -1,14 +1,23 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable no-console */
 import { useEffect, useState } from 'react'
+
+import { monitoring } from '@/libs/monitoring'
 
 import { useForm, zodResolver } from '@/libs/forms'
 
 import { useSubscriptionForm } from '@/presentation/hooks'
 
+import { SubscriptionResponse } from '@/api/models'
+
 import { AboutYouStepType, aboutYouStepSchema } from '../schema'
+import { PersonalInfoStepType } from '../../PersonalInfo/schema'
+import { TechnicalInfoStepType } from '../../TechnicalInfo/schema'
 
 import { autoSaveFormFields } from '../../../helpers'
+
+type FormData = AboutYouStepType &
+  PersonalInfoStepType &
+  TechnicalInfoStepType
 
 export const useAboutYouStep = () => {
   const [isOpenModal, setIsOpenModal] = useState(false)
@@ -20,7 +29,7 @@ export const useAboutYouStep = () => {
     setFormData,
     handlePreviousStep,
     handleNextStep,
-  } = useSubscriptionForm<AboutYouStepType>()
+  } = useSubscriptionForm<FormData>()
 
   const {
     register,
@@ -65,16 +74,43 @@ export const useAboutYouStep = () => {
       try {
         setIsLoading(true)
 
-        await new Promise((resolve) => setTimeout(resolve, 1500))
+        const response = await fetch('/api/subscription', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            formData,
+          }),
+        })
+
+        const { message, payload }: SubscriptionResponse =
+          await response.json()
+
+        if (response.status !== 201) {
+          throw new Error(payload?.error![0].message)
+        }
 
         setIsSubscriptionSuccess(true)
 
-        // TODO: register subscription
-        console.log('FormData =>', formData)
+        monitoring.captureMessage({
+          category: 'form',
+          message: `Create subscription with id: ${
+            payload?.data!.createSubscriptionForm?.id
+          }`,
+          logMessage: message,
+          level: 'log',
+          user: { email: formData.email },
+        })
       } catch (error: any) {
         setIsSubscriptionSuccess(false)
 
-        console.error('Error =>', error)
+        monitoring.captureMessage({
+          category: 'form',
+          message: `Failed subscription for user with name: ${formData.fullName}`,
+          level: 'error',
+          error: error,
+        })
       } finally {
         setFormData({
           ...formData,
@@ -82,6 +118,7 @@ export const useAboutYouStep = () => {
         })
 
         handleNextStep()
+
         setIsLoading(false)
       }
     }

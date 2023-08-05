@@ -7,8 +7,8 @@ export const ErrorMessage = () => {
       />
       <h3>Não foi possível realizar a inscrição!</h3>
       <p>
-        Aconteceu um erro ao durante o processamento da inscrição,
-        entre em contato com nossa equipe.
+        Aconteceu um erro durante o processamento da inscrição, entre
+        em contato com nossa equipe.
       </p>
     </>
   )
