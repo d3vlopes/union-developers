@@ -1,6 +1,12 @@
 import { MainModel } from '@/domain/models'
 
 import {
+  DataStructureSEO,
+  alternateName,
+  seoConfig,
+} from '@/libs/seo'
+
+import {
   Hero,
   AccordionProps,
   TestimonialCardProps,
@@ -42,6 +48,24 @@ export const MainLayout = ({
   return (
     <BaseLayout header={base.header} footer={base.footer}>
       <Hero {...hero} />
+
+      <DataStructureSEO
+        organization={{
+          logo: base.header.logoUrl,
+          name: alternateName,
+          url: seoConfig.canonical!,
+          contactPoint: [
+            {
+              contactType: 'Suporte',
+              email: base.footer.socialLinks[0].target,
+              availableLanguage: 'Portuguese',
+            },
+          ],
+        }}
+        faq={{
+          questions: faqSection.accordions,
+        }}
+      />
 
       <S.Container>
         <AboutSection {...aboutSection} />
