@@ -51,9 +51,12 @@ export default class MyDocument extends Document {
           {/* <link rel="shortcut icon" href="/img/icon-512.png" />
           <link rel="apple-touch-icon" href="/img/icon-512.png" /> */}
 
-          <meta name="description" content="Loren ipsum dolor" />
+          <meta
+            name="google-site-verification"
+            content="iK9lfnqaDqsu-DSVdr2rOthVfMf9EOP75Or13FJ8FHQ"
+          />
         </Head>
-        <title>Union Developers</title>
+
         <body>
           <Main />
           <NextScript />
