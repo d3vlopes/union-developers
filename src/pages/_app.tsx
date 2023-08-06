@@ -7,6 +7,8 @@ import { client } from '@/libs/graphql/client/apollo'
 
 import { SubscriptionFormContextProvider } from '@/presentation/hooks'
 
+import { Seo } from '@/libs/seo'
+
 import { GlobalStyles, theme } from '@/presentation/styles'
 
 function App({ Component, pageProps }: AppProps) {
@@ -15,7 +17,7 @@ function App({ Component, pageProps }: AppProps) {
       <ThemeProvider theme={theme}>
         <SubscriptionFormContextProvider>
           <GlobalStyles />
-
+          <Seo />
           <Component {...pageProps} />
         </SubscriptionFormContextProvider>
       </ThemeProvider>
