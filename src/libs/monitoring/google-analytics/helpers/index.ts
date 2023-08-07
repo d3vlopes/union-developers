@@ -4,6 +4,12 @@ type AnalityClickProps =
   | Gtag.EventParams
   | undefined
 
-export function handleAnalityClick(eventPrams: AnalityClickProps) {
-  gtag('event', 'click', eventPrams)
+export function handleAnalityClick(eventParams: AnalityClickProps) {
+  gtag('event', 'click', eventParams)
+}
+
+export function handleAnalitySubscriptions(
+  eventParams: AnalityClickProps,
+) {
+  gtag('event', 'subscription', eventParams)
 }
