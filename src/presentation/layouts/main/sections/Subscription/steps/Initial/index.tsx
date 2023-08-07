@@ -1,5 +1,7 @@
 import { useSubscriptionForm } from '@/presentation/hooks'
 
+import { handleAnalityClick } from '@/libs/monitoring'
+
 import { Button } from '@/presentation/components/atoms'
 
 import { SubscriptionSectionProps } from '../..'
@@ -17,6 +19,16 @@ export const InitialStep = ({
 }: InitialStepProps) => {
   const { handleNextStep } = useSubscriptionForm()
 
+  function handleButtonClick() {
+    handleAnalityClick({
+      event_category: 'Click',
+      event_label: 'Form',
+      event_action: 'Clique para inciar a inscrição',
+    })
+
+    handleNextStep()
+  }
+
   return (
     <>
       <S.List>
@@ -31,7 +43,7 @@ export const InitialStep = ({
         ))}
       </S.List>
 
-      <Button onClick={handleNextStep}>{buttonText}</Button>
+      <Button onClick={handleButtonClick}>{buttonText}</Button>
     </>
   )
 }

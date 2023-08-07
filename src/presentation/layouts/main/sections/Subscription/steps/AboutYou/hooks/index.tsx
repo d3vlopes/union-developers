@@ -1,7 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from 'react'
 
-import { monitoring } from '@/libs/monitoring'
+import {
+  handleAnalityClick,
+  handleAnalitySubscriptions,
+  monitoring,
+} from '@/libs/monitoring'
 
 import { useForm, zodResolver } from '@/libs/forms'
 
@@ -13,7 +17,7 @@ import { AboutYouStepType, aboutYouStepSchema } from '../schema'
 import { PersonalInfoStepType } from '../../PersonalInfo/schema'
 import { TechnicalInfoStepType } from '../../TechnicalInfo/schema'
 
-import { autoSaveFormFields } from '../../../helpers'
+import { autoSaveFormFields, formStepMap } from '../../../helpers'
 
 type FormData = AboutYouStepType &
   PersonalInfoStepType &
@@ -25,9 +29,10 @@ export const useAboutYouStep = () => {
 
   const {
     formData,
+    currentStepIndex,
     setIsSubscriptionSuccess,
     setFormData,
-    handlePreviousStep,
+    handlePreviousStep: decreasesCurrentStepIndex,
     handleNextStep,
   } = useSubscriptionForm<FormData>()
 
@@ -52,7 +57,17 @@ export const useAboutYouStep = () => {
 
   const { isTermsAccepted } = getValues()
 
-  const handleOpenModal = () => setIsOpenModal(true)
+  const handleOpenModal = () => {
+    setIsOpenModal(true)
+
+    handleAnalityClick({
+      event_category: 'Click',
+      event_label: 'Form',
+      event_action: 'Clique para abrir os termos',
+      value: 1,
+    })
+  }
+
   const handleCloseModal = () => setIsOpenModal(false)
 
   useEffect(() => {
@@ -84,7 +99,7 @@ export const useAboutYouStep = () => {
           }),
         })
 
-        const { message, payload }: SubscriptionResponse =
+        const { payload }: SubscriptionResponse =
           await response.json()
 
         if (response.status !== 201) {
@@ -93,14 +108,11 @@ export const useAboutYouStep = () => {
 
         setIsSubscriptionSuccess(true)
 
-        monitoring.captureMessage({
-          category: 'form',
-          message: `Create subscription with id: ${
-            payload?.data!.createSubscriptionForm?.id
-          }`,
-          logMessage: message,
-          level: 'log',
-          user: { email: formData.email },
+        handleAnalitySubscriptions({
+          event_category: 'Contagem de inscrições bem sucedidas',
+          event_label: 'Form',
+          event_action: 'Inscrição concluída com sucesso',
+          value: 1,
         })
       } catch (error: any) {
         setIsSubscriptionSuccess(false)
@@ -110,6 +122,13 @@ export const useAboutYouStep = () => {
           message: `Failed subscription for user with name: ${formData.fullName}`,
           level: 'error',
           error: error,
+        })
+
+        handleAnalitySubscriptions({
+          event_category: 'Contagem de inscrições com falha',
+          event_label: 'Form',
+          event_action: 'Inscrição com erro',
+          value: 1,
         })
       } finally {
         setFormData({
@@ -122,6 +141,19 @@ export const useAboutYouStep = () => {
         setIsLoading(false)
       }
     }
+  }
+
+  function handlePreviousStep() {
+    decreasesCurrentStepIndex()
+
+    const previousStepIndex = currentStepIndex - 1
+    const previousStep = formStepMap[previousStepIndex]
+
+    handleAnalityClick({
+      event_category: 'Click',
+      event_label: 'Form',
+      event_action: `Clique para para voltar para a etapa ${previousStep}`,
+    })
   }
 
   return {
