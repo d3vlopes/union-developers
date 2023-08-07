@@ -1,10 +1,11 @@
 import { useEffect } from 'react'
 
 import { useForm, zodResolver } from '@/libs/forms'
+import { handleAnalityClick } from '@/libs/monitoring'
 
 import { useSubscriptionForm } from '@/presentation/hooks'
 
-import { autoSaveFormFields } from '../../../helpers'
+import { autoSaveFormFields, formStepMap } from '../../../helpers'
 
 import {
   TechnicalInfoStepType,
@@ -14,8 +15,9 @@ import {
 export const useTechnicalInfo = () => {
   const {
     handleNextStep,
-    handlePreviousStep,
+    handlePreviousStep: decreasesCurrentStepIndex,
     formData,
+    currentStepIndex,
     setFormData,
   } = useSubscriptionForm<TechnicalInfoStepType>()
 
@@ -52,7 +54,29 @@ export const useTechnicalInfo = () => {
       setFormData({ ...formData, ...data })
 
       handleNextStep()
+
+      const nextStepIndex = currentStepIndex + 1
+      const nextStep = formStepMap[nextStepIndex]
+
+      handleAnalityClick({
+        event_category: 'Click',
+        event_label: 'Form',
+        event_action: `Clique para para ir para a etapa ${nextStep}`,
+      })
     }
+  }
+
+  function handlePreviousStep() {
+    decreasesCurrentStepIndex()
+
+    const previousStepIndex = currentStepIndex - 1
+    const previousStep = formStepMap[previousStepIndex]
+
+    handleAnalityClick({
+      event_category: 'Click',
+      event_label: 'Form',
+      event_action: `Clique para para voltar para a etapa ${previousStep}`,
+    })
   }
 
   return {

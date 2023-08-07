@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 import { sanitizeHTML } from '@/libs/sanitizers'
+import { handleAnalityClick } from '@/libs/monitoring'
 
 import { lessIcon, plusIcon } from './assets'
 
@@ -22,6 +23,14 @@ export const Accordion = ({ title, content }: AccordionProps) => {
 
   function handleToggle() {
     setIsOpen((prevState) => !prevState)
+
+    if (!isOpen) {
+      handleAnalityClick({
+        event_category: 'Click',
+        event_label: 'Faq',
+        event_action: `Clique na pergunta ${title}`,
+      })
+    }
   }
 
   return (

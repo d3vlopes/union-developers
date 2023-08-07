@@ -4,6 +4,8 @@ import { Button, Logo } from '@/presentation/components/atoms'
 
 import { useActive } from '@/presentation/hooks/useActive'
 
+import { handleAnalityClick } from '@/libs/monitoring'
+
 import { NavigationLinkTemplate } from './templates/NavigationLinkTemplate'
 
 import { HeaderProps } from './types'
@@ -23,6 +25,14 @@ export const Header = ({
 
   function toggleMenu() {
     setIsOpen(!isOpen)
+  }
+
+  function handleCallToActionClick() {
+    handleAnalityClick({
+      event_category: 'Click',
+      event_label: 'Cabeçalho',
+      event_action: 'Clique no botão',
+    })
   }
 
   return (
@@ -62,7 +72,11 @@ export const Header = ({
           </S.NavLink>
 
           <S.CallToAction open={isOpen}>
-            <a href={buttonTarget} data-testid="button-anchor">
+            <a
+              href={buttonTarget}
+              data-testid="button-anchor"
+              onClick={handleCallToActionClick}
+            >
               <Button>{buttonText}</Button>
             </a>
           </S.CallToAction>

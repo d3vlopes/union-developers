@@ -1,3 +1,5 @@
+import { vitest } from 'vitest'
+
 import {
   render,
   screen,
@@ -13,10 +15,13 @@ import { Accordion } from '.'
 
 const { getByRole, queryByTestId, getByTestId } = screen
 
+const mockFn = vitest.fn()
 const mock = accordionMock
 
 describe('<Accordion />', () => {
   beforeEach(() => {
+    window.gtag = mockFn
+
     render(<Accordion {...mock} />)
   })
 

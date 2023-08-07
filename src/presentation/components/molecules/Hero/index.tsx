@@ -1,4 +1,5 @@
 import { sanitizeHTML } from '@/libs/sanitizers'
+import { handleAnalityClick } from '@/libs/monitoring'
 
 import { Button } from '@/presentation/components/atoms'
 
@@ -8,6 +9,14 @@ import * as S from './styles'
 
 export const Hero = (props: HeroProps) => {
   const clearHTML = sanitizeHTML(props.title)
+
+  function handleButtonClick() {
+    handleAnalityClick({
+      event_category: 'Click',
+      event_label: 'Hero',
+      event_action: 'Clique no botão',
+    })
+  }
 
   return (
     <S.Wrapper
@@ -19,7 +28,7 @@ export const Hero = (props: HeroProps) => {
           <S.Title dangerouslySetInnerHTML={{ __html: clearHTML }} />
           <S.Description>{props.description}</S.Description>
 
-          <a href={props.buttonTarget}>
+          <a href={props.buttonTarget} onClick={handleButtonClick}>
             <Button>{props.buttonText}</Button>
           </a>
         </S.ContentWrapper>
