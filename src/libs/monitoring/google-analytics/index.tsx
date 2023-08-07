@@ -2,6 +2,8 @@ import { useEffect } from 'react'
 
 import Script from 'next/script'
 
+export * from './helpers'
+
 const TRACKING_ID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID
 
 export const Analytics = () => {
