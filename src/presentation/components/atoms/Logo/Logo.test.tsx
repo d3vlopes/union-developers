@@ -23,7 +23,7 @@ describe('<Logo />', () => {
     expect(logo).toHaveAttribute('src', logoMock.imgUrl)
   })
 
-  it('should render <a> element around <img> with href for #', () => {
+  it('should render <a> element around <img> with correct href for target', () => {
     render(<Logo {...logoMock} />)
 
     const link = getByRole('link')
