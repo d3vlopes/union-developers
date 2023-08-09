@@ -3,6 +3,7 @@ import { AppProps } from 'next/app'
 import { ApolloProvider } from '@apollo/client'
 import { ThemeProvider } from 'styled-components'
 
+import { motion } from '@/libs/animations'
 import { client } from '@/libs/graphql/client/apollo'
 
 import { SubscriptionFormContextProvider } from '@/presentation/hooks'
@@ -19,7 +20,20 @@ function App({ Component, pageProps }: AppProps) {
         <SubscriptionFormContextProvider>
           <GlobalStyles />
           <Seo />
-          <Component {...pageProps} />
+          <motion.div
+            initial="initial"
+            animate="animate"
+            variants={{
+              initial: {
+                opacity: 0,
+              },
+              animate: {
+                opacity: 1,
+              },
+            }}
+          >
+            <Component {...pageProps} />
+          </motion.div>
           <Analytics />
         </SubscriptionFormContextProvider>
       </ThemeProvider>
