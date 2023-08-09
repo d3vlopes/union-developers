@@ -9,7 +9,7 @@ export const CallToAction = styled.div<MenuProps>`
     button {
       display: ${open ? 'flex' : 'none'};
       justify-content: flex-start;
-      height: 4.7rem;
+      height: 5.9rem;
       padding: 1rem 0.5rem;
       margin-left: 2rem;
       margin-bottom: 3rem;
@@ -27,9 +27,14 @@ export const CallToAction = styled.div<MenuProps>`
         display: flex;
         margin-bottom: initial;
         min-width: 18.6rem;
-        height: 5.9rem;
         margin-left: 0;
         justify-content: center;
+      }
+    `}
+
+    ${media.xl`
+      button {
+        min-width: 29.9rem;
       }
     `}
   `}
