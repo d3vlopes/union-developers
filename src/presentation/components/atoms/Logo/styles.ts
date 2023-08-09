@@ -1,3 +1,9 @@
 import styled from 'styled-components'
 
-export const Wrapper = styled.div``
+export const Wrapper = styled.div`
+  @media (max-width: 1100px) {
+    img {
+      width: 22rem;
+    }
+  }
+`

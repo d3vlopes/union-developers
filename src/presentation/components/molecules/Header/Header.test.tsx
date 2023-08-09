@@ -79,4 +79,10 @@ describe('<Header />', () => {
       visibility: 'visible',
     })
   })
+
+  it('should match snapshot', () => {
+    const { container } = render(<Header {...headerMock} />)
+
+    expect(container).toMatchSnapshot()
+  })
 })

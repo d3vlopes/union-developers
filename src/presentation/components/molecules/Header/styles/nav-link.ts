@@ -27,20 +27,6 @@ export const NavLink = styled.div<MenuProps>`
       }
     }
 
-    ${media.lg`
-      .active {
-        &::after {
-          content: '';
-          background: ${theme.colors.gradient};
-          height: 1.5px;
-          width: 100%;
-          position: absolute;
-          bottom: -46px;
-          left: 0;
-        }
-      }
-    `}
-
     ul {
       display: flex;
       flex-direction: column;
@@ -58,13 +44,8 @@ export const NavLink = styled.div<MenuProps>`
         transition: all 0.35s ease-in-out;
         position: relative;
 
-        ${media.lg`
-          a {
-            font-size: ${theme.fonts.size['3xl']};
-          }
-        `}
-
-        &:hover, .active {
+        &:hover,
+        .active {
           background: ${theme.colors.gradient};
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
@@ -95,6 +76,26 @@ export const NavLink = styled.div<MenuProps>`
             align-items: center;
             gap: 1.6rem;
             padding: 0;
+          }
+        }
+
+        .active {
+          &::after {
+            content: '';
+            background: ${theme.colors.gradient};
+            height: 1.5px;
+            width: 100%;
+            position: absolute;
+            bottom: -46px;
+            left: 0;
+          }
+        }
+    `}
+
+    ${media.xl`
+        ul {
+          a {
+            font-size: ${theme.fonts.size.xl};
           }
         }
     `}
