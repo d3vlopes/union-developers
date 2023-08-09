@@ -1,8 +1,9 @@
 import styled, { css } from 'styled-components'
+import { motion } from 'framer-motion'
 
 import { media } from '@/presentation/styles/helpers'
 
-export const Title = styled.div`
+export const Title = styled(motion.div)`
   ${({ theme }) => css`
     max-width: 38.3rem;
 
@@ -29,14 +30,6 @@ export const Title = styled.div`
 
     ${media.md`
       max-width: 55rem;
-
-      h1 {
-        font-size: ${theme.fonts.size['4xl']};
-      }
-    `}
-
-    ${media.xl`
-      max-width: 73.3rem;
 
       h1 {
         font-size: ${theme.fonts.size['7xl']};

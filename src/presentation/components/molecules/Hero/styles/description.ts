@@ -1,8 +1,9 @@
 import styled, { css } from 'styled-components'
+import { motion } from 'framer-motion'
 
 import { media } from '@/presentation/styles/helpers'
 
-export const Description = styled.p`
+export const Description = styled(motion.p)`
   ${({ theme }) => css`
     margin-top: 1.4rem;
     font-size: ${theme.fonts.size['base']};
