@@ -1,9 +1,15 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`<Logo /> > should match snapshot 1`] = `
+@media (max-width:1100px) {
+  .c0 img {
+    width: 22rem;
+  }
+}
+
 <div>
   <div
-    class=""
+    class="c0"
   >
     <a
       href="#"
