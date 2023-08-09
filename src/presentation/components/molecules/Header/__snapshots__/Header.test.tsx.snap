@@ -1,0 +1,504 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<Header /> > should match snapshot 1`] = `
+.c8 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100%;
+  background: none;
+  -webkit-transition: filter 0.3s ease-in-out;
+  transition: filter 0.3s ease-in-out;
+  box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
+  overflow: hidden;
+  height: auto;
+}
+
+.c8 span {
+  color: #FFFFFF;
+  font-size: 2.2rem;
+  font-family: Poppins,apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+  -webkit-letter-spacing: 1.5px;
+  -moz-letter-spacing: 1.5px;
+  -ms-letter-spacing: 1.5px;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  z-index: 2;
+}
+
+.c8:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.c8::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  background: linear-gradient(225deg,#0048FE 0%,#851D86 100%);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  z-index: 1;
+}
+
+.c1 {
+  max-width: 125.6rem;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding: 1.6rem 1.2rem;
+}
+
+.c0 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #121119;
+  -webkit-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+  width: 100%;
+  height: auto;
+  z-index: 50;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.c5 {
+  width: 100%;
+  height: 0;
+  padding: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+
+.c5 .active::after {
+  content: '';
+  background: linear-gradient(225deg,#0048FE 0%,#851D86 100%);
+  height: 1.5px;
+  border-radius: 10px;
+  width: 100%;
+  position: absolute;
+  bottom: -5.5px;
+  left: 0;
+}
+
+.c5 ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 4rem 0 2rem 2rem;
+}
+
+.c5 ul a {
+  font-family: Poppins,apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 2.2rem;
+  color: #E2E2E2;
+  text-rendering: optimizeLegibility;
+  -webkit-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+  position: relative;
+}
+
+.c5 ul a:hover,
+.c5 ul a .active {
+  background: linear-gradient(225deg,#0048FE 0%,#851D86 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.c5 ul a li {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+.c4 {
+  position: relative;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: none;
+  outline: none;
+  background: none;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.35s ease-in-out;
+  transition: 0.35s ease-in-out;
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+.c4 span {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  border: none;
+  outline: none;
+  opacity: 1;
+  border-radius: 4px;
+  background: #E2E2E2;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+.c4 span:nth-child(1) {
+  top: 0;
+  left: 0;
+  width: inherit;
+}
+
+.c4 span:nth-child(2) {
+  top: 0.8rem;
+}
+
+.c4 span:nth-child(3) {
+  top: 0.8rem;
+}
+
+.c4 span:nth-child(4) {
+  top: 1.6rem;
+  width: inherit;
+  left: 0;
+}
+
+.c6 button {
+  display: none;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  height: 5.9rem;
+  padding: 1rem 0.5rem;
+  margin-left: 2rem;
+  margin-bottom: 3rem;
+  max-width: 18rem;
+}
+
+.c6 button span {
+  font-size: 1.8rem;
+  min-width: 16.7rem;
+  min-height: 2.7rem;
+}
+
+@media (min-width:1024px) {
+  .c8:hover:not(.c7:disabled) {
+    border-right: 2px solid #0048FE;
+    border-left: 2px solid #851D86;
+    background-image: linear-gradient(to right,#851D86,#0048FE), linear-gradient(to right,#851D86,#0048FE);
+    background-size: 100% 2px;
+    background-position: 0 100%,0 0;
+    background-repeat: no-repeat;
+    background-clip: padding-box;
+  }
+
+  .c8:hover:not(.c7:disabled):hover {
+    -webkit-filter: brightness(0.9);
+    filter: brightness(0.9);
+  }
+
+  .c8:hover:not(.c7:disabled)::before {
+    left: 100%;
+  }
+}
+
+@media (max-width:1100px) {
+  .c3 img {
+    width: 22rem;
+  }
+}
+
+@media (min-width:1024px) {
+  .c1 {
+    padding: 2.2rem 1.6rem;
+  }
+}
+
+@media (min-width:1400px) {
+  .c1 {
+    padding: 2.2rem 0;
+  }
+}
+
+@media (min-width:1024px) {
+  .c0 {
+    height: 11.4rem;
+  }
+}
+
+@media (min-width:1024px) {
+  .c2 {
+    height: 6.9rem;
+  }
+}
+
+@media (min-width:1024px) {
+  .c5 {
+    width: initial;
+    opacity: initial;
+    visibility: initial;
+    overflow: initial;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .c5 ul {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 1.6rem;
+    padding: 0;
+  }
+
+  .c5 .active::after {
+    content: '';
+    background: linear-gradient(225deg,#0048FE 0%,#851D86 100%);
+    height: 1.5px;
+    width: 100%;
+    position: absolute;
+    bottom: -46px;
+    left: 0;
+  }
+}
+
+@media (min-width:1400px) {
+  .c5 ul a {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width:1024px) {
+  .c4 {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+@media (min-width:1024px) {
+  .c6 button {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: initial;
+    min-width: 18.6rem;
+    margin-left: 0;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+}
+
+@media (min-width:1400px) {
+  .c6 button {
+    min-width: 29.9rem;
+  }
+}
+
+<div>
+  <header
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <nav
+        class="c2"
+      >
+        <div
+          class="c3"
+        >
+          <a
+            href="#"
+          >
+            <img
+              alt="Um octógono com três pontos, representando a união dos desenvolvedores"
+              src="https://res.cloudinary.com/dbnq26wqe/image/upload/v1688490290/union/logo_desktop_uppabl.svg"
+            />
+          </a>
+        </div>
+        <button
+          aria-expanded="false"
+          aria-label="Abrir menu"
+          class="c4"
+          type="button"
+        >
+          <span />
+          <span />
+          <span />
+          <span />
+        </button>
+        <div
+          aria-hidden="true"
+          aria-label="Navegação principal"
+          class="c5"
+          role="navigation"
+        >
+          <ul>
+            <a
+              aria-label="Sobre"
+              href="#about"
+            >
+              <li
+                class=""
+              >
+                Sobre
+              </li>
+            </a>
+            <a
+              aria-label="Pilares"
+              href="#pillars"
+            >
+              <li
+                class=""
+              >
+                Pilares
+              </li>
+            </a>
+            <a
+              aria-label="Benefícios"
+              href="#highlights"
+            >
+              <li
+                class=""
+              >
+                Benefícios
+              </li>
+            </a>
+            <a
+              aria-label="Etapas"
+              href="#steps"
+            >
+              <li
+                class=""
+              >
+                Etapas
+              </li>
+            </a>
+            <a
+              aria-label="Depoimentos"
+              href="#testimonials"
+            >
+              <li
+                class=""
+              >
+                Depoimentos
+              </li>
+            </a>
+            <a
+              aria-label="Dúvidas"
+              href="#questions"
+            >
+              <li
+                class=""
+              >
+                Dúvidas
+              </li>
+            </a>
+          </ul>
+        </div>
+        <div
+          class="c6"
+        >
+          <a
+            data-testid="button-anchor"
+            href="#join"
+          >
+            <button
+              class="c7 c8"
+            >
+              <span>
+                Junte-se a nós
+              </span>
+            </button>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+</div>
+`;
