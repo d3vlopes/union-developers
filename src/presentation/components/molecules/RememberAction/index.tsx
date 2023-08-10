@@ -1,8 +1,14 @@
 import { RememberActionModel } from '@/domain/models'
 
 import { handleAnalityClick } from '@/libs/monitoring'
+import { motion } from '@/libs/animations'
 
 import { Button } from '@/presentation/components/atoms'
+
+import {
+  makeFlashAnimation,
+  makeFloatingAnimation,
+} from './animations'
 
 import * as S from './styles'
 
@@ -16,6 +22,9 @@ export const RememberAction = ({
   logoUrl,
   logoAlt,
 }: RememberActionProps) => {
+  const logoAnimation = makeFloatingAnimation()
+  const subtitleAnimation = makeFlashAnimation()
+
   function handleButtonClick() {
     handleAnalityClick({
       event_category: 'Click',
@@ -26,10 +35,10 @@ export const RememberAction = ({
 
   return (
     <S.Wrapper>
-      <S.Logo src={logoUrl} alt={logoAlt} />
+      <S.Logo src={logoUrl} alt={logoAlt} {...logoAnimation} />
       <S.ContentWrapper>
         <h2>{title}</h2>
-        <h3>{subtitle}</h3>
+        <motion.h3 {...subtitleAnimation}>{subtitle}</motion.h3>
         <a href={buttonTarget} onClick={handleButtonClick}>
           <Button>{buttonText}</Button>
         </a>
