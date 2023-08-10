@@ -1,6 +1,6 @@
 import { StepModel } from '@/domain/models'
 
-import { StepTemplate } from './templates'
+import { Step } from './components'
 
 import * as S from './styles'
 
@@ -14,7 +14,11 @@ export const Steps = ({ steps }: StepsProps) => {
   return (
     <S.Wrapper>
       <S.StepsWrapper>
-        {items.sort((a, b) => a.number - b.number).map(StepTemplate)}
+        {items
+          .sort((a, b) => a.number - b.number)
+          .map((item) => (
+            <Step key={item.id} item={item} />
+          ))}
       </S.StepsWrapper>
       <S.Line />
     </S.Wrapper>

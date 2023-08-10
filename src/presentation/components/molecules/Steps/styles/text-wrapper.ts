@@ -1,8 +1,10 @@
 import styled from 'styled-components'
 
+import { motion } from '@/libs/animations'
+
 import { media } from '@/presentation/styles/helpers'
 
-export const TextWrapper = styled.div`
+export const TextWrapper = styled(motion.div)`
   display: inline-flex;
   flex-direction: column;
   gap: 0.8rem;

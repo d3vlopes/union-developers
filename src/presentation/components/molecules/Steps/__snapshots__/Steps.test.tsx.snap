@@ -282,12 +282,14 @@ exports[`<Steps /> > should match snapshot 1`] = `
       <li>
         <div
           class="c2"
+          style="opacity: 0; transform: translateY(10px) translateZ(0);"
         >
           <span>
             1
           </span>
           <div
             class="c3"
+            style="opacity: 0; transform: translateY(10px) translateZ(0);"
           >
             <h3
               class="c4"
@@ -305,12 +307,14 @@ exports[`<Steps /> > should match snapshot 1`] = `
       <li>
         <div
           class="c2"
+          style="opacity: 0; transform: translateY(10px) translateZ(0);"
         >
           <span>
             2
           </span>
           <div
             class="c3"
+            style="opacity: 0; transform: translateY(10px) translateZ(0);"
           >
             <h3
               class="c4"
@@ -328,12 +332,14 @@ exports[`<Steps /> > should match snapshot 1`] = `
       <li>
         <div
           class="c2"
+          style="opacity: 0; transform: translateY(10px) translateZ(0);"
         >
           <span>
             3
           </span>
           <div
             class="c3"
+            style="opacity: 0; transform: translateY(10px) translateZ(0);"
           >
             <h3
               class="c4"
@@ -351,12 +357,14 @@ exports[`<Steps /> > should match snapshot 1`] = `
       <li>
         <div
           class="c2"
+          style="opacity: 0; transform: translateY(10px) translateZ(0);"
         >
           <span>
             4
           </span>
           <div
             class="c3"
+            style="opacity: 0; transform: translateY(10px) translateZ(0);"
           >
             <h3
               class="c4"
