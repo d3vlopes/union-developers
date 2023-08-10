@@ -155,6 +155,7 @@ exports[`<Highlights /> > should match snapshot 1`] = `
   >
     <div
       class="c1"
+      style="opacity: 0; transform: translateY(20px) translateZ(0);"
     >
       <div
         class="c2"
@@ -177,6 +178,7 @@ exports[`<Highlights /> > should match snapshot 1`] = `
     </div>
     <div
       class="c1"
+      style="opacity: 0; transform: translateY(20px) translateZ(0);"
     >
       <div
         class="c2"
@@ -199,6 +201,7 @@ exports[`<Highlights /> > should match snapshot 1`] = `
     </div>
     <div
       class="c1"
+      style="opacity: 0; transform: translateY(20px) translateZ(0);"
     >
       <div
         class="c2"
@@ -221,6 +224,7 @@ exports[`<Highlights /> > should match snapshot 1`] = `
     </div>
     <div
       class="c1"
+      style="opacity: 0; transform: translateY(20px) translateZ(0);"
     >
       <div
         class="c2"
@@ -243,6 +247,7 @@ exports[`<Highlights /> > should match snapshot 1`] = `
     </div>
     <div
       class="c1"
+      style="opacity: 0; transform: translateY(20px) translateZ(0);"
     >
       <div
         class="c2"
@@ -265,6 +270,7 @@ exports[`<Highlights /> > should match snapshot 1`] = `
     </div>
     <div
       class="c1"
+      style="opacity: 0; transform: translateY(20px) translateZ(0);"
     >
       <div
         class="c2"
@@ -287,6 +293,7 @@ exports[`<Highlights /> > should match snapshot 1`] = `
     </div>
     <div
       class="c1"
+      style="opacity: 0; transform: translateY(20px) translateZ(0);"
     >
       <div
         class="c2"
@@ -309,6 +316,7 @@ exports[`<Highlights /> > should match snapshot 1`] = `
     </div>
     <div
       class="c1"
+      style="opacity: 0; transform: translateY(20px) translateZ(0);"
     >
       <div
         class="c2"

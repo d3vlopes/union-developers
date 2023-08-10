@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components'
 
+import { motion } from '@/libs/animations'
+
 import { media } from '@/presentation/styles/helpers'
 
 export const Wrapper = styled.div`
@@ -15,7 +17,7 @@ export const Wrapper = styled.div`
   `}
 `
 
-export const Highlight = styled.div`
+export const Highlight = styled(motion.div)`
   display: flex;
   flex-direction: column;
   justify-content: center;

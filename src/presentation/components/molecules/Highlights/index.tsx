@@ -1,6 +1,6 @@
 import { HighlightModel } from '@/domain/models'
 
-import { HighlightTemplate } from './templates'
+import { Highlight } from './components'
 
 import * as S from './styles'
 
@@ -9,5 +9,11 @@ export interface HighlightsProps {
 }
 
 export const Highlights = ({ items }: HighlightsProps) => {
-  return <S.Wrapper>{items.map(HighlightTemplate)}</S.Wrapper>
+  return (
+    <S.Wrapper>
+      {items.map((highlight) => (
+        <Highlight key={highlight.id} highlight={highlight} />
+      ))}
+    </S.Wrapper>
+  )
 }
