@@ -1,5 +1,7 @@
 import { Button, Input } from '@/presentation/components/atoms'
 
+import { makeFormAnimation } from '../_shared/animations'
+
 import { usePersonalInfoStep } from './hooks'
 
 import * as S from '../styles'
@@ -14,8 +16,10 @@ export const PersonalInfoStep = () => {
     onSubmit,
   } = usePersonalInfoStep()
 
+  const formWrapperAnimation = makeFormAnimation()
+
   return (
-    <S.FormWrapper>
+    <S.FormWrapper {...formWrapperAnimation}>
       <S.FormField>
         <S.LabelWrapper>
           <span>*</span>

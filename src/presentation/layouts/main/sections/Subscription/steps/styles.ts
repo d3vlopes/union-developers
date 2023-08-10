@@ -1,10 +1,12 @@
 import styled, { css } from 'styled-components'
 
+import { motion } from '@/libs/animations'
+
 import { media } from '@/presentation/styles/helpers'
 
 import { Button } from '@/presentation/components/atoms/Button/styles'
 
-export const FormWrapper = styled.div`
+export const FormWrapper = styled(motion.div)`
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
@@ -140,7 +142,7 @@ export const ButtonsWrapper = styled.div`
     gap: 1.2rem;
 
     ${Button} {
-      width: 14.3rem;
+      width: 16.3rem;
       height: 4.4rem;
       margin-top: 2.2rem;
 
