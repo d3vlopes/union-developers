@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { useRouter } from 'next/router'
 
 import { useForm, zodResolver } from '@/libs/forms'
 import { handleAnalityClick } from '@/libs/monitoring'
@@ -36,6 +37,8 @@ export const useTechnicalInfo = () => {
     resolver: zodResolver(technicalInfoStepSchema),
   })
 
+  const router = useRouter()
+
   useEffect(() => {
     const formValues = getValues()
 
@@ -52,6 +55,8 @@ export const useTechnicalInfo = () => {
   function onSubmit(data: TechnicalInfoStepType) {
     if (isValid) {
       setFormData({ ...formData, ...data })
+
+      router.push('/#formulario')
 
       handleNextStep()
 

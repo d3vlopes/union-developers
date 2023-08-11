@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
 
 import {
   handleAnalityClick,
@@ -54,6 +55,8 @@ export const useAboutYouStep = () => {
     mode: 'onBlur',
     resolver: zodResolver(aboutYouStepSchema),
   })
+
+  const router = useRouter()
 
   const { isTermsAccepted } = getValues()
 
@@ -135,6 +138,8 @@ export const useAboutYouStep = () => {
           ...formData,
           ...data,
         })
+
+        router.push('/#formulario')
 
         handleNextStep()
 

@@ -1,4 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
+import { vitest } from 'vitest'
+
 global.IntersectionObserver = class IntersectionObserver {
   constructor() {}
 
@@ -14,3 +16,7 @@ global.IntersectionObserver = class IntersectionObserver {
     return null
   }
 } as any
+
+vitest.mock('next/router', () => ({
+  useRouter: vitest.fn(),
+}))
