@@ -138,6 +138,7 @@ exports[`<MethodologyCards /> > should match snapshot 1`] = `
   >
     <div
       class="c1"
+      style="opacity: 0; transform: translateY(20px) translateZ(0);"
     >
       <header
         class="c2 c3"
@@ -156,6 +157,7 @@ exports[`<MethodologyCards /> > should match snapshot 1`] = `
     </div>
     <div
       class="c1"
+      style="opacity: 0; transform: translateY(20px) translateZ(0);"
     >
       <header
         class="c2 c3"
@@ -174,6 +176,7 @@ exports[`<MethodologyCards /> > should match snapshot 1`] = `
     </div>
     <div
       class="c1"
+      style="opacity: 0; transform: translateY(20px) translateZ(0);"
     >
       <header
         class="c2 c3"

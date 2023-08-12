@@ -1,8 +1,10 @@
+import { motion } from '@/libs/animations'
+
 import styled, { css } from 'styled-components'
 
 import { media } from '@/presentation/styles/helpers'
 
-export const ContentWrapper = styled.div`
+export const ContentWrapper = styled(motion.div)`
   ${({ theme }) => css`
     position: relative;
     display: flex;

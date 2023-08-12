@@ -4,6 +4,8 @@ import {
   Textarea,
 } from '@/presentation/components/atoms'
 
+import { makeFormAnimation } from '../_shared/animations'
+
 import { useTechnicalInfo } from './hooks'
 
 import * as S from '../styles'
@@ -18,8 +20,10 @@ export const TechnicalInfoStep = () => {
     handleSubmit,
   } = useTechnicalInfo()
 
+  const formWrapperAnimation = makeFormAnimation()
+
   return (
-    <S.FormWrapper>
+    <S.FormWrapper {...formWrapperAnimation}>
       <S.FormField>
         <S.LabelWrapper>
           <span>*</span>

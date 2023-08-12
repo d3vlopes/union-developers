@@ -1,6 +1,6 @@
 import { MethodologyModel } from '@/domain/models'
 
-import { MethodologyCardTemplate } from './templates'
+import { MethodologyCard } from './components'
 
 import * as S from './styles'
 
@@ -11,5 +11,14 @@ export interface MethodologyCardsProps {
 export const MethodologyCards = ({
   items,
 }: MethodologyCardsProps) => {
-  return <S.Wrapper>{items.map(MethodologyCardTemplate)}</S.Wrapper>
+  return (
+    <S.Wrapper>
+      {items.map((methodology) => (
+        <MethodologyCard
+          key={methodology.id}
+          methodology={methodology}
+        />
+      ))}
+    </S.Wrapper>
+  )
 }

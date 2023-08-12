@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable no-console */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { Suspense, lazy } from 'react'
 
@@ -10,6 +8,8 @@ import {
   Checkbox,
   Textarea,
 } from '@/presentation/components/atoms'
+
+import { makeFormAnimation } from '../_shared/animations'
 
 import { Terms } from './components'
 
@@ -42,8 +42,10 @@ export const AboutYouStep = ({ terms }: AboutYouStepProps) => {
     handlePreviousStep,
   } = useAboutYouStep()
 
+  const formWrapperAnimation = makeFormAnimation()
+
   return (
-    <S.FormWrapper>
+    <S.FormWrapper {...formWrapperAnimation}>
       <S.FormField>
         <S.LabelWrapper>
           <span>*</span>

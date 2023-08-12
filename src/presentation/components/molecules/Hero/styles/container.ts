@@ -1,8 +1,9 @@
 import styled, { css } from 'styled-components'
+import { motion } from 'framer-motion'
 
 import { media } from '@/presentation/styles/helpers'
 
-export const Container = styled.div`
+export const Container = styled(motion.div)`
   ${({ theme }) => css`
     ${media.lg`
       & {

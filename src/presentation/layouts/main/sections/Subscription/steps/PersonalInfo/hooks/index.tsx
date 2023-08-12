@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { useRouter } from 'next/router'
 
 import { useForm, zodResolver } from '@/libs/forms'
 import { handleAnalityClick } from '@/libs/monitoring'
@@ -39,9 +40,13 @@ export const usePersonalInfoStep = () => {
     },
   })
 
+  const router = useRouter()
+
   function onSubmit(data: PersonalInfoStepType) {
     if (isValid) {
       setFormData({ ...formData, ...data })
+
+      router.push('/#formulario')
 
       handleNextStep()
 

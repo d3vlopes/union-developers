@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components'
 
+import { motion } from '@/libs/animations'
+
 import { media } from '@/presentation/styles/helpers'
 
 export const Wrapper = styled.div`
@@ -26,7 +28,7 @@ export const Wrapper = styled.div`
   `}
 `
 
-export const Logo = styled.img`
+export const Logo = styled(motion.img)`
   position: relative;
   top: -40px;
   height: 30rem;
@@ -110,7 +112,7 @@ export const ContentWrapper = styled.div`
       a {
         button {
           width: 42.2rem;
-          height: 5.3rem;
+          height: 6.9rem;
           margin: 0 auto;
         }
       }

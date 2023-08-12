@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components'
 
+import { motion } from '@/libs/animations'
+
 import { media } from '@/presentation/styles/helpers'
 
 export const Wrapper = styled.div`
@@ -18,7 +20,7 @@ export const Wrapper = styled.div`
   `}
 `
 
-export const Card = styled.div`
+export const Card = styled(motion.div)`
   ${({ theme }) => css`
     display: flex;
     flex-direction: column;

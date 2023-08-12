@@ -202,16 +202,6 @@ exports[`<Hero /> > should match snapshot 1`] = `
   }
 
   .c3 h1 {
-    font-size: 2.8rem;
-  }
-}
-
-@media (min-width:1400px) {
-  .c3 {
-    max-width: 73.3rem;
-  }
-
-  .c3 h1 {
     font-size: 4.2rem;
   }
 }
@@ -248,12 +238,14 @@ exports[`<Hero /> > should match snapshot 1`] = `
   >
     <div
       class="c1"
+      style="opacity: 0;"
     >
       <div
         class="c2"
       >
         <div
           class="c3"
+          style="opacity: 0; transform: scale(0.5) translateZ(0);"
         >
           <h1>
             Quer se tornar um desenvolvedor 
@@ -264,11 +256,13 @@ exports[`<Hero /> > should match snapshot 1`] = `
         </div>
         <p
           class="c4"
+          style="opacity: 0; transform: scale(0.5) translateZ(0);"
         >
           Aqui você vivencia na prática como é o dia a dia de um desenvolvedor em uma empresa e se prepara para enfrentar os desafios do mercado de forma prática e imersiva!
         </p>
         <a
           href="#join"
+          style="opacity: 0; transform: scale(0.5) translateZ(0);"
         >
           <button
             class="c5 c6"
@@ -283,6 +277,7 @@ exports[`<Hero /> > should match snapshot 1`] = `
         alt="Description logo"
         class="c7"
         src="https://media.graphassets.com/zRjyxnD5RyGdG8xVpll8"
+        style="transform: none;"
       />
     </div>
   </div>
