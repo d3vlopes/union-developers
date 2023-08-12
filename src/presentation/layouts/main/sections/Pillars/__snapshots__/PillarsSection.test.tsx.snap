@@ -15,6 +15,14 @@ exports[`<PillarsSection /> > should match snapshot 1`] = `
   background-clip: padding-box;
   border: 3px solid transparent;
   border-radius: 20px;
+  -webkit-scroll-margin-block-start: 150px;
+  -moz-scroll-margin-block-start: 150px;
+  -ms-scroll-margin-block-start: 150px;
+  scroll-margin-block-start: 150px;
+  -webkit-scroll-margin-block-end: 150px;
+  -moz-scroll-margin-block-end: 150px;
+  -ms-scroll-margin-block-end: 150px;
+  scroll-margin-block-end: 150px;
 }
 
 .c0:before {
