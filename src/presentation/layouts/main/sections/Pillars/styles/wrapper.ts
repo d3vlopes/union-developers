@@ -12,6 +12,8 @@ export const Wrapper = styled.section`
     background-clip: padding-box;
     border: 3px solid transparent;
     border-radius: 20px;
+    scroll-margin-block-start: 150px;
+    scroll-margin-block-end: 150px;
 
     &:before {
       content: '';
