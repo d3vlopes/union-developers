@@ -15,7 +15,7 @@ export const Wrapper = styled.section`
 
 export const Description = styled.p`
   ${({ theme }) => css`
-    margin-top: 2.4rem;
+    margin: 2.4rem auto;
     color: ${theme.colors.text['500']};
     font-size: ${theme.fonts.size['base']};
     text-align: center;

@@ -58,7 +58,7 @@ exports[`<HighlightSection /> > should match snapshot 1`] = `
 }
 
 .c5 {
-  margin-top: 2.4rem;
+  margin: 2.4rem auto;
   color: #E2E2E2;
   font-size: 1.6rem;
   text-align: center;
