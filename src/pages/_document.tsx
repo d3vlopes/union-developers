@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import Document, {
   Html,
   Head,
@@ -5,6 +6,7 @@ import Document, {
   NextScript,
   DocumentContext,
 } from 'next/document'
+import Script from 'next/script'
 import { ServerStyleSheet } from 'styled-components'
 
 export default class MyDocument extends Document {
@@ -69,6 +71,16 @@ export default class MyDocument extends Document {
           <meta
             name="google-site-verification"
             content="iK9lfnqaDqsu-DSVdr2rOthVfMf9EOP75Or13FJ8FHQ"
+          />
+
+          <Script
+            async
+            strategy="afterInteractive"
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5246164032780615"
+            crossOrigin="anonymous"
+            onError={(e) => {
+              console.error('Falha ao carregar script', e)
+            }}
           />
         </Head>
 
