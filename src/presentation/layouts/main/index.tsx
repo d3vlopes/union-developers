@@ -6,8 +6,6 @@ import {
   seoConfig,
 } from '@/libs/seo'
 
-import { AdType, Ads } from '@/libs/monetization'
-
 import {
   Hero,
   AccordionProps,
@@ -73,7 +71,6 @@ export const MainLayout = ({
         <AboutSection {...aboutSection} />
         <PillarsSection {...pillarsSection} />
         <HighlightSection {...highlightSection} />
-        <Ads variant={AdType.HORIZONTAL} />
         <StepsSection {...stepsSection} />
       </S.Container>
 
