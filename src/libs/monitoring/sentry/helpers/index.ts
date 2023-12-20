@@ -22,5 +22,8 @@ export function captureMessage({
 
   if (user) Sentry.setUser(user)
   if (logMessage) Sentry.captureMessage(logMessage)
-  if (error) Sentry.captureException(error)
+  if (error) {
+    Sentry.setUser(user || null)
+    Sentry.captureException(error)
+  }
 }

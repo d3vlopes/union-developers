@@ -125,6 +125,10 @@ export const useAboutYouStep = () => {
           message: `Failed subscription for user with name: ${formData.fullName}`,
           level: 'error',
           error: error,
+          user: {
+            username: formData.fullName,
+            email: formData.email,
+          },
         })
 
         handleAnalitySubscriptions({
